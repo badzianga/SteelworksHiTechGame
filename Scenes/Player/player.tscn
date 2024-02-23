@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://kna2yacl5q3s"]
+[gd_scene load_steps=12 format=3 uid="uid://kna2yacl5q3s"]
 
 [ext_resource type="Script" path="res://Scenes/Player/player.gd" id="1_5whdu"]
 [ext_resource type="Texture2D" uid="uid://byhv2d3266ffc" path="res://Assets/Entities/Player/player_sheet.png" id="2_nd2ey"]
 [ext_resource type="PackedScene" uid="uid://mx6j27qpkmf5" path="res://Scenes/Components/hurtbox_component.tscn" id="3_0l8ck"]
 [ext_resource type="PackedScene" uid="uid://bse3dkitoj2uh" path="res://Scenes/Components/health_component.tscn" id="4_o00dw"]
+[ext_resource type="Texture2D" uid="uid://hlew5jk71a2s" path="res://Assets/Weapons/book.png" id="5_iw6dv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_36d6u"]
 size = Vector2(10, 4)
@@ -98,3 +99,12 @@ position_smoothing_speed = 6.0
 libraries = {
 "": SubResource("AnimationLibrary_645uf")
 }
+
+[node name="GunSlot" type="Marker2D" parent="."]
+position = Vector2(0, 5)
+
+[node name="Gun" type="Sprite2D" parent="GunSlot"]
+position = Vector2(5, 0)
+rotation = 0.523599
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("5_iw6dv")
