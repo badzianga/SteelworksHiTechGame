@@ -6,7 +6,7 @@ extends CharacterBody2D
 @onready var sprite := $Sprite
 @onready var animation_player := $AnimationPlayer
 @onready var gun_slot: Marker2D = $GunSlot
-@onready var gun: Sprite2D = $GunSlot/Gun
+@onready var gun: Gun = $GunSlot/Gun
 
 var direction := Vector2.ZERO
 
@@ -43,7 +43,8 @@ func handle_animation() -> void:
 
 
 func rotate_weapon() -> void:
-	var angle := gun_slot.global_position.direction_to(get_global_mouse_position()).angle()
+	var dir := gun_slot.global_position.direction_to(get_global_mouse_position())
+	var angle := dir.angle()
 	gun_slot.rotation = angle
 	if gun_slot.rotation_degrees > 90.0 or gun_slot.rotation_degrees < -90.0:
 		gun.flip_v = true
@@ -51,3 +52,6 @@ func rotate_weapon() -> void:
 	else:
 		gun.flip_v = false
 		gun.flip_h = false
+	
+	if Input.is_action_just_pressed("shoot"):
+		gun.shoot(dir)

@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://dvi483r1ouqav"]
+
+[ext_resource type="Texture2D" uid="uid://hlew5jk71a2s" path="res://Assets/Weapons/book.png" id="1_ypcb7"]
+[ext_resource type="Script" path="res://Scenes/Player/gun.gd" id="2_3r46t"]
+[ext_resource type="PackedScene" uid="uid://bvh1nf6j4fw25" path="res://Scenes/Projectiles/book_projectile.tscn" id="3_7ceoh"]
+
+[node name="Gun" type="Sprite2D"]
+position = Vector2(5, 0)
+rotation = 0.523599
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("1_ypcb7")
+script = ExtResource("2_3r46t")
+projectile_scene = ExtResource("3_7ceoh")
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

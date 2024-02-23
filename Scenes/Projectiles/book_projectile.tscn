@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://bvh1nf6j4fw25"]
+
+[ext_resource type="Script" path="res://Scenes/Projectiles/book_projectile.gd" id="1_i5ct1"]
+[ext_resource type="Texture2D" uid="uid://hlew5jk71a2s" path="res://Assets/Weapons/book.png" id="1_l5m6v"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ix4qu"]
+size = Vector2(5, 7)
+
+[node name="BookProjectile" type="Area2D"]
+collision_layer = 4
+collision_mask = 8
+script = ExtResource("1_i5ct1")
+speed = 100.0
+damage = 1.0
+
+[node name="Sprite" type="Sprite2D" parent="."]
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("1_l5m6v")
+
+[node name="CollisionShape" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ix4qu")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
