@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="SUPER ANGRY AGH LIBRARIAN VS UJ BARBARIANS"
-run/main_scene="res://Scenes/Maps/world.tscn"
+run/main_scene="res://Scenes/Maps/room_1.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[autoload]
+
+GameController="*res://Singletons/game_controller.tscn"
 
 [display]
 

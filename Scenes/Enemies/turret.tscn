@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dnye0sqfyk71x"]
+[gd_scene load_steps=12 format=3 uid="uid://dnye0sqfyk71x"]
 
 [ext_resource type="Script" path="res://Scenes/Enemies/turret.gd" id="1_5s1j5"]
 [ext_resource type="Shader" path="res://Resources/Shaders/flash.gdshader" id="2_5hev1"]
@@ -52,6 +52,9 @@ _data = {
 "hurt": SubResource("Animation_rmi56")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3p0po"]
+size = Vector2(128, 128)
+
 [node name="Turret" type="StaticBody2D"]
 scale = Vector2(0.125, 0.125)
 script = ExtResource("1_5s1j5")
@@ -76,3 +79,6 @@ max_health = 2.0
 libraries = {
 "": SubResource("AnimationLibrary_c68f5")
 }
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_3p0po")

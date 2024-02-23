@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://cmuwaea8oeiky"]
+
+[ext_resource type="Script" path="res://Scenes/Weapons/weapon.gd" id="1_2rb7t"]
+[ext_resource type="Texture2D" uid="uid://hlew5jk71a2s" path="res://Assets/Weapons/book.png" id="1_eqy3m"]
+[ext_resource type="PackedScene" uid="uid://bvh1nf6j4fw25" path="res://Scenes/Projectiles/book_projectile.tscn" id="2_q3647"]
+
+[node name="Book" type="Sprite2D"]
+rotation = 0.523599
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("1_eqy3m")
+script = ExtResource("1_2rb7t")
+damage = 1
+projectile_scene = ExtResource("2_q3647")
+
+[node name="CooldownTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="VolleyTimer" type="Timer" parent="."]
+
+[connection signal="timeout" from="CooldownTimer" to="." method="_on_cooldown_timer_timeout"]

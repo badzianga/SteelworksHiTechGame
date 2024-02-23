@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://byhv2d3266ffc" path="res://Assets/Entities/Player/player_sheet.png" id="2_nd2ey"]
 [ext_resource type="PackedScene" uid="uid://mx6j27qpkmf5" path="res://Scenes/Components/hurtbox_component.tscn" id="3_0l8ck"]
 [ext_resource type="PackedScene" uid="uid://bse3dkitoj2uh" path="res://Scenes/Components/health_component.tscn" id="4_o00dw"]
-[ext_resource type="PackedScene" uid="uid://dvi483r1ouqav" path="res://Scenes/Weapons/gun.tscn" id="5_pwf1r"]
+[ext_resource type="PackedScene" uid="uid://cmuwaea8oeiky" path="res://Scenes/Weapons/book.tscn" id="5_65q2l"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_36d6u"]
 size = Vector2(10, 4)
@@ -74,15 +74,16 @@ motion_mode = 1
 script = ExtResource("1_5whdu")
 
 [node name="Sprite" type="Sprite2D" parent="."]
+position = Vector2(0, -5)
 texture = ExtResource("2_nd2ey")
 hframes = 8
 
 [node name="CollisionShape" type="CollisionShape2D" parent="."]
-position = Vector2(0, 6)
+position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_36d6u")
 
 [node name="HurtboxComponent" parent="." instance=ExtResource("3_0l8ck")]
-position = Vector2(0, 6)
+position = Vector2(0, 1)
 collision_layer = 2
 collision_mask = 16
 
@@ -91,16 +92,12 @@ shape = SubResource("RectangleShape2D_byg6u")
 
 [node name="HealthComponent" parent="." instance=ExtResource("4_o00dw")]
 
-[node name="Camera" type="Camera2D" parent="."]
-position_smoothing_enabled = true
-position_smoothing_speed = 6.0
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_645uf")
 }
 
-[node name="GunSlot" type="Marker2D" parent="."]
-position = Vector2(0, 5)
+[node name="WeaponSlot" type="Marker2D" parent="."]
 
-[node name="Gun" parent="GunSlot" instance=ExtResource("5_pwf1r")]
+[node name="Weapon" parent="WeaponSlot" instance=ExtResource("5_65q2l")]
+position = Vector2(6, 0)
