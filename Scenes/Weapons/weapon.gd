@@ -8,10 +8,17 @@ extends Sprite2D
 
 var shots_left := volley
 
-@onready var cooldown_timer := $CooldownTimer
+@onready var cooldown_timer
 @onready var volley_timer := $VolleyTimer
 @onready var shoot_sound := $ShootSound
 
+# Reload multiplier ability
+func _ready():
+	if GameController.abilities["Contract"]["acquired"]:
+		cooldown_timer = $CooldownTimer * GameController.abilities["Contract"]["reload_multiplier"]
+	else:
+		cooldown_timer = $CooldownTimer
+		
 
 func shoot() -> void:
 	if cooldown_timer.is_stopped():

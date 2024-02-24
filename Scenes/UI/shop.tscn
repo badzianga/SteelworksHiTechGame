@@ -1,0 +1,287 @@
+[gd_scene load_steps=14 format=3 uid="uid://cg6sknwoktjqx"]
+
+[ext_resource type="Texture2D" uid="uid://dw4dtfps2ba52" path="res://Assets/UI/shop.png" id="1_bg5et"]
+[ext_resource type="Script" path="res://Scenes/UI/shop.gd" id="1_j8dmq"]
+[ext_resource type="Texture2D" uid="uid://c10odfbv1hqlp" path="res://Assets/UI/economy_1.png" id="2_q5sw1"]
+[ext_resource type="Texture2D" uid="uid://dq7776sj081h8" path="res://Assets/UI/economy_2.png" id="3_5pd3k"]
+[ext_resource type="Texture2D" uid="uid://ecf5rl6t1vig" path="res://Assets/UI/upgrade_bar_1.png" id="4_48n6b"]
+[ext_resource type="Texture2D" uid="uid://c3jd7n58vm78s" path="res://Assets/UI/upgrade_bar_2.png" id="5_tgbjm"]
+[ext_resource type="PackedScene" uid="uid://b65x3vroq46f3" path="res://Scenes/UI/economy.tscn" id="6_888is"]
+[ext_resource type="Texture2D" uid="uid://dllicbf1atna8" path="res://Assets/UI/btn_upgrade.png" id="6_y8isp"]
+[ext_resource type="Texture2D" uid="uid://cfmunnel3rxpn" path="res://Assets/UI/BAThesis.png" id="7_f8emw"]
+[ext_resource type="Texture2D" uid="uid://cfhgfd37u3uoa" path="res://Assets/UI/beer.png" id="8_fsfio"]
+[ext_resource type="Texture2D" uid="uid://capuyqk68u3i5" path="res://Assets/UI/hand_shake.png" id="9_6cdjf"]
+[ext_resource type="Texture2D" uid="uid://cl3f32f4odpdy" path="res://Assets/UI/contract.png" id="10_v4je8"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q24r0"]
+bg_color = Color(0.6, 0.6, 0.6, 0.203922)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 1)
+
+[node name="Shop" type="Node2D"]
+position = Vector2(160, 96)
+script = ExtResource("1_j8dmq")
+
+[node name="Shop" type="Sprite2D" parent="."]
+scale = Vector2(2, 2)
+texture = ExtResource("1_bg5et")
+
+[node name="Weapons" type="Node2D" parent="."]
+position = Vector2(-14, 0)
+
+[node name="Upgrade_1" type="Node2D" parent="Weapons"]
+unique_name_in_owner = true
+position = Vector2(64, 88)
+scale = Vector2(1.25, 1.25)
+
+[node name="progress" type="TextureProgressBar" parent="Weapons/Upgrade_1"]
+offset_left = -91.0
+offset_top = -101.333
+offset_right = -42.0
+offset_bottom = -95.3333
+max_value = 12.0
+texture_under = ExtResource("4_48n6b")
+texture_progress = ExtResource("5_tgbjm")
+
+[node name="Btn" type="Button" parent="Weapons/Upgrade_1"]
+offset_left = -37.3333
+offset_top = -106.667
+offset_right = -21.3333
+offset_bottom = -90.6667
+focus_mode = 0
+mouse_default_cursor_shape = 2
+icon = ExtResource("6_y8isp")
+flat = true
+
+[node name="cost" type="Node2D" parent="Weapons/Upgrade_1"]
+position = Vector2(-91.2, -108.8)
+scale = Vector2(1, 1)
+
+[node name="Economy1" type="Sprite2D" parent="Weapons/Upgrade_1/cost"]
+position = Vector2(31.2, -9.53674e-07)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("2_q5sw1")
+
+[node name="Label" type="Label" parent="Weapons/Upgrade_1/cost"]
+offset_left = -1.52588e-05
+offset_top = -8.0
+offset_right = 40.0
+offset_bottom = 15.0
+theme_override_font_sizes/font_size = 11
+text = "20"
+
+[node name="Upgrade_2" type="Node2D" parent="Weapons"]
+unique_name_in_owner = true
+position = Vector2(64, 48)
+scale = Vector2(1.25, 1.25)
+
+[node name="progress" type="TextureProgressBar" parent="Weapons/Upgrade_2"]
+offset_left = -90.6667
+offset_top = -37.3333
+offset_right = -41.6667
+offset_bottom = -31.3333
+max_value = 12.0
+texture_under = ExtResource("4_48n6b")
+texture_progress = ExtResource("5_tgbjm")
+
+[node name="Btn" type="Button" parent="Weapons/Upgrade_2"]
+offset_left = -37.3333
+offset_top = -42.6667
+offset_right = -21.3333
+offset_bottom = -26.6667
+focus_mode = 0
+mouse_default_cursor_shape = 2
+icon = ExtResource("6_y8isp")
+flat = true
+
+[node name="cost" type="Node2D" parent="Weapons/Upgrade_2"]
+position = Vector2(-91.2, -44.8)
+scale = Vector2(1, 1)
+
+[node name="Economy1" type="Sprite2D" parent="Weapons/Upgrade_2/cost"]
+position = Vector2(31.2, 0)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("2_q5sw1")
+
+[node name="Label" type="Label" parent="Weapons/Upgrade_2/cost"]
+offset_left = -1.52588e-05
+offset_top = -8.0
+offset_right = 40.0
+offset_bottom = 15.0
+theme_override_font_sizes/font_size = 11
+text = "20"
+
+[node name="Upgrade_3" type="Node2D" parent="Weapons"]
+unique_name_in_owner = true
+position = Vector2(64, 96)
+scale = Vector2(1.25, 1.25)
+
+[node name="progress" type="TextureProgressBar" parent="Weapons/Upgrade_3"]
+offset_left = -91.0
+offset_top = -37.0
+offset_right = -42.0
+offset_bottom = -31.0
+max_value = 12.0
+texture_under = ExtResource("4_48n6b")
+texture_progress = ExtResource("5_tgbjm")
+
+[node name="Btn" type="Button" parent="Weapons/Upgrade_3"]
+offset_left = -37.3333
+offset_top = -42.6667
+offset_right = -21.3333
+offset_bottom = -26.6667
+focus_mode = 0
+mouse_default_cursor_shape = 2
+icon = ExtResource("6_y8isp")
+flat = true
+
+[node name="cost" type="Node2D" parent="Weapons/Upgrade_3"]
+position = Vector2(-91.2, -44.8)
+scale = Vector2(1, 1)
+
+[node name="Economy1" type="Sprite2D" parent="Weapons/Upgrade_3/cost"]
+position = Vector2(31.2, 0)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("2_q5sw1")
+
+[node name="Label" type="Label" parent="Weapons/Upgrade_3/cost"]
+offset_left = -1.52588e-05
+offset_top = -8.0
+offset_right = 40.0
+offset_bottom = 15.0
+theme_override_font_sizes/font_size = 11
+text = "20"
+
+[node name="Upgrades" type="Node2D" parent="."]
+
+[node name="Ability_1" type="Button" parent="Upgrades"]
+unique_name_in_owner = true
+offset_left = 72.0
+offset_top = -48.0
+offset_right = 96.0
+offset_bottom = -24.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_q24r0")
+icon = ExtResource("7_f8emw")
+icon_alignment = 1
+
+[node name="cost" type="Node2D" parent="Upgrades/Ability_1"]
+position = Vector2(-3.00001, 34)
+scale = Vector2(1, 1)
+
+[node name="Economy2" type="Sprite2D" parent="Upgrades/Ability_1/cost"]
+position = Vector2(2.19995, 0)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("3_5pd3k")
+
+[node name="Label" type="Label" parent="Upgrades/Ability_1/cost"]
+offset_left = 7.99998
+offset_top = -8.0
+offset_right = 48.0
+offset_bottom = 15.0
+theme_override_font_sizes/font_size = 11
+text = "20"
+
+[node name="Ability_2" type="Button" parent="Upgrades"]
+unique_name_in_owner = true
+offset_left = 120.0
+offset_top = -48.0
+offset_right = 144.0
+offset_bottom = -24.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_q24r0")
+icon = ExtResource("8_fsfio")
+icon_alignment = 1
+
+[node name="cost" type="Node2D" parent="Upgrades/Ability_2"]
+position = Vector2(-3, 34)
+scale = Vector2(1, 1)
+
+[node name="Economy2" type="Sprite2D" parent="Upgrades/Ability_2/cost"]
+position = Vector2(2.19995, 0)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("3_5pd3k")
+
+[node name="Label" type="Label" parent="Upgrades/Ability_2/cost"]
+offset_left = 7.99998
+offset_top = -8.0
+offset_right = 48.0
+offset_bottom = 15.0
+theme_override_font_sizes/font_size = 11
+text = "20"
+
+[node name="Ability_3" type="Button" parent="Upgrades"]
+unique_name_in_owner = true
+offset_left = 72.0
+offset_right = 96.0
+offset_bottom = 24.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_q24r0")
+icon = ExtResource("9_6cdjf")
+icon_alignment = 1
+
+[node name="cost" type="Node2D" parent="Upgrades/Ability_3"]
+position = Vector2(-3, 34)
+scale = Vector2(1, 1)
+
+[node name="Economy2" type="Sprite2D" parent="Upgrades/Ability_3/cost"]
+position = Vector2(2.19995, 0)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("3_5pd3k")
+
+[node name="Label" type="Label" parent="Upgrades/Ability_3/cost"]
+offset_left = 8.99998
+offset_top = -8.0
+offset_right = 49.0
+offset_bottom = 15.0
+theme_override_font_sizes/font_size = 11
+text = "20"
+
+[node name="Ability_4" type="Button" parent="Upgrades"]
+unique_name_in_owner = true
+offset_left = 120.0
+offset_right = 144.0
+offset_bottom = 24.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_q24r0")
+icon = ExtResource("10_v4je8")
+icon_alignment = 1
+
+[node name="cost" type="Node2D" parent="Upgrades/Ability_4"]
+position = Vector2(-3.00002, 34)
+scale = Vector2(1, 1)
+
+[node name="Economy2" type="Sprite2D" parent="Upgrades/Ability_4/cost"]
+position = Vector2(2.19995, 0)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("3_5pd3k")
+
+[node name="Label" type="Label" parent="Upgrades/Ability_4/cost"]
+offset_left = 7.99998
+offset_top = -8.0
+offset_right = 48.0
+offset_bottom = 15.0
+theme_override_font_sizes/font_size = 11
+text = "20"
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(-37, 67)
+scale = Vector2(2, 2)
+
+[node name="Economy" parent="Node2D" instance=ExtResource("6_888is")]
+position = Vector2(22, -34)
+
+[connection signal="pressed" from="Weapons/Upgrade_1/Btn" to="." method="_on_btn_1_pressed"]
+[connection signal="pressed" from="Weapons/Upgrade_2/Btn" to="." method="_on_btn_2_pressed"]
+[connection signal="pressed" from="Weapons/Upgrade_3/Btn" to="." method="_on_btn_3_pressed"]
+[connection signal="pressed" from="Upgrades/Ability_1" to="." method="_on_ability_1_pressed"]
+[connection signal="pressed" from="Upgrades/Ability_2" to="." method="_on_ability_2_pressed"]
+[connection signal="pressed" from="Upgrades/Ability_3" to="." method="_on_ability_3_pressed"]
+[connection signal="pressed" from="Upgrades/Ability_4" to="." method="_on_ability_4_pressed"]
