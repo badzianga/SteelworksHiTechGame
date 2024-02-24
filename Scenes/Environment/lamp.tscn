@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://clmh8mqgt3owe"]
+
+[ext_resource type="Texture2D" uid="uid://c1xp1iv1wvqe6" path="res://Assets/Environment/lamp.png" id="1_r1152"]
+
+[node name="Lamp" type="StaticBody2D"]
+
+[node name="Lamp" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_r1152")
