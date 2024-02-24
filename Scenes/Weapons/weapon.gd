@@ -8,7 +8,7 @@ extends Sprite2D
 
 var shots_left := volley
 
-@onready var cooldown_timer
+var cooldown_timer: Timer
 @onready var volley_timer := $VolleyTimer
 @onready var shoot_sound := $ShootSound
 

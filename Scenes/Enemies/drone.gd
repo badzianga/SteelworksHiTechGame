@@ -9,9 +9,16 @@ extends CharacterBody2D
 @onready var effects := $Effects
 
 
+
+var malfunction: bool = false
 func _ready() -> void:
 	health_component.health_depleted.connect(_on_health_depleted)
 	health_component.health_changed.connect(_on_health_changed)
+	
+	# Possibility of malfunction ability
+	if GameController.abilities["BAThesis"]["acquired"]:
+		if randi_range(1, 100) <= GameController.abilities["BAThesis"]["malfunction"]:
+			malfunction = true
 
 
 func _physics_process(_delta: float) -> void:
@@ -23,6 +30,8 @@ func move_towards_player() -> void:
 	look_at(GameController.player.global_position)
 	velocity = direction * speed
 	move_and_slide()
+	
+	# TODO: Add explosion if malfunction=true
 
 
 func _on_health_changed() -> void:
