@@ -1,9 +1,10 @@
-[gd_scene load_steps=17 format=3 uid="uid://d228nlmogisaj"]
+[gd_scene load_steps=18 format=3 uid="uid://d228nlmogisaj"]
 
 [ext_resource type="Script" path="res://Scenes/Enemies/ujist.gd" id="1_v2pgn"]
 [ext_resource type="Shader" path="res://Resources/Shaders/flash.gdshader" id="2_2rnil"]
 [ext_resource type="Texture2D" uid="uid://b37t6irp52sd7" path="res://Assets/Entities/Enemies/enemy_uj_sheet.png" id="3_b8ute"]
 [ext_resource type="PackedScene" uid="uid://difgmphqym05s" path="res://Scenes/Components/hitbox_component.tscn" id="4_m3sa8"]
+[ext_resource type="PackedScene" uid="uid://1ftmkmpdvwmm" path="res://Scenes/Weapons/pistol.tscn" id="4_wr0lc"]
 [ext_resource type="PackedScene" uid="uid://mx6j27qpkmf5" path="res://Scenes/Components/hurtbox_component.tscn" id="5_0k1ac"]
 [ext_resource type="PackedScene" uid="uid://bse3dkitoj2uh" path="res://Scenes/Components/health_component.tscn" id="6_0ad1x"]
 
@@ -111,6 +112,11 @@ material = SubResource("ShaderMaterial_moi6k")
 position = Vector2(0, -4)
 texture = ExtResource("3_b8ute")
 hframes = 8
+
+[node name="GunSlot" type="Marker2D" parent="."]
+
+[node name="Pistol" parent="GunSlot" instance=ExtResource("4_wr0lc")]
+damage = 1
 
 [node name="CollisionShape" type="CollisionShape2D" parent="."]
 position = Vector2(0, 2)

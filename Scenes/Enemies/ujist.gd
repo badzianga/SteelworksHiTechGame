@@ -10,6 +10,7 @@ var direction: Vector2
 @onready var health_component: HealthComponent = $HealthComponent
 @onready var effects := $Effects
 @onready var sprite := $Sprite
+@onready var pistol_sprite := $PistolSprite
 
 
 func _ready() -> void:
@@ -24,8 +25,10 @@ func _physics_process(delta: float) -> void:
 	
 	if velocity.x < 0:
 		sprite.flip_h = true
+		pistol_sprite.flip_h = true
 	else:
 		sprite.flip_h = false
+		pistol_sprite.flip_h = false
 
 
 func move(delta: float) -> void:
