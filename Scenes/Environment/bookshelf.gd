@@ -1,10 +1,14 @@
 extends StaticBody2D
 
 
-
-func _on_alpha_area_area_entered(area):
-	modulate.a = 0.4
+@onready var sprite := $Sprite
 
 
-func _on_alpha_area_area_exited(area):
-	modulate.a = 1
+func _on_alpha_area_area_entered(_area: Area2D):
+	var tween := create_tween()
+	tween.tween_property(sprite, "modulate", Color(1.0, 1.0, 1.0, 0.4), 0.2)
+
+
+func _on_alpha_area_area_exited(_area: Area2D):
+	var tween := create_tween()
+	tween.tween_property(sprite, "modulate", Color(1.0, 1.0, 1.0, 1.0), 0.2)
