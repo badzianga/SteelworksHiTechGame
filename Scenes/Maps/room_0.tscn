@@ -1,0 +1,105 @@
+[gd_scene load_steps=8 format=3 uid="uid://cd7lkpg78ale6"]
+
+[ext_resource type="TileSet" uid="uid://c6vtajlqadjm8" path="res://Resources/TileSets/floors.tres" id="1_ntvxu"]
+[ext_resource type="PackedScene" uid="uid://cl5dr7hvsd7uu" path="res://Scenes/Environment/bookshelf_top.tscn" id="2_uwl50"]
+[ext_resource type="Texture2D" uid="uid://debcd1f1dgpxf" path="res://Assets/Environment/wall_weapons.png" id="2_xw1m6"]
+[ext_resource type="PackedScene" uid="uid://wbce6g434pt8" path="res://Scenes/Environment/bookshelf.tscn" id="3_b2jwr"]
+[ext_resource type="PackedScene" uid="uid://bl5ykcc26sn25" path="res://Scenes/Environment/door.tscn" id="3_mme2l"]
+[ext_resource type="PackedScene" uid="uid://clmh8mqgt3owe" path="res://Scenes/Environment/lamp.tscn" id="5_k2ck2"]
+[ext_resource type="PackedScene" uid="uid://u76wa83muvlu" path="res://Scenes/Environment/bookshelf_side.tscn" id="6_xkksf"]
+
+[node name="Room1" type="Node2D"]
+y_sort_enabled = true
+position = Vector2(1, 0)
+
+[node name="Floor" type="TileMap" parent="."]
+z_index = -1
+tile_set = ExtResource("1_ntvxu")
+format = 2
+layer_0/name = "Floor"
+layer_0/tile_data = PackedInt32Array(-262151, 2, 0, -196615, 2, 1, -131079, 2, 2, -262150, 2, 0, -196614, 2, 1, -131078, 2, 2, -262149, 2, 0, -196613, 2, 1, -131077, 2, 2, -262148, 2, 0, -196612, 2, 1, -131076, 2, 2, -262147, 2, 0, -196611, 2, 1, -131075, 2, 2, -262146, 2, 0, -196610, 2, 1, -131074, 2, 2, 131066, 196608, 0, 196602, 196608, 0, 131067, 196608, 0, 196603, 196608, 0, 131068, 196608, 0, 196604, 196608, 0, 131069, 131072, 0, 196605, 196608, 0, 131070, 0, 0, 196606, 196608, 0, 131071, 65536, 0, 196607, 196608, 0, 65536, 0, 0, 131072, 196608, 0, 65537, 65536, 0, 131073, 196608, 0, 65538, 0, 0, 131074, 196608, 0, 65539, 196608, 0, 131075, 196608, 0, -327679, 2, 0, -262143, 2, 1, -196607, 2, 2, -327678, 2, 0, -262142, 2, 1, -196606, 2, 2, -327677, 2, 0, -262141, 2, 1, -196605, 2, 2, 65534, 262144, 0, 65533, 262144, 0, 65532, 262144, 0, 65531, 0, 0, 65530, 65536, 0, -131072, 262144, 0, -131071, 262144, 0, -131070, 262144, 0, -131069, 262144, 0, 3, 262144, 0, 2, 262144, 0, 1, 262144, 0, 0, 262144, 0, 65535, 262144, 0, -65536, 262144, 0, -65535, 262144, 0, -65534, 262144, 0, -65533, 262144, 0, -65543, 0, 0, -65542, 0, 0, -65541, 131072, 0, -7, 0, 0, -6, 65536, 0, -5, 65536, 0, -65540, 262144, 0, -65539, 262144, 0, -65538, 262144, 0, -4, 262144, 0, -3, 262144, 0, -2, 262144, 0, -65537, 262144, 0, -1, 262144, 0, -131073, 2, 2, -196608, 2, 2, -262145, 2, 0, -196609, 2, 1, -327680, 2, 0, -262144, 2, 1, 65529, 0, 0, 131065, 196608, 0, 196601, 196608, 0, -262154, 4, 0, -196618, 4, 0, -131082, 4, 0, -65546, 4, 0, -10, 4, 0, 65526, 4, 0, 131062, 4, 0, 196598, 4, 0, 262134, 4, 0, -262153, 4, 0, -196617, 4, 0, -131081, 4, 0, -65545, 4, 0, -9, 4, 0, 65527, 4, 0, 131063, 4, 0, 196599, 4, 0, 262135, 4, 0, -262152, 4, 0, -196616, 4, 0, -131080, 4, 0, -65544, 4, 0, -8, 4, 0, 65528, 4, 0, 131064, 4, 0, 196600, 4, 0, 262136, 4, 0, -327690, 4, 0, -327689, 4, 0, -327688, 4, 0, -327687, 4, 0, -327686, 4, 0, -327685, 4, 0, -327684, 4, 0, -327683, 4, 0, -327682, 4, 0, -327681, 4, 0, -393216, 4, 0, -393215, 4, 0, -393214, 4, 0, -393213, 4, 0, -393212, 4, 0, -393211, 4, 0, -393210, 4, 0, -393209, 4, 0, -327676, 4, 0, -262140, 4, 0, -196604, 4, 0, -131068, 4, 0, -65532, 4, 0, 4, 4, 0, 196612, 4, 0, -327675, 4, 0, -262139, 4, 0, -196603, 4, 0, -131067, 4, 0, -65531, 4, 0, 5, 4, 0, 196613, 4, 0, 327670, 4, 0, 393206, 4, 0, 327671, 4, 0, 393207, 4, 0, 327672, 4, 0, 393208, 4, 0, 262137, 4, 0, 327673, 4, 0, 393209, 4, 0, 262138, 4, 0, 327674, 4, 0, 393210, 4, 0, 262139, 4, 0, 327675, 4, 0, 393211, 4, 0, 262140, 4, 0, 327676, 4, 0, 393212, 4, 0, 262141, 4, 0, 327677, 4, 0, 393213, 4, 0, 262142, 4, 0, 327678, 4, 0, 393214, 4, 0, 262143, 4, 0, 327679, 4, 0, 393215, 4, 0, 196608, 4, 0, 262144, 4, 0, 327680, 4, 0, 196609, 4, 0, 262145, 4, 0, 327681, 4, 0, 196610, 4, 0, 262146, 4, 0, 327682, 4, 0, 196611, 4, 0, 262147, 4, 0, 327683, 4, 0, 262148, 4, 0, 327684, 4, 0, 262149, 4, 0, 327685, 4, 0, 262150, 4, 0, 327686, 4, 0, 262151, 4, 0, 327687, 4, 0, -393208, 4, 0, 262152, 4, 0, 327688, 4, 0, -327674, 4, 0, -262138, 4, 0, -196602, 4, 0, -131066, 4, 0, -65530, 4, 0, 6, 4, 0, 196614, 4, 0, -327673, 4, 0, -262137, 4, 0, -196601, 4, 0, -131065, 4, 0, -65529, 4, 0, 7, 4, 0, 65543, 4, 0, 131079, 4, 0, 196615, 4, 0, -327672, 4, 0, -262136, 4, 0, -196600, 4, 0, -131064, 4, 0, -65528, 4, 0, 8, 4, 0, 65544, 4, 0, 131080, 4, 0, 196616, 4, 0, -393207, 4, 0, -327671, 4, 0, -262135, 4, 0, -196599, 4, 0, -131063, 4, 0, -65527, 4, 0, 9, 4, 0, 65545, 4, 0, 131081, 4, 0, 196617, 4, 0, 262153, 4, 0, 327689, 4, 0, 65540, 196608, 0, 65541, 196608, 0, 65542, 196608, 0, 131078, 196608, 0, 131077, 196608, 0, 131076, 196608, 0)
+layer_1/name = "Carpet"
+layer_1/tile_data = PackedInt32Array(131070, 65539, 0, 131071, 65539, 0, 65536, 65539, 0, 65537, 65539, 0, 65538, 131075, 0, 65534, 262147, 0, 65535, 262147, 0, 0, 262147, 0, 1, 262147, 0, 2, 327683, 0, 131069, 3, 0, 65533, 196611, 0, -131068, 2, 0, -65532, 2, 1, 4, 2, 2, -131067, 2, 0, -65531, 2, 1, 5, 2, 2, -131066, 2, 0, -65530, 2, 1, 6, 2, 2, -6, 65537, 1, -5, 131073, 1, 65531, 131073, 2, 65530, 65537, 2, 65529, 1, 2, -7, 1, 1, -65543, 1, 0, -65542, 65537, 0, -65541, 131073, 0)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+limit_left = -160
+limit_top = -90
+limit_right = 160
+limit_bottom = 90
+editor_draw_limits = true
+
+[node name="Walls" type="Node2D" parent="."]
+position = Vector2(0, -4)
+
+[node name="Bookshelf" parent="Walls" instance=ExtResource("3_b2jwr")]
+position = Vector2(-104, -24)
+
+[node name="Bookshelf2" parent="Walls" instance=ExtResource("3_b2jwr")]
+position = Vector2(-80, -24)
+
+[node name="Bookshelf3" parent="Walls" instance=ExtResource("3_b2jwr")]
+position = Vector2(-56, -24)
+
+[node name="BookshelfTop4" parent="Walls" instance=ExtResource("2_uwl50")]
+position = Vector2(-112, -8)
+
+[node name="BookshelfTop5" parent="Walls" instance=ExtResource("2_uwl50")]
+position = Vector2(-112, -16)
+
+[node name="BookshelfTop6" parent="Walls" instance=ExtResource("2_uwl50")]
+position = Vector2(-112, -24)
+
+[node name="BookshelfTop7" parent="Walls" instance=ExtResource("2_uwl50")]
+z_index = 1
+position = Vector2(-112, -32)
+
+[node name="BookshelfTop8" parent="Walls" instance=ExtResource("2_uwl50")]
+z_index = 1
+position = Vector2(-112, -40)
+
+[node name="BookshelfTop9" parent="Walls" instance=ExtResource("2_uwl50")]
+z_index = 1
+position = Vector2(-112, -48)
+
+[node name="Bookshelf4" parent="Walls" instance=ExtResource("3_b2jwr")]
+position = Vector2(-104, 24)
+
+[node name="BookshelfSide" parent="Walls" instance=ExtResource("6_xkksf")]
+position = Vector2(-64, 16)
+
+[node name="BookshelfTop" parent="Walls" instance=ExtResource("2_uwl50")]
+position = Vector2(-64, -8)
+
+[node name="BookshelfTop2" parent="Walls" instance=ExtResource("2_uwl50")]
+position = Vector2(-64, -16)
+
+[node name="BookshelfTop3" parent="Walls" instance=ExtResource("2_uwl50")]
+z_index = 1
+position = Vector2(-64, -24)
+
+[node name="BookshelfTop10" parent="Walls" instance=ExtResource("2_uwl50")]
+z_index = 1
+position = Vector2(-64, -32)
+
+[node name="BookshelfTop11" parent="Walls" instance=ExtResource("2_uwl50")]
+z_index = 1
+position = Vector2(-64, -40)
+
+[node name="BookshelfTop12" parent="Walls" instance=ExtResource("2_uwl50")]
+z_index = 1
+position = Vector2(-64, -48)
+
+[node name="WallWeapons" type="Sprite2D" parent="."]
+position = Vector2(40, -56)
+texture = ExtResource("2_xw1m6")
+
+[node name="Door" parent="." instance=ExtResource("3_mme2l")]
+z_index = 1
+position = Vector2(0, -32)
+
+[node name="Lamp" parent="." instance=ExtResource("5_k2ck2")]
+position = Vector2(-24, -56)
+
+[node name="Lamp3" parent="." instance=ExtResource("5_k2ck2")]
+z_index = 1
+position = Vector2(-64, 8)
