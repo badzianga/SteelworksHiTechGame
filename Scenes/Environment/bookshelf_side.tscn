@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://nua35ylhjm4m" path="res://Assets/Environment/bookshelf_side.png" id="1_pyqat"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ourud"]
-size = Vector2(8, 8)
+size = Vector2(8, 24)
 
 [node name="BookshelfSide" type="StaticBody2D"]
 
@@ -13,4 +13,5 @@ scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_pyqat")
 
 [node name="CollisionShape" type="CollisionShape2D" parent="."]
+position = Vector2(0, -8)
 shape = SubResource("RectangleShape2D_ourud")

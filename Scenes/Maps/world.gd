@@ -5,33 +5,47 @@ var room_types: Array[PackedScene]
 var room_path := &"res://Scenes/Maps/room_"
 var lobby := preload("res://Scenes/Maps/room_0.tscn")
 
+@onready var camera := $Camera
+
 
 func _ready() -> void:
 	# God please forgive me for this mess
 	for i in range(1, 9):
 		room_types.append(load(room_path + str(i) + ".tscn"))
 	
-	var room_position := Vector2.ZERO
+	var index := 0  # using it for map indexing
+	const COLS := MapGenerator.ARRAY_COLS
+	const ROWS := MapGenerator.ARRAY_ROWS
 	MapGenerator.generate(8)
-	const iterations := MapGenerator.ARRAY_COLS * MapGenerator.ARRAY_ROWS
-	for i in range(iterations):
-		print("Iteration number: ", i + 1)
-		# generate room
-		if MapGenerator.map[i] != MapGenerator.ROOM_TYPE.NONE:
-			var room_scene: Node2D = room_types.pick_random().instantiate()
-			room_scene.global_position = room_position
+	for y in range(ROWS):
+		for x in range(COLS):
+			index = y * COLS + x
+			
+			if MapGenerator.map[index] == MapGenerator.ROOM_TYPE.NONE:
+				continue
+			
+			var room_scene = room_types.pick_random().instantiate()
+			room_scene.global_position = Vector2(x * 360.0, y * 180.0)
+			
+			# fill paths that lead nowhere
+			var to_fill: Array[int] = []
+			if y - 1 < 0 or MapGenerator.map[(y - 1) * COLS + x] == MapGenerator.ROOM_TYPE.NONE:
+				to_fill.append(0)
+			if y + 1 >= ROWS or MapGenerator.map[(y + 1) * COLS + x] == MapGenerator.ROOM_TYPE.NONE:
+				if MapGenerator.map[index] != MapGenerator.ROOM_TYPE.ENTRANCE:
+					to_fill.append(1)
+				else:
+					var lobby_scene: Node2D = lobby.instantiate()
+					lobby_scene.global_position = Vector2(x * 360.0, (y + 1) * 180.0)
+					camera.global_position = lobby_scene.global_position
+					add_child(lobby_scene)
+					#print("Generated lobby (I believe)")
+			if x - 1 < 0 or MapGenerator.map[y * COLS + x - 1] == MapGenerator.ROOM_TYPE.NONE:
+				to_fill.append(2)
+			if x + 1 >= COLS or MapGenerator.map[y * COLS + x + 1] == MapGenerator.ROOM_TYPE.NONE:
+				to_fill.append(3)
+			#print("Coordinates: ", Vector2i(x, y), " To fill: ", to_fill)
+			
+			room_scene.fill_holes(to_fill)
 			add_child(room_scene)
-			print("Generated room (I hope)")
-		
-		# generate lobby under the entrance room
-		if MapGenerator.map[i] == MapGenerator.ROOM_TYPE.ENTRANCE:
-			var lobby_scene: Node2D = lobby.instantiate()
-			lobby_scene.global_position = Vector2(room_position.x, room_position.y + 180.0)
-			add_child(lobby_scene)
-			print("Generated lobby (I believe)")
-		
-		# calculate next position
-		room_position.x += 360.0
-		if i % MapGenerator.ARRAY_COLS == MapGenerator.ARRAY_COLS - 1:
-			room_position.x = 0.0
-			room_position.y += 180.0
+			#print("Generated room (I hope)")
