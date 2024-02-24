@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://fud1ek34g8rj"]
+[gd_scene load_steps=4 format=3 uid="uid://fud1ek34g8rj"]
 
 [ext_resource type="TileSet" uid="uid://c6vtajlqadjm8" path="res://Resources/TileSets/floors.tres" id="1_dwb2j"]
 [ext_resource type="PackedScene" uid="uid://kna2yacl5q3s" path="res://Scenes/Player/player.tscn" id="2_gfbck"]
+[ext_resource type="PackedScene" uid="uid://c34db17gfjehg" path="res://Scenes/Enemies/drone.tscn" id="3_ioxx4"]
 
 [node name="Room1" type="Node2D"]
 y_sort_enabled = true
@@ -20,3 +21,6 @@ limit_left = 0
 limit_top = 0
 limit_right = 384
 limit_bottom = 228
+
+[node name="Drone" parent="." instance=ExtResource("3_ioxx4")]
+position = Vector2(84, 78)

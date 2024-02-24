@@ -11,6 +11,10 @@ extends CharacterBody2D
 var direction := Vector2.ZERO
 
 
+func _ready() -> void:
+	GameController.player = self
+
+
 func _physics_process(_delta: float) -> void:
 	handle_movement()
 	handle_animation()

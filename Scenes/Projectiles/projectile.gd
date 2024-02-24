@@ -12,7 +12,7 @@ func _physics_process(delta: float) -> void:
 	special_behavior(delta)
 
 
-func special_behavior(delta: float) -> void:
+func special_behavior(_delta: float) -> void:
 	pass
 
 
