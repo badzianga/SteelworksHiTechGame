@@ -5,6 +5,7 @@ var reputation_points := 10000
 var glory_points := 10000
 var player: Player
 var ui: UI
+var world: Node2D
 
 signal room_changed(next_position: Vector2)
 
@@ -74,3 +75,4 @@ func reset_game() -> void:
 	glory_points = 0
 	player = null
 	ui = null
+	world = null

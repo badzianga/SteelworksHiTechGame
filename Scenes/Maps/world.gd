@@ -10,6 +10,7 @@ var lobby := preload("res://Scenes/Maps/room_0.tscn")
 
 
 func _ready() -> void:
+	GameController.world = self
 	GameController.room_changed.connect(_on_room_changed)
 	
 	# God please forgive me for this mess

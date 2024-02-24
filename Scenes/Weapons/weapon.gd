@@ -38,7 +38,7 @@ func create_projectile() -> void:
 	projectile.damage = damage
 	projectile.direction = GameController.player.get_shoot_direction()
 	projectile.rotation = GameController.player.get_shoot_direction().angle()
-	get_tree().root.add_child(projectile)
+	GameController.world.add_child(projectile)
 
 
 func _on_cooldown_timer_timeout() -> void:
