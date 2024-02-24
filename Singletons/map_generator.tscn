@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://crdsr2hr6pyi3"]
 
-[ext_resource type="Script" path="res://Scenes/Maps/map_generator.gd" id="1_rlhxd"]
+[ext_resource type="Script" path="res://Singletons/map_generator.gd" id="1_rlhxd"]
 
 [node name="MapGenerator" type="Node2D"]
 script = ExtResource("1_rlhxd")

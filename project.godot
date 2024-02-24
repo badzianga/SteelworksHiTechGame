@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="SUPER ANGRY AGH LIBRARIAN VS UJ BARBARIANS"
-run/main_scene="res://Scenes/Maps/map_generator.tscn"
+run/main_scene="res://Scenes/Maps/world.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://icon.svg"
 
@@ -22,6 +22,7 @@ buses/default_bus_layout="res://Resources/Buses/bus_layout.tres"
 [autoload]
 
 GameController="*res://Singletons/game_controller.tscn"
+MapGenerator="*res://Singletons/map_generator.tscn"
 
 [display]
 

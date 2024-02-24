@@ -17,13 +17,6 @@ layer_0/tile_data = PackedInt32Array(65532, 131072, 0, 65533, 65536, 0, 65534, 1
 layer_1/name = "Carpet"
 layer_1/tile_data = PackedInt32Array()
 
-[node name="Camera2D" type="Camera2D" parent="."]
-limit_left = -160
-limit_top = -90
-limit_right = 160
-limit_bottom = 90
-editor_draw_limits = true
-
 [node name="Border" type="Node2D" parent="."]
 
 [node name="BookshelfTop20" parent="Border" instance=ExtResource("2_8c0tn")]

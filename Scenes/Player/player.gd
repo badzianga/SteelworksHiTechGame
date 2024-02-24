@@ -60,10 +60,8 @@ func handle_weapon() -> void:
 	weapon_slot.rotation = angle
 	if weapon_slot.rotation_degrees > 90.0 or weapon_slot.rotation_degrees < -90.0:
 		weapon.flip_v = true
-		#weapon.flip_h = true
 	else:
 		weapon.flip_v = false
-		#weapon.flip_h = false
 	
 	if Input.is_action_just_pressed("shoot"):
 		weapon.shoot()

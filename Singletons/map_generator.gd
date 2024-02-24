@@ -1,4 +1,3 @@
-class_name MapGenerator
 extends Node
 
 
@@ -32,8 +31,6 @@ var pointer: int
 func _ready() -> void:
 	map.resize(ARRAY_ROWS * ARRAY_COLS)
 	clear_map()
-	generate(5)
-	print_map()
 
 
 func clear_map() -> void:
