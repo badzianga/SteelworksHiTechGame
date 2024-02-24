@@ -9,6 +9,5 @@ script = ExtResource("1_n67jg")
 
 [node name="Camera" type="Camera2D" parent="."]
 position_smoothing_enabled = true
-position_smoothing_speed = 10.0
 
 [node name="Player" parent="." instance=ExtResource("2_etemv")]
