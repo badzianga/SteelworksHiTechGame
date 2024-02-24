@@ -6,6 +6,8 @@ var glory_points := 10000
 var player: Player
 var ui: UI
 
+signal room_changed(next_position: Vector2)
+
 # State of user's weapons
 var weapons = {
 	"book": {

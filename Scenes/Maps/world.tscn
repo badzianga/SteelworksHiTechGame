@@ -1,10 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://gak5l2nh34b5"]
+[gd_scene load_steps=3 format=3 uid="uid://gak5l2nh34b5"]
 
 [ext_resource type="Script" path="res://Scenes/Maps/world.gd" id="1_n67jg"]
+[ext_resource type="PackedScene" uid="uid://kna2yacl5q3s" path="res://Scenes/Player/player.tscn" id="2_etemv"]
 
 [node name="World" type="Node2D"]
+y_sort_enabled = true
 script = ExtResource("1_n67jg")
 
 [node name="Camera" type="Camera2D" parent="."]
 position_smoothing_enabled = true
 position_smoothing_speed = 10.0
+
+[node name="Player" parent="." instance=ExtResource("2_etemv")]

@@ -109,6 +109,7 @@ _data = {
 [node name="Player" type="CharacterBody2D"]
 motion_mode = 1
 script = ExtResource("1_5whdu")
+speed = 256.0
 
 [node name="Sprite" type="Sprite2D" parent="."]
 position = Vector2(0, -5)

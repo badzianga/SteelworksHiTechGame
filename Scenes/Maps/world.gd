@@ -6,9 +6,12 @@ var room_path := &"res://Scenes/Maps/room_"
 var lobby := preload("res://Scenes/Maps/room_0.tscn")
 
 @onready var camera := $Camera
+@onready var player: Player = $Player
 
 
 func _ready() -> void:
+	GameController.room_changed.connect(_on_room_changed)
+	
 	# God please forgive me for this mess
 	for i in range(1, 9):
 		room_types.append(load(room_path + str(i) + ".tscn"))
@@ -37,6 +40,7 @@ func _ready() -> void:
 				else:
 					var lobby_scene: Node2D = lobby.instantiate()
 					lobby_scene.global_position = Vector2(x * 360.0, (y + 1) * 180.0)
+					player.global_position = lobby_scene.global_position
 					camera.global_position = lobby_scene.global_position
 					add_child(lobby_scene)
 					#print("Generated lobby (I believe)")
@@ -49,3 +53,7 @@ func _ready() -> void:
 			room_scene.fill_holes(to_fill)
 			add_child(room_scene)
 			#print("Generated room (I hope)")
+
+
+func _on_room_changed(next_position: Vector2) -> void:
+	camera.global_position = next_position

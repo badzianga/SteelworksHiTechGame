@@ -1,4 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://xwoj3qa43i2x"]
+[gd_scene load_steps=3 format=3 uid="uid://xwoj3qa43i2x"]
+
+[ext_resource type="Script" path="res://Scenes/Enemies/player_detection_area.gd" id="1_fy62x"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g6kk6"]
 size = Vector2(320, 168)
@@ -6,7 +8,10 @@ size = Vector2(320, 168)
 [node name="PlayerDetectionArea" type="Area2D"]
 collision_layer = 0
 collision_mask = 2
+script = ExtResource("1_fy62x")
 
 [node name="CollisionShape" type="CollisionShape2D" parent="."]
 position = Vector2(0, 4)
 shape = SubResource("RectangleShape2D_g6kk6")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

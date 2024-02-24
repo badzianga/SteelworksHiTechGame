@@ -202,10 +202,6 @@ position = Vector2(-160, 88)
 [node name="BookshelfSide2" parent="Walls" instance=ExtResource("5_j06p3")]
 position = Vector2(160, 88)
 
-[node name="Bookshelf6" parent="Walls" instance=ExtResource("3_7n4x6")]
-y_sort_enabled = true
-position = Vector2(0, -16)
-
 [node name="BookshelfSide3" parent="Walls" instance=ExtResource("5_j06p3")]
 position = Vector2(-160, -32)
 
