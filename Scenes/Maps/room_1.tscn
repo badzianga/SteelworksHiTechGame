@@ -281,3 +281,28 @@ position = Vector2(168, 28)
 
 [node name="Bookshelf_connect_L2" parent="." instance=ExtResource("8_0bmal")]
 position = Vector2(-168, 28)
+
+[node name="SpawnPoints" type="Node2D" parent="."]
+
+[node name="Marker" type="Marker2D" parent="SpawnPoints"]
+position = Vector2(-136, -56)
+
+[node name="Marker2" type="Marker2D" parent="SpawnPoints"]
+position = Vector2(-80, -56)
+
+[node name="Marker3" type="Marker2D" parent="SpawnPoints"]
+position = Vector2(88, -56)
+
+[node name="Marker4" type="Marker2D" parent="SpawnPoints"]
+position = Vector2(136, -56)
+
+[node name="Marker5" type="Marker2D" parent="SpawnPoints"]
+position = Vector2(-136, 40)
+
+[node name="Marker6" type="Marker2D" parent="SpawnPoints"]
+position = Vector2(-88, 48)
+
+[node name="Marker7" type="Marker2D" parent="SpawnPoints"]
+
+[node name="Marker8" type="Marker2D" parent="SpawnPoints"]
+position = Vector2(112, 40)
