@@ -7,16 +7,14 @@ extends Sprite2D
 @export var projectile_scene: PackedScene
 
 var shots_left := volley
-var shot_direction: Vector2
 
 @onready var cooldown_timer := $CooldownTimer
 @onready var volley_timer := $VolleyTimer
 @onready var shoot_sound := $ShootSound
 
 
-func shoot(direction: Vector2) -> void:
+func shoot() -> void:
 	if cooldown_timer.is_stopped():
-		shot_direction = direction
 		shots_left = volley
 		cooldown_timer.start()
 		if shots_left > 0:
@@ -31,8 +29,8 @@ func create_projectile() -> void:
 	var projectile: Projectile = projectile_scene.instantiate()
 	projectile.global_position = global_position
 	projectile.damage = damage
-	projectile.direction = shot_direction
-	projectile.rotation = shot_direction.angle()
+	projectile.direction = GameController.player.get_shoot_direction()
+	projectile.rotation = GameController.player.get_shoot_direction().angle()
 	get_tree().root.add_child(projectile)
 
 

@@ -12,6 +12,7 @@ extends CharacterBody2D
 @onready var helmet_sprite := $HelmetSprite
 
 var direction := Vector2.ZERO
+var shoot_direction := Vector2.ZERO
 
 
 func _ready() -> void:
@@ -54,6 +55,7 @@ func handle_animation() -> void:
 
 func handle_weapon() -> void:
 	var dir := weapon_slot.global_position.direction_to(get_global_mouse_position())
+	shoot_direction = dir
 	var angle := dir.angle()
 	weapon_slot.rotation = angle
 	if weapon_slot.rotation_degrees > 90.0 or weapon_slot.rotation_degrees < -90.0:
@@ -64,7 +66,11 @@ func handle_weapon() -> void:
 		#weapon.flip_h = false
 	
 	if Input.is_action_just_pressed("shoot"):
-		weapon.shoot(dir)
+		weapon.shoot()
+
+
+func get_shoot_direction() -> Vector2:
+	return shoot_direction
 
 
 func _on_health_changed() -> void:

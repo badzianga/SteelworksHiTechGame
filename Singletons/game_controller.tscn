@@ -1,6 +1,12 @@
-[gd_scene load_steps=2 format=3 uid="uid://b65svflv5vby0"]
+[gd_scene load_steps=3 format=3 uid="uid://b65svflv5vby0"]
 
 [ext_resource type="Script" path="res://Singletons/game_controller.gd" id="1_f15wj"]
+[ext_resource type="AudioStream" uid="uid://dtbucojwebw5x" path="res://Assets/Music/Still There.mp3" id="2_wc6s5"]
 
 [node name="GameController" type="Node"]
 script = ExtResource("1_f15wj")
+
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_wc6s5")
+autoplay = true
+bus = &"Music"

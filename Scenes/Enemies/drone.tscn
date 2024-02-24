@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://c34db17gfjehg"]
+[gd_scene load_steps=17 format=3 uid="uid://c34db17gfjehg"]
 
 [ext_resource type="Texture2D" uid="uid://cdlseq52b52ip" path="res://Assets/Entities/Enemies/drone.png" id="1_h2dwg"]
 [ext_resource type="Script" path="res://Scenes/Enemies/drone.gd" id="1_qinr8"]
@@ -55,14 +55,48 @@ tracks/0/keys = {
 "values": [0]
 }
 
-[sub_resource type="Animation" id="Animation_r0xjm"]
-resource_name = "malfuctioning"
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_fde1w"]
 _data = {
 "RESET": SubResource("Animation_b7f5s"),
-"fly": SubResource("Animation_i6c3x"),
-"malfuctioning": SubResource("Animation_r0xjm")
+"fly": SubResource("Animation_i6c3x")
+}
+
+[sub_resource type="Animation" id="Animation_fuc8k"]
+resource_name = "hurt"
+length = 0.3
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:material:shader_parameter/flash_state")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 1.0, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_dtcj8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:material:shader_parameter/flash_state")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cmlwv"]
+_data = {
+"RESET": SubResource("Animation_dtcj8"),
+"hurt": SubResource("Animation_fuc8k")
 }
 
 [node name="Drone" type="CharacterBody2D"]
@@ -105,3 +139,8 @@ libraries = {
 "": SubResource("AnimationLibrary_fde1w")
 }
 autoplay = "fly"
+
+[node name="Effects" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_cmlwv")
+}
