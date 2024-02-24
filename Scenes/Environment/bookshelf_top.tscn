@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://cl5dr7hvsd7uu"]
+
+[ext_resource type="Texture2D" uid="uid://ng5u60jj8d06" path="res://Assets/Environment/bookshelf_top.png" id="1_vpmvs"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ourud"]
+size = Vector2(8, 8)
+
+[node name="BookshelfTop" type="StaticBody2D"]
+
+[node name="Sprite" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_vpmvs")
+
+[node name="CollisionShape" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ourud")
