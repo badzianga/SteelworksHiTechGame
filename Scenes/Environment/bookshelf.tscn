@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://wbce6g434pt8"]
 
 [ext_resource type="Script" path="res://Scenes/Environment/bookshelf.gd" id="1_him74"]
-[ext_resource type="Texture2D" uid="uid://c4a8dyq33d47t" path="res://Assets/Environment/bookshelf.png" id="1_rtwv6"]
+[ext_resource type="Texture2D" uid="uid://dlq0fyfyim0ef" path="res://Assets/Environment/bookshelf_sheet.png" id="2_u861o"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s2h3x"]
 size = Vector2(24, 8)
@@ -15,7 +15,8 @@ script = ExtResource("1_him74")
 [node name="Sprite" type="Sprite2D" parent="."]
 position = Vector2(0, -16)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("1_rtwv6")
+texture = ExtResource("2_u861o")
+hframes = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_s2h3x")

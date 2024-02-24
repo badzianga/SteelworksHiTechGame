@@ -18,6 +18,10 @@ var shoot_direction := Vector2.ZERO
 func _ready() -> void:
 	GameController.player = self
 	health_component.health_changed.connect(_on_health_changed)
+	GameController.room_changed.connect(_on_room_changed)
+	
+	helmet_sprite.visible = false
+	weapon_slot.visible = false
 
 
 func _physics_process(_delta: float) -> void:
@@ -74,3 +78,12 @@ func get_shoot_direction() -> Vector2:
 func _on_health_changed() -> void:
 	GameController.ui.apply_damage()
 
+
+func _on_room_changed(new_position: Vector2) -> void:
+	print("Room changed")
+	if new_position.y > MapGenerator.ARRAY_ROWS * 180.0 - 8.0:
+		helmet_sprite.visible = false
+		weapon_slot.visible = false
+	else:
+		helmet_sprite.visible = true
+		weapon_slot.visible = true

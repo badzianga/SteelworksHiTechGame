@@ -32,8 +32,8 @@ func move(delta: float) -> void:
 	velocity = direction * speed
 	var collision := move_and_collide(velocity * delta)
 	if collision:
-		var bounce_velocity := velocity.bounce(collision.get_normal())
-		velocity = bounce_velocity
+		var bounce_direction := direction.bounce(collision.get_normal())
+		direction = bounce_direction
 
 
 func _on_health_changed() -> void:

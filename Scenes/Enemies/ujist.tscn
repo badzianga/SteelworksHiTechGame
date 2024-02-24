@@ -100,7 +100,11 @@ _data = {
 }
 
 [node name="UJist" type="CharacterBody2D"]
+motion_mode = 1
 script = ExtResource("1_v2pgn")
+speed = 80.0
+glory_min = 2
+glory_max = 5
 
 [node name="Sprite" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_moi6k")
