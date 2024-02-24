@@ -102,8 +102,6 @@ _data = {
 [node name="Drone" type="CharacterBody2D"]
 script = ExtResource("1_qinr8")
 speed = 56.0
-glory_min = null
-glory_max = null
 
 [node name="Sprite" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_moi6k")
