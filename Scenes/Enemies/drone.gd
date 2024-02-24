@@ -5,8 +5,6 @@ extends CharacterBody2D
 @export var glory_min: int
 @export var glory_max: int
 
-var malfunction := false
-
 @onready var health_component: HealthComponent = $HealthComponent
 @onready var effects := $Effects
 
@@ -18,7 +16,8 @@ func _ready() -> void:
 	# Possibility of malfunction ability
 	if GameController.abilities["BAThesis"]["acquired"]:
 		if randi_range(1, 100) <= GameController.abilities["BAThesis"]["malfunction"]:
-			malfunction = true
+			%ExplosionTimeout.wait_time = randi_range(1, 2)
+			%ExplosionTimeout.start()
 
 
 func _physics_process(_delta: float) -> void:
@@ -30,8 +29,6 @@ func move_towards_player() -> void:
 	look_at(GameController.player.global_position)
 	velocity = direction * speed
 	move_and_slide()
-	
-	# TODO: Add explosion if malfunction=true
 
 
 func _on_health_changed() -> void:
@@ -40,4 +37,10 @@ func _on_health_changed() -> void:
 
 func _on_health_depleted() -> void:
 	GameController.glory_points += randi_range(glory_min, glory_max)
+	queue_free()
+
+
+func _on_explosion_timeout_timeout() -> void:
+	GameController.glory_points += randi_range(glory_min, glory_max)
+	effects.play("explosion")
 	queue_free()

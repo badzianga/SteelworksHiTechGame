@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://debcd1f1dgpxf" path="res://Assets/Environment/wall_weapons.png" id="2_xw1m6"]
 [ext_resource type="PackedScene" uid="uid://wbce6g434pt8" path="res://Scenes/Environment/bookshelf.tscn" id="3_b2jwr"]
 [ext_resource type="PackedScene" uid="uid://v55vliv3w5uk" path="res://Scenes/Environment/door.tscn" id="3_mme2l"]
-[ext_resource type="PackedScene" path="res://Scenes/Environment/lamp.tscn" id="5_k2ck2"]
+[ext_resource type="PackedScene" uid="uid://clmh8mqgt3owe" path="res://Scenes/Environment/lamp.tscn" id="5_k2ck2"]
 [ext_resource type="PackedScene" uid="uid://u76wa83muvlu" path="res://Scenes/Environment/bookshelf_side.tscn" id="6_xkksf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f3uh2"]
@@ -133,3 +133,6 @@ position = Vector2(-64, 8)
 [node name="Door" parent="." instance=ExtResource("3_mme2l")]
 y_sort_enabled = true
 position = Vector2(0, -55)
+
+[node name="ExplosionTimeout" type="Timer" parent="."]
+unique_name_in_owner = true
