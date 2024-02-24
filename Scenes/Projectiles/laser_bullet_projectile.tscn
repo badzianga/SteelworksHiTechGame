@@ -6,9 +6,9 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ix4qu"]
 size = Vector2(5, 2)
 
-[node name="BulletProjectile" type="Area2D"]
+[node name="LaserBulletProjectile" type="Area2D"]
 collision_layer = 4
-collision_mask = 8
+collision_mask = 9
 script = ExtResource("1_sp684")
 speed = 260.0
 
@@ -22,3 +22,4 @@ position = Vector2(1, 0)
 shape = SubResource("RectangleShape2D_ix4qu")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
