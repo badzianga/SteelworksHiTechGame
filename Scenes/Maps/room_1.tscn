@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://fud1ek34g8rj"]
+[gd_scene load_steps=5 format=3 uid="uid://fud1ek34g8rj"]
 
 [ext_resource type="TileSet" uid="uid://c6vtajlqadjm8" path="res://Resources/TileSets/floors.tres" id="1_dwb2j"]
+[ext_resource type="PackedScene" uid="uid://cl5dr7hvsd7uu" path="res://Scenes/Environment/bookshelf_top.tscn" id="2_7je2e"]
+[ext_resource type="PackedScene" uid="uid://wbce6g434pt8" path="res://Scenes/Environment/bookshelf.tscn" id="2_ib80f"]
+[ext_resource type="PackedScene" uid="uid://u76wa83muvlu" path="res://Scenes/Environment/bookshelf_side.tscn" id="4_ln5id"]
 
 [node name="Room1" type="Node2D"]
 y_sort_enabled = true
@@ -10,9 +13,9 @@ z_index = -1
 tile_set = ExtResource("1_dwb2j")
 format = 2
 layer_0/name = "Floor"
-layer_0/tile_data = PackedInt32Array(65532, 131072, 0, 65533, 65536, 0, 65534, 0, 0, 65535, 65536, 0, 0, 65536, 0, 1, 131072, 0, 2, 131072, 0, 3, 0, 0, 4, 131072, 0, 5, 65536, 0, 6, 65536, 0, 7, 65536, 0, 8, 65536, 0, 65527, 131072, 0, 65528, 65536, 0, 65529, 0, 0, 65530, 0, 0, 65531, 65536, 0, -262153, 131072, 0, -196617, 0, 0, -131081, 131072, 0, -65545, 131072, 0, -9, 65536, 0, -262152, 65536, 0, -196616, 65536, 0, -131080, 65536, 0, -65544, 0, 0, -8, 131072, 0, -262151, 131072, 0, -196615, 0, 0, -131079, 131072, 0, -65543, 131072, 0, -7, 0, 0, -262150, 65536, 0, -196614, 131072, 0, -131078, 65536, 0, -65542, 65536, 0, -6, 131072, 0, -262149, 65536, 0, -196613, 131072, 0, -131077, 65536, 0, -65541, 65536, 0, -5, 0, 0, -262148, 131072, 0, -196612, 65536, 0, -131076, 0, 0, -65540, 65536, 0, -4, 65536, 0, -262147, 0, 0, -196611, 0, 0, -131075, 0, 0, -65539, 0, 0, -3, 65536, 0, -262146, 0, 0, -196610, 0, 0, -131074, 0, 0, -65538, 131072, 0, -2, 0, 0, -262145, 65536, 0, -196609, 0, 0, -131073, 131072, 0, -65537, 0, 0, -1, 0, 0, -327680, 0, 0, -262144, 0, 0, -196608, 131072, 0, -131072, 0, 0, -65536, 0, 0, -327679, 0, 0, -262143, 65536, 0, -196607, 131072, 0, -131071, 131072, 0, -65535, 131072, 0, -327678, 65536, 0, -262142, 65536, 0, -196606, 65536, 0, -131070, 65536, 0, -65534, 65536, 0, -327677, 131072, 0, -262141, 131072, 0, -196605, 131072, 0, -131069, 65536, 0, -65533, 131072, 0, -327676, 131072, 0, -262140, 65536, 0, -196604, 131072, 0, -131068, 131072, 0, -65532, 0, 0, -327675, 131072, 0, -262139, 65536, 0, -196603, 131072, 0, -131067, 65536, 0, -65531, 0, 0, -327674, 65536, 0, -262138, 65536, 0, -196602, 131072, 0, -131066, 65536, 0, -65530, 0, 0, -327673, 131072, 0, -262137, 0, 0, -196601, 0, 0, -131065, 131072, 0, -65529, 131072, 0, -327672, 131072, 0, -262136, 0, 0, -196600, 0, 0, -131064, 65536, 0, -65528, 0, 0, 131063, 131072, 0, 196599, 131072, 0, 262135, 131072, 0, 327671, 0, 0, 131064, 0, 0, 196600, 65536, 0, 262136, 65536, 0, 327672, 65536, 0, 131065, 131072, 0, 196601, 131072, 0, 262137, 0, 0, 327673, 65536, 0, 131066, 65536, 0, 196602, 0, 0, 262138, 131072, 0, 327674, 65536, 0, 131067, 131072, 0, 196603, 0, 0, 262139, 65536, 0, 327675, 65536, 0, 131068, 65536, 0, 196604, 131072, 0, 262140, 131072, 0, 327676, 131072, 0, 131069, 131072, 0, 196605, 65536, 0, 262141, 131072, 0, 327677, 0, 0, 131070, 0, 0, 196606, 131072, 0, 262142, 65536, 0, 327678, 131072, 0, 131071, 65536, 0, 196607, 131072, 0, 262143, 131072, 0, 327679, 131072, 0, 65536, 0, 0, 131072, 0, 0, 196608, 0, 0, 262144, 65536, 0, 65537, 65536, 0, 131073, 0, 0, 196609, 131072, 0, 262145, 65536, 0, 65538, 0, 0, 131074, 131072, 0, 196610, 65536, 0, 262146, 65536, 0, 65539, 131072, 0, 131075, 0, 0, 196611, 0, 0, 262147, 131072, 0, 65540, 131072, 0, 131076, 65536, 0, 196612, 65536, 0, 262148, 0, 0, 65541, 65536, 0, 131077, 0, 0, 196613, 131072, 0, 262149, 131072, 0, 65542, 0, 0, 131078, 131072, 0, 196614, 131072, 0, 262150, 131072, 0, 65543, 131072, 0, 131079, 0, 0, 196615, 65536, 0, 262151, 65536, 0, 65544, 131072, 0, 131080, 0, 0, 196616, 0, 0, 262152, 65536, 0)
+layer_0/tile_data = PackedInt32Array(65532, 131072, 0, 65533, 65536, 0, 65534, 0, 0, 65535, 65536, 0, 0, 65536, 0, 1, 131072, 0, 2, 131072, 0, 3, 0, 0, 4, 131072, 0, 5, 65536, 0, 6, 65536, 0, 7, 65536, 0, 65527, 131072, 0, 65528, 65536, 0, 65529, 0, 0, 65530, 0, 0, 65531, 65536, 0, -262153, 131072, 0, -196617, 0, 0, -131081, 131072, 0, -65545, 131072, 0, -9, 65536, 0, -262152, 65536, 0, -196616, 65536, 0, -131080, 65536, 0, -65544, 0, 0, -8, 131072, 0, -262151, 131072, 0, -196615, 0, 0, -131079, 131072, 0, -65543, 131072, 0, -7, 0, 0, -262150, 65536, 0, -196614, 131072, 0, -131078, 65536, 0, -65542, 65536, 0, -6, 131072, 0, -262149, 65536, 0, -196613, 131072, 0, -131077, 65536, 0, -65541, 65536, 0, -5, 0, 0, -262148, 131072, 0, -196612, 65536, 0, -131076, 0, 0, -65540, 65536, 0, -4, 65536, 0, -262147, 0, 0, -196611, 0, 0, -131075, 0, 0, -65539, 0, 0, -3, 65536, 0, -262146, 65536, 0, -196610, 0, 0, -131074, 0, 0, -65538, 131072, 0, -2, 0, 0, -262145, 131072, 0, -196609, 0, 0, -131073, 131072, 0, -65537, 0, 0, -1, 0, 0, -327680, 0, 0, -262144, 0, 0, -196608, 131072, 0, -131072, 0, 0, -65536, 0, 0, -327679, 0, 0, -262143, 65536, 0, -196607, 131072, 0, -131071, 131072, 0, -65535, 131072, 0, -327678, 65536, 0, -262142, 65536, 0, -196606, 65536, 0, -131070, 65536, 0, -65534, 65536, 0, -327677, 131072, 0, -262141, 131072, 0, -196605, 131072, 0, -131069, 65536, 0, -65533, 131072, 0, -327676, 131072, 0, -262140, 65536, 0, -196604, 131072, 0, -131068, 131072, 0, -65532, 0, 0, -327675, 131072, 0, -262139, 65536, 0, -196603, 131072, 0, -131067, 65536, 0, -65531, 0, 0, -327674, 65536, 0, -262138, 65536, 0, -196602, 131072, 0, -131066, 65536, 0, -65530, 0, 0, -327673, 131072, 0, -262137, 0, 0, -196601, 0, 0, -131065, 131072, 0, -65529, 131072, 0, -327672, 131072, 0, -262136, 0, 0, -196600, 0, 0, 131063, 131072, 0, 196599, 131072, 0, 262135, 131072, 0, 327671, 0, 0, 131064, 0, 0, 196600, 65536, 0, 262136, 65536, 0, 327672, 65536, 0, 131065, 131072, 0, 196601, 131072, 0, 262137, 0, 0, 327673, 65536, 0, 131066, 65536, 0, 196602, 0, 0, 262138, 131072, 0, 327674, 65536, 0, 131067, 131072, 0, 196603, 0, 0, 262139, 65536, 0, 327675, 65536, 0, 131068, 65536, 0, 196604, 131072, 0, 262140, 131072, 0, 327676, 131072, 0, 131069, 131072, 0, 196605, 65536, 0, 262141, 131072, 0, 327677, 0, 0, 131070, 0, 0, 196606, 131072, 0, 262142, 65536, 0, 327678, 131072, 0, 131071, 65536, 0, 196607, 131072, 0, 262143, 131072, 0, 327679, 131072, 0, 65536, 0, 0, 131072, 0, 0, 196608, 0, 0, 262144, 65536, 0, 65537, 65536, 0, 131073, 0, 0, 196609, 131072, 0, 262145, 65536, 0, 65538, 0, 0, 131074, 131072, 0, 196610, 65536, 0, 262146, 65536, 0, 65539, 131072, 0, 131075, 0, 0, 196611, 0, 0, 262147, 131072, 0, 65540, 131072, 0, 131076, 65536, 0, 196612, 65536, 0, 262148, 0, 0, 65541, 65536, 0, 131077, 0, 0, 196613, 131072, 0, 262149, 131072, 0, 65542, 0, 0, 131078, 131072, 0, 196614, 131072, 0, 262150, 131072, 0, 65543, 131072, 0, 131079, 0, 0, 196615, 65536, 0, 262151, 65536, 0, 131080, 0, 0, 196616, 0, 0, 262152, 65536, 0, -262154, 65536, 0, -196618, 131072, 0, -131082, 65536, 0, -65546, 0, 0, 131062, 65536, 0, 196598, 65536, 0, 262134, 65536, 0, 327670, 65536, 0, 262153, 0, 0, 196617, 0, 0, 131081, 65536, 0, -196599, 131072, 0, -262135, 65536, 0, -327671, 65536, 0, -327682, 0, 0, -327681, 131072, 0, -393216, 131072, 0, -393215, 65536, 0, 393213, 65536, 0, 393214, 65536, 0, 393215, 65536, 0, 327680, 0, 0, 327681, 0, 0, 327682, 0, 0, -11, 0, 0, 65525, 131072, 0, -10, 131072, 0, 65526, 0, 0, -65547, 65536, 0, 131061, 131072, 0, -131064, 65536, 0, -65528, 0, 0, 8, 65536, 0, 65544, 131072, 0, -65527, 131072, 0, 9, 0, 0, 65545, 131072, 0, -131062, 131072, 0, -65526, 0, 0, 10, 65536, 0, 65546, 65536, 0, -131063, 131072, 0)
 layer_1/name = "Carpet"
-layer_1/tile_data = PackedInt32Array()
+layer_1/tile_data = PackedInt32Array(0, 65537, 1, 65535, 65537, 1, 65536, 65537, 2, 131071, 65537, 2, 131070, 65537, 2, 65534, 65537, 1, -2, 65537, 0, -1, 65537, 0, -65536, 65537, 0, 1, 65537, 1, 65537, 65537, 2, -65535, 65537, 0, 8, 65537, 1, 9, 131073, 1, 65545, 131073, 2, 65544, 65537, 2, 65543, 1, 2, 7, 1, 1, -65529, 1, 1, -65528, 65537, 1, -65527, 131073, 1, -131065, 1, 0, -131064, 65537, 0, -131063, 131073, 0, 65527, 65537, 1, -9, 65537, 1, -8, 131073, 1, 65528, 131073, 1, 65526, 1, 1, -10, 1, 1, -65546, 1, 0, -65545, 65537, 0, -65544, 131073, 0, 131064, 131073, 2, 131063, 65537, 2, 131062, 1, 2, 2, 131073, 1, 65538, 131073, 2, -65534, 131073, 0, 131069, 1, 2, 65533, 1, 1, -3, 1, 0)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 limit_left = -160
@@ -21,4 +24,248 @@ limit_right = 160
 limit_bottom = 90
 editor_draw_limits = true
 
+[node name="Borders" type="Node2D" parent="."]
+
+[node name="BookshelfTop20" parent="Borders" instance=ExtResource("2_7je2e")]
+position = Vector2(-160, 64)
+
+[node name="BookshelfTop20" parent="Borders/BookshelfTop20" instance=ExtResource("2_7je2e")]
+position = Vector2(320, 0)
+
+[node name="BookshelfTop15" parent="Borders/BookshelfTop20" instance=ExtResource("2_7je2e")]
+position = Vector2(320, -40)
+
+[node name="BookshelfTop16" parent="Borders/BookshelfTop20" instance=ExtResource("2_7je2e")]
+position = Vector2(320, -32)
+
+[node name="BookshelfTop18" parent="Borders/BookshelfTop20" instance=ExtResource("2_7je2e")]
+position = Vector2(320, -16)
+
+[node name="BookshelfTop19" parent="Borders/BookshelfTop20" instance=ExtResource("2_7je2e")]
+position = Vector2(320, -8)
+
+[node name="BookshelfTop23" parent="Borders/BookshelfTop20" instance=ExtResource("2_7je2e")]
+position = Vector2(320, -24)
+
+[node name="Bookshelf13" parent="Borders" instance=ExtResource("2_ib80f")]
+position = Vector2(-152, -80)
+
+[node name="Bookshelf14" parent="Borders" instance=ExtResource("2_ib80f")]
+position = Vector2(-128, -80)
+
+[node name="Bookshelf15" parent="Borders" instance=ExtResource("2_ib80f")]
+position = Vector2(-104, -80)
+
+[node name="Bookshelf16" parent="Borders" instance=ExtResource("2_ib80f")]
+position = Vector2(-80, -80)
+
+[node name="Bookshelf17" parent="Borders" instance=ExtResource("2_ib80f")]
+position = Vector2(-56, -80)
+
+[node name="Bookshelf18" parent="Borders" instance=ExtResource("2_ib80f")]
+position = Vector2(-32, -80)
+
+[node name="Bookshelf19" parent="Borders" instance=ExtResource("2_ib80f")]
+position = Vector2(152, -80)
+
+[node name="Bookshelf20" parent="Borders" instance=ExtResource("2_ib80f")]
+position = Vector2(128, -80)
+
+[node name="Bookshelf21" parent="Borders" instance=ExtResource("2_ib80f")]
+position = Vector2(104, -80)
+
+[node name="Bookshelf22" parent="Borders" instance=ExtResource("2_ib80f")]
+position = Vector2(80, -80)
+
+[node name="Bookshelf23" parent="Borders" instance=ExtResource("2_ib80f")]
+position = Vector2(56, -80)
+
+[node name="Bookshelf24" parent="Borders" instance=ExtResource("2_ib80f")]
+position = Vector2(32, -80)
+
+[node name="Bookshelf" parent="Borders" instance=ExtResource("2_ib80f")]
+position = Vector2(-152, 96)
+
+[node name="Bookshelf2" parent="Borders" instance=ExtResource("2_ib80f")]
+position = Vector2(-128, 96)
+
+[node name="Bookshelf3" parent="Borders" instance=ExtResource("2_ib80f")]
+position = Vector2(-104, 96)
+
+[node name="Bookshelf4" parent="Borders" instance=ExtResource("2_ib80f")]
+position = Vector2(-80, 96)
+
+[node name="Bookshelf5" parent="Borders" instance=ExtResource("2_ib80f")]
+position = Vector2(-56, 96)
+
+[node name="Bookshelf6" parent="Borders" instance=ExtResource("2_ib80f")]
+position = Vector2(-32, 96)
+
+[node name="Bookshelf6" parent="Borders/Bookshelf6" instance=ExtResource("2_ib80f")]
+position = Vector2(-136, -120)
+
+[node name="Bookshelf6" parent="Borders/Bookshelf6/Bookshelf6" instance=ExtResource("2_ib80f")]
+position = Vector2(336, 0)
+
+[node name="Bookshelf7" parent="Borders" instance=ExtResource("2_ib80f")]
+position = Vector2(152, 96)
+
+[node name="Bookshelf8" parent="Borders" instance=ExtResource("2_ib80f")]
+position = Vector2(128, 96)
+
+[node name="Bookshelf9" parent="Borders" instance=ExtResource("2_ib80f")]
+position = Vector2(104, 96)
+
+[node name="Bookshelf10" parent="Borders" instance=ExtResource("2_ib80f")]
+position = Vector2(80, 96)
+
+[node name="Bookshelf11" parent="Borders" instance=ExtResource("2_ib80f")]
+position = Vector2(56, 96)
+
+[node name="Bookshelf12" parent="Borders" instance=ExtResource("2_ib80f")]
+position = Vector2(32, 96)
+
+[node name="Walls Top" type="Node2D" parent="Borders"]
+
+[node name="BookshelfTop2" parent="Borders/Walls Top" instance=ExtResource("2_7je2e")]
+position = Vector2(-160, -96)
+
+[node name="BookshelfTop3" parent="Borders/Walls Top" instance=ExtResource("2_7je2e")]
+position = Vector2(-160, -88)
+
+[node name="BookshelfTop4" parent="Borders/Walls Top" instance=ExtResource("2_7je2e")]
+position = Vector2(-160, -72)
+
+[node name="BookshelfTop5" parent="Borders/Walls Top" instance=ExtResource("2_7je2e")]
+position = Vector2(-160, -64)
+
+[node name="BookshelfTop6" parent="Borders/Walls Top" instance=ExtResource("2_7je2e")]
+position = Vector2(-160, -80)
+
+[node name="BookshelfTop12" parent="Borders/Walls Top" instance=ExtResource("2_7je2e")]
+z_index = -1
+position = Vector2(-160, -56)
+
+[node name="BookshelfTop15" parent="Borders/Walls Top" instance=ExtResource("2_7je2e")]
+position = Vector2(-160, 24)
+
+[node name="BookshelfTop16" parent="Borders/Walls Top" instance=ExtResource("2_7je2e")]
+position = Vector2(-160, 32)
+
+[node name="BookshelfTop18" parent="Borders/Walls Top" instance=ExtResource("2_7je2e")]
+position = Vector2(-160, 48)
+
+[node name="BookshelfTop19" parent="Borders/Walls Top" instance=ExtResource("2_7je2e")]
+position = Vector2(-160, 56)
+
+[node name="BookshelfTop23" parent="Borders/Walls Top" instance=ExtResource("2_7je2e")]
+position = Vector2(-160, 40)
+
+[node name="BookshelfTop" parent="Borders/Walls Top" instance=ExtResource("2_7je2e")]
+position = Vector2(-160, -104)
+
+[node name="BookshelfTop2" parent="Borders/Walls Top/BookshelfTop" instance=ExtResource("2_7je2e")]
+position = Vector2(320, 8)
+
+[node name="BookshelfTop3" parent="Borders/Walls Top/BookshelfTop" instance=ExtResource("2_7je2e")]
+position = Vector2(320, 16)
+
+[node name="BookshelfTop4" parent="Borders/Walls Top/BookshelfTop" instance=ExtResource("2_7je2e")]
+position = Vector2(320, 32)
+
+[node name="BookshelfTop5" parent="Borders/Walls Top/BookshelfTop" instance=ExtResource("2_7je2e")]
+position = Vector2(320, 40)
+
+[node name="BookshelfTop6" parent="Borders/Walls Top/BookshelfTop" instance=ExtResource("2_7je2e")]
+position = Vector2(320, 24)
+
+[node name="BookshelfTop" parent="Borders/Walls Top/BookshelfTop" instance=ExtResource("2_7je2e")]
+position = Vector2(320, 0)
+
+[node name="BookshelfTop12" parent="Borders/Walls Top/BookshelfTop/BookshelfTop" instance=ExtResource("2_7je2e")]
+z_index = -1
+position = Vector2(0, 48)
+
 [node name="Walls" type="Node2D" parent="."]
+position = Vector2(-8, 0)
+
+[node name="Bookshelf2" parent="Walls" instance=ExtResource("2_ib80f")]
+position = Vector2(32, -24)
+
+[node name="Bookshelf3" parent="Walls" instance=ExtResource("2_ib80f")]
+position = Vector2(-40, 24)
+
+[node name="Bookshelf5" parent="Walls" instance=ExtResource("2_ib80f")]
+position = Vector2(56, -24)
+
+[node name="Bookshelf6" parent="Walls" instance=ExtResource("2_ib80f")]
+z_index = 1
+position = Vector2(80, 32)
+
+[node name="Bookshelf7" parent="Walls" instance=ExtResource("2_ib80f")]
+position = Vector2(56, 24)
+
+[node name="Bookshelf8" parent="Walls" instance=ExtResource("2_ib80f")]
+position = Vector2(-64, 32)
+
+[node name="Bookshelf4" parent="Walls" instance=ExtResource("2_ib80f")]
+position = Vector2(-16, -24)
+
+[node name="Bookshelf" parent="Walls" instance=ExtResource("2_ib80f")]
+position = Vector2(-40, -24)
+
+[node name="BookshelfSide" parent="Walls" instance=ExtResource("4_ln5id")]
+position = Vector2(-104, 24)
+
+[node name="BookshelfTop7" parent="Walls" instance=ExtResource("2_7je2e")]
+position = Vector2(-104, -40)
+
+[node name="BookshelfTop6" parent="Walls" instance=ExtResource("2_7je2e")]
+position = Vector2(-104, -32)
+
+[node name="BookshelfTop8" parent="Walls" instance=ExtResource("2_7je2e")]
+position = Vector2(-104, -24)
+
+[node name="BookshelfTop3" parent="Walls" instance=ExtResource("2_7je2e")]
+position = Vector2(-104, -16)
+
+[node name="BookshelfTop2" parent="Walls" instance=ExtResource("2_7je2e")]
+position = Vector2(-104, -8)
+
+[node name="BookshelfTop" parent="Walls" instance=ExtResource("2_7je2e")]
+z_index = 1
+position = Vector2(-104, 0)
+
+[node name="BookshelfTop4" parent="Walls" instance=ExtResource("2_7je2e")]
+z_index = -1
+position = Vector2(-8, -56)
+
+[node name="BookshelfTop5" parent="Walls" instance=ExtResource("2_7je2e")]
+position = Vector2(-8, -64)
+
+[node name="BookshelfTop9" parent="Walls" instance=ExtResource("2_7je2e")]
+position = Vector2(24, -56)
+
+[node name="BookshelfTop10" parent="Walls" instance=ExtResource("2_7je2e")]
+position = Vector2(24, -64)
+
+[node name="BookshelfSide2" parent="Walls" instance=ExtResource("4_ln5id")]
+position = Vector2(120, 24)
+
+[node name="BookshelfTop11" parent="Walls" instance=ExtResource("2_7je2e")]
+position = Vector2(120, 0)
+
+[node name="BookshelfTop12" parent="Walls" instance=ExtResource("2_7je2e")]
+position = Vector2(120, -8)
+
+[node name="BookshelfTop13" parent="Walls" instance=ExtResource("2_7je2e")]
+position = Vector2(120, -16)
+
+[node name="BookshelfTop14" parent="Walls" instance=ExtResource("2_7je2e")]
+position = Vector2(120, -24)
+
+[node name="BookshelfTop15" parent="Walls" instance=ExtResource("2_7je2e")]
+position = Vector2(120, -32)
+
+[node name="BookshelfTop16" parent="Walls" instance=ExtResource("2_7je2e")]
+position = Vector2(120, -40)
