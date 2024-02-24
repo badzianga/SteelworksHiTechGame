@@ -6,6 +6,8 @@ var glory_points := 10000
 var player: Player
 var ui: UI
 
+signal room_changed(next_position: Vector2)
+
 # State of user's weapons
 var weapons = {
 	"book": {
@@ -42,7 +44,7 @@ var abilities = {
 	"BAThesis": {
 		"acquired": false,
 		"cost": 150,
-		"malfunction": 0.1,
+		"malfunction": 10, # 10%
 	},
 	"Beer": { # Dash
 		"acquired": false,
