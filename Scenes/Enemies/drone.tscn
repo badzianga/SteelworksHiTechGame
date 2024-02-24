@@ -14,13 +14,13 @@ shader_parameter/flash_color = Color(1, 0, 0, 1)
 shader_parameter/flash_state = 0.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ohu0p"]
-size = Vector2(14, 15)
+size = Vector2(15, 13)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1b7x5"]
-size = Vector2(14, 15)
+size = Vector2(15, 13)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fu4ut"]
-size = Vector2(14, 15)
+size = Vector2(15, 13)
 
 [sub_resource type="Animation" id="Animation_i6c3x"]
 resource_name = "fly"
@@ -110,8 +110,7 @@ texture = ExtResource("1_h2dwg")
 hframes = 3
 
 [node name="CollisionShape" type="CollisionShape2D" parent="."]
-visible = false
-position = Vector2(0, 0.5)
+position = Vector2(0.5, -0.5)
 shape = SubResource("RectangleShape2D_ohu0p")
 
 [node name="HitboxComponent" parent="." instance=ExtResource("2_imyqt")]
@@ -119,8 +118,7 @@ collision_layer = 16
 collision_mask = 2
 
 [node name="CollisionShape" type="CollisionShape2D" parent="HitboxComponent"]
-visible = false
-position = Vector2(0, 0.5)
+position = Vector2(0.5, -0.5)
 shape = SubResource("RectangleShape2D_1b7x5")
 
 [node name="HurtboxComponent" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("3_mmj0c")]
@@ -129,8 +127,7 @@ collision_mask = 4
 health_component = NodePath("../HealthComponent")
 
 [node name="CollisionShape" type="CollisionShape2D" parent="HurtboxComponent"]
-visible = false
-position = Vector2(0, 0.5)
+position = Vector2(0.5, -0.5)
 shape = SubResource("RectangleShape2D_fu4ut")
 
 [node name="HealthComponent" parent="." instance=ExtResource("4_7c8h7")]

@@ -6,6 +6,10 @@ var glory_points := 0
 var player: CharacterBody2D
 
 
+func _ready() -> void:
+	randomize()
+
+
 func reset_game() -> void:
 	reputation_points = 0
 	glory_points = 0
