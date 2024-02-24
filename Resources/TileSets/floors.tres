@@ -61,11 +61,17 @@ texture = ExtResource("3_50r5p")
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0acnr"]
 texture = ExtResource("4_dfnod")
 0:0/0 = 0
+0:0/0/z_index = 2
 1:0/0 = 0
+1:0/0/z_index = 2
 2:0/0 = 0
+2:0/0/z_index = 2
 3:0/0 = 0
+3:0/0/z_index = 2
 4:0/0 = 0
+4:0/0/z_index = 2
 5:0/0 = 0
+5:0/0/z_index = 2
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_s50c2"]
 texture = ExtResource("5_6mqfa")

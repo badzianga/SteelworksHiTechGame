@@ -6,6 +6,7 @@
 size = Vector2(8, 8)
 
 [node name="BookshelfTop" type="StaticBody2D"]
+z_index = 1
 
 [node name="Sprite" type="Sprite2D" parent="."]
 scale = Vector2(0.5, 0.5)

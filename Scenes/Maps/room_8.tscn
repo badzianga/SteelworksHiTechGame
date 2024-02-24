@@ -1,12 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://bjifuk3vg6sk4"]
+[gd_scene load_steps=7 format=3 uid="uid://bjifuk3vg6sk4"]
 
 [ext_resource type="TileSet" uid="uid://c6vtajlqadjm8" path="res://Resources/TileSets/floors.tres" id="1_ja061"]
+[ext_resource type="Script" path="res://Scenes/Maps/room.gd" id="1_yr8o1"]
 [ext_resource type="PackedScene" uid="uid://cl5dr7hvsd7uu" path="res://Scenes/Environment/bookshelf_top.tscn" id="2_kiw3y"]
 [ext_resource type="PackedScene" uid="uid://wbce6g434pt8" path="res://Scenes/Environment/bookshelf.tscn" id="3_o62xv"]
 [ext_resource type="PackedScene" uid="uid://u76wa83muvlu" path="res://Scenes/Environment/bookshelf_side.tscn" id="4_40uie"]
+[ext_resource type="PackedScene" uid="uid://xwoj3qa43i2x" path="res://Scenes/Enemies/player_detection_area.tscn" id="6_smkgg"]
 
-[node name="Room1" type="Node2D"]
+[node name="Room8" type="Node2D"]
 y_sort_enabled = true
+script = ExtResource("1_yr8o1")
 
 [node name="Floor" type="TileMap" parent="."]
 z_index = -1
@@ -17,169 +20,164 @@ layer_0/tile_data = PackedInt32Array(65532, 131072, 0, 65533, 65536, 0, 65534, 0
 layer_1/name = "Carpet"
 layer_1/tile_data = PackedInt32Array(-65531, 65537, 1, -65532, 65537, 1, -65533, 65537, 1, -65534, 65537, 1, -65535, 65537, 1, -65536, 65537, 1, -1, 65537, 1, -2, 65537, 1, -3, 65537, 1, -4, 65537, 1, -5, 65537, 1, -6, 65537, 1, 65531, 65537, 2, 65530, 65537, 2, 65529, 65537, 2, -7, 65537, 1, -65543, 65537, 0, -65542, 65537, 0, -65541, 65537, 0, 65532, 65537, 2, -65540, 65537, 0, 65533, 65537, 2, -65539, 65537, 0, 65534, 65537, 2, -65538, 65537, 0, 65535, 65537, 2, -65537, 65537, 0, 0, 65537, 2, -131072, 65537, 0, 1, 65537, 2, -131071, 65537, 0, 2, 65537, 2, -131070, 65537, 0, 3, 65537, 2, -131069, 65537, 0, 4, 65537, 2, -131068, 65537, 0, 5, 65537, 2, -131067, 65537, 0, -65530, 65537, 1, 6, 65537, 2, -131066, 65537, 0, -65529, 131073, 1, 7, 131073, 2, -131065, 131073, 0, 65528, 1, 2, -8, 1, 1, -65544, 1, 0)
 
-[node name="Border" type="Node2D" parent="."]
+[node name="Walls" type="Node2D" parent="."]
+y_sort_enabled = true
 
-[node name="BookshelfTop20" parent="Border" instance=ExtResource("2_kiw3y")]
-position = Vector2(-160, 64)
-
-[node name="BookshelfTop20" parent="Border/BookshelfTop20" instance=ExtResource("2_kiw3y")]
-position = Vector2(320, 0)
-
-[node name="BookshelfTop15" parent="Border/BookshelfTop20" instance=ExtResource("2_kiw3y")]
-position = Vector2(320, -40)
-
-[node name="BookshelfTop16" parent="Border/BookshelfTop20" instance=ExtResource("2_kiw3y")]
-position = Vector2(320, -32)
-
-[node name="BookshelfTop18" parent="Border/BookshelfTop20" instance=ExtResource("2_kiw3y")]
-position = Vector2(320, -16)
-
-[node name="BookshelfTop19" parent="Border/BookshelfTop20" instance=ExtResource("2_kiw3y")]
-position = Vector2(320, -8)
-
-[node name="BookshelfTop23" parent="Border/BookshelfTop20" instance=ExtResource("2_kiw3y")]
-position = Vector2(320, -24)
-
-[node name="Bookshelf13" parent="Border" instance=ExtResource("3_o62xv")]
-position = Vector2(-152, -80)
-
-[node name="Bookshelf14" parent="Border" instance=ExtResource("3_o62xv")]
-position = Vector2(-128, -80)
-
-[node name="Bookshelf15" parent="Border" instance=ExtResource("3_o62xv")]
-position = Vector2(-104, -80)
-
-[node name="Bookshelf16" parent="Border" instance=ExtResource("3_o62xv")]
-position = Vector2(-80, -80)
-
-[node name="Bookshelf17" parent="Border" instance=ExtResource("3_o62xv")]
-position = Vector2(-56, -80)
-
-[node name="Bookshelf18" parent="Border" instance=ExtResource("3_o62xv")]
-position = Vector2(-32, -80)
-
-[node name="Bookshelf19" parent="Border" instance=ExtResource("3_o62xv")]
-position = Vector2(152, -80)
-
-[node name="Bookshelf20" parent="Border" instance=ExtResource("3_o62xv")]
-position = Vector2(128, -80)
-
-[node name="Bookshelf21" parent="Border" instance=ExtResource("3_o62xv")]
-position = Vector2(104, -80)
-
-[node name="Bookshelf22" parent="Border" instance=ExtResource("3_o62xv")]
-position = Vector2(80, -80)
-
-[node name="Bookshelf23" parent="Border" instance=ExtResource("3_o62xv")]
-position = Vector2(56, -80)
-
-[node name="Bookshelf24" parent="Border" instance=ExtResource("3_o62xv")]
-position = Vector2(32, -80)
-
-[node name="Bookshelf" parent="Border" instance=ExtResource("3_o62xv")]
-position = Vector2(-152, 96)
-
-[node name="Bookshelf2" parent="Border" instance=ExtResource("3_o62xv")]
-position = Vector2(-128, 96)
-
-[node name="Bookshelf3" parent="Border" instance=ExtResource("3_o62xv")]
-position = Vector2(-104, 96)
-
-[node name="Bookshelf4" parent="Border" instance=ExtResource("3_o62xv")]
-position = Vector2(-80, 96)
-
-[node name="Bookshelf5" parent="Border" instance=ExtResource("3_o62xv")]
-position = Vector2(-56, 96)
-
-[node name="Bookshelf6" parent="Border" instance=ExtResource("3_o62xv")]
-position = Vector2(-32, 96)
-
-[node name="Bookshelf6" parent="Border/Bookshelf6" instance=ExtResource("3_o62xv")]
-position = Vector2(-136, -120)
-
-[node name="Bookshelf6" parent="Border/Bookshelf6/Bookshelf6" instance=ExtResource("3_o62xv")]
-position = Vector2(336, 0)
-
-[node name="Bookshelf7" parent="Border" instance=ExtResource("3_o62xv")]
-position = Vector2(152, 96)
-
-[node name="Bookshelf8" parent="Border" instance=ExtResource("3_o62xv")]
-position = Vector2(128, 96)
-
-[node name="Bookshelf9" parent="Border" instance=ExtResource("3_o62xv")]
-position = Vector2(104, 96)
-
-[node name="Bookshelf10" parent="Border" instance=ExtResource("3_o62xv")]
-position = Vector2(80, 96)
-
-[node name="Bookshelf11" parent="Border" instance=ExtResource("3_o62xv")]
-position = Vector2(56, 96)
-
-[node name="Bookshelf12" parent="Border" instance=ExtResource("3_o62xv")]
-position = Vector2(32, 96)
-
-[node name="Walls Top" type="Node2D" parent="Border"]
-
-[node name="BookshelfTop2" parent="Border/Walls Top" instance=ExtResource("2_kiw3y")]
+[node name="BookshelfTop27" parent="Walls" instance=ExtResource("2_kiw3y")]
 position = Vector2(-160, -96)
 
-[node name="BookshelfTop3" parent="Border/Walls Top" instance=ExtResource("2_kiw3y")]
+[node name="BookshelfTop28" parent="Walls" instance=ExtResource("2_kiw3y")]
 position = Vector2(-160, -88)
 
-[node name="BookshelfTop4" parent="Border/Walls Top" instance=ExtResource("2_kiw3y")]
+[node name="BookshelfTop29" parent="Walls" instance=ExtResource("2_kiw3y")]
 position = Vector2(-160, -72)
 
-[node name="BookshelfTop5" parent="Border/Walls Top" instance=ExtResource("2_kiw3y")]
+[node name="BookshelfTop30" parent="Walls" instance=ExtResource("2_kiw3y")]
 position = Vector2(-160, -64)
 
-[node name="BookshelfTop6" parent="Border/Walls Top" instance=ExtResource("2_kiw3y")]
+[node name="BookshelfTop31" parent="Walls" instance=ExtResource("2_kiw3y")]
 position = Vector2(-160, -80)
 
-[node name="BookshelfTop12" parent="Border/Walls Top" instance=ExtResource("2_kiw3y")]
-z_index = -1
+[node name="BookshelfTop32" parent="Walls" instance=ExtResource("2_kiw3y")]
 position = Vector2(-160, -56)
 
-[node name="BookshelfTop15" parent="Border/Walls Top" instance=ExtResource("2_kiw3y")]
+[node name="BookshelfTop33" parent="Walls" instance=ExtResource("2_kiw3y")]
 position = Vector2(-160, 24)
 
-[node name="BookshelfTop16" parent="Border/Walls Top" instance=ExtResource("2_kiw3y")]
+[node name="BookshelfTop34" parent="Walls" instance=ExtResource("2_kiw3y")]
 position = Vector2(-160, 32)
 
-[node name="BookshelfTop18" parent="Border/Walls Top" instance=ExtResource("2_kiw3y")]
+[node name="BookshelfTop35" parent="Walls" instance=ExtResource("2_kiw3y")]
 position = Vector2(-160, 48)
 
-[node name="BookshelfTop19" parent="Border/Walls Top" instance=ExtResource("2_kiw3y")]
+[node name="BookshelfTop36" parent="Walls" instance=ExtResource("2_kiw3y")]
 position = Vector2(-160, 56)
 
-[node name="BookshelfTop23" parent="Border/Walls Top" instance=ExtResource("2_kiw3y")]
+[node name="BookshelfTop37" parent="Walls" instance=ExtResource("2_kiw3y")]
 position = Vector2(-160, 40)
 
-[node name="BookshelfTop" parent="Border/Walls Top" instance=ExtResource("2_kiw3y")]
+[node name="BookshelfTop38" parent="Walls" instance=ExtResource("2_kiw3y")]
 position = Vector2(-160, -104)
 
-[node name="BookshelfTop2" parent="Border/Walls Top/BookshelfTop" instance=ExtResource("2_kiw3y")]
-position = Vector2(320, 8)
+[node name="BookshelfTop14" parent="Walls" instance=ExtResource("2_kiw3y")]
+position = Vector2(160, -96)
 
-[node name="BookshelfTop3" parent="Border/Walls Top/BookshelfTop" instance=ExtResource("2_kiw3y")]
-position = Vector2(320, 16)
+[node name="BookshelfTop17" parent="Walls" instance=ExtResource("2_kiw3y")]
+position = Vector2(160, -88)
 
-[node name="BookshelfTop4" parent="Border/Walls Top/BookshelfTop" instance=ExtResource("2_kiw3y")]
-position = Vector2(320, 32)
+[node name="BookshelfTop22" parent="Walls" instance=ExtResource("2_kiw3y")]
+position = Vector2(160, -72)
 
-[node name="BookshelfTop5" parent="Border/Walls Top/BookshelfTop" instance=ExtResource("2_kiw3y")]
-position = Vector2(320, 40)
+[node name="BookshelfTop24" parent="Walls" instance=ExtResource("2_kiw3y")]
+position = Vector2(160, -64)
 
-[node name="BookshelfTop6" parent="Border/Walls Top/BookshelfTop" instance=ExtResource("2_kiw3y")]
-position = Vector2(320, 24)
+[node name="BookshelfTop25" parent="Walls" instance=ExtResource("2_kiw3y")]
+position = Vector2(160, -80)
 
-[node name="BookshelfTop" parent="Border/Walls Top/BookshelfTop" instance=ExtResource("2_kiw3y")]
-position = Vector2(320, 0)
+[node name="BookshelfTop26" parent="Walls" instance=ExtResource("2_kiw3y")]
+position = Vector2(160, -104)
 
-[node name="BookshelfTop12" parent="Border/Walls Top/BookshelfTop/BookshelfTop" instance=ExtResource("2_kiw3y")]
-z_index = -1
-position = Vector2(0, 48)
+[node name="BookshelfTop13" parent="Walls" instance=ExtResource("2_kiw3y")]
+position = Vector2(160, -56)
 
-[node name="Walls" type="Node2D" parent="."]
+[node name="BookshelfTop21" parent="Walls" instance=ExtResource("2_kiw3y")]
+position = Vector2(160, 64)
+
+[node name="BookshelfTop15" parent="Walls" instance=ExtResource("2_kiw3y")]
+position = Vector2(160, 24)
+
+[node name="BookshelfTop16" parent="Walls" instance=ExtResource("2_kiw3y")]
+position = Vector2(160, 32)
+
+[node name="BookshelfTop18" parent="Walls" instance=ExtResource("2_kiw3y")]
+position = Vector2(160, 48)
+
+[node name="BookshelfTop19" parent="Walls" instance=ExtResource("2_kiw3y")]
+position = Vector2(160, 56)
+
+[node name="BookshelfTop23" parent="Walls" instance=ExtResource("2_kiw3y")]
+position = Vector2(160, 40)
+
+[node name="BookshelfTop20" parent="Walls" instance=ExtResource("2_kiw3y")]
+position = Vector2(-160, 64)
+
+[node name="Bookshelf17" parent="Walls" instance=ExtResource("3_o62xv")]
+position = Vector2(-152, -80)
+
+[node name="Bookshelf18" parent="Walls" instance=ExtResource("3_o62xv")]
+position = Vector2(-128, -80)
+
+[node name="Bookshelf19" parent="Walls" instance=ExtResource("3_o62xv")]
+position = Vector2(-104, -80)
+
+[node name="Bookshelf20" parent="Walls" instance=ExtResource("3_o62xv")]
+position = Vector2(-80, -80)
+
+[node name="Bookshelf21" parent="Walls" instance=ExtResource("3_o62xv")]
+position = Vector2(-56, -80)
+
+[node name="Bookshelf22" parent="Walls" instance=ExtResource("3_o62xv")]
+position = Vector2(-32, -80)
+
+[node name="Bookshelf23" parent="Walls" instance=ExtResource("3_o62xv")]
+position = Vector2(152, -80)
+
+[node name="Bookshelf24" parent="Walls" instance=ExtResource("3_o62xv")]
+position = Vector2(128, -80)
+
+[node name="Bookshelf25" parent="Walls" instance=ExtResource("3_o62xv")]
+position = Vector2(104, -80)
+
+[node name="Bookshelf26" parent="Walls" instance=ExtResource("3_o62xv")]
+position = Vector2(80, -80)
+
+[node name="Bookshelf27" parent="Walls" instance=ExtResource("3_o62xv")]
+position = Vector2(56, -80)
+
+[node name="Bookshelf28" parent="Walls" instance=ExtResource("3_o62xv")]
+position = Vector2(32, -80)
+
+[node name="Bookshelf29" parent="Walls" instance=ExtResource("3_o62xv")]
+position = Vector2(-152, 96)
+
+[node name="Bookshelf30" parent="Walls" instance=ExtResource("3_o62xv")]
+position = Vector2(-128, 96)
+
+[node name="Bookshelf31" parent="Walls" instance=ExtResource("3_o62xv")]
+position = Vector2(-104, 96)
+
+[node name="Bookshelf32" parent="Walls" instance=ExtResource("3_o62xv")]
+position = Vector2(-80, 96)
+
+[node name="Bookshelf33" parent="Walls" instance=ExtResource("3_o62xv")]
+position = Vector2(-56, 96)
+
+[node name="Bookshelf34" parent="Walls" instance=ExtResource("3_o62xv")]
+position = Vector2(168, -24)
+
+[node name="Bookshelf35" parent="Walls" instance=ExtResource("3_o62xv")]
+position = Vector2(-168, -24)
+
+[node name="Bookshelf36" parent="Walls" instance=ExtResource("3_o62xv")]
+position = Vector2(-32, 96)
+
+[node name="Bookshelf37" parent="Walls" instance=ExtResource("3_o62xv")]
+position = Vector2(152, 96)
+
+[node name="Bookshelf38" parent="Walls" instance=ExtResource("3_o62xv")]
+position = Vector2(128, 96)
+
+[node name="Bookshelf39" parent="Walls" instance=ExtResource("3_o62xv")]
+position = Vector2(104, 96)
+
+[node name="Bookshelf40" parent="Walls" instance=ExtResource("3_o62xv")]
+position = Vector2(80, 96)
+
+[node name="Bookshelf41" parent="Walls" instance=ExtResource("3_o62xv")]
+position = Vector2(56, 96)
+
+[node name="Bookshelf42" parent="Walls" instance=ExtResource("3_o62xv")]
+position = Vector2(32, 96)
 
 [node name="Bookshelf" parent="Walls" instance=ExtResource("3_o62xv")]
 position = Vector2(-80, -24)
@@ -268,5 +266,19 @@ position = Vector2(128, -24)
 [node name="BookshelfTop11" parent="Walls" instance=ExtResource("2_kiw3y")]
 position = Vector2(128, -32)
 
+[node name="BookshelfSide3" parent="Walls" instance=ExtResource("4_40uie")]
+position = Vector2(-160, -32)
+
+[node name="BookshelfSide4" parent="Walls" instance=ExtResource("4_40uie")]
+position = Vector2(160, -32)
+
+[node name="BookshelfSide5" parent="Walls" instance=ExtResource("4_40uie")]
+position = Vector2(160, 88)
+
+[node name="BookshelfSide6" parent="Walls" instance=ExtResource("4_40uie")]
+position = Vector2(-160, 88)
+
 [node name="BookshelfTop12" parent="Walls" instance=ExtResource("2_kiw3y")]
 position = Vector2(128, -40)
+
+[node name="PlayerDetectionArea" parent="." instance=ExtResource("6_smkgg")]
