@@ -1,0 +1,82 @@
+[gd_scene load_steps=5 format=3 uid="uid://bybkyfwr0c3l4"]
+
+[ext_resource type="Script" path="res://Scenes/DialogueSystem/dialogue_system.gd" id="2_jg3wb"]
+
+[sub_resource type="Animation" id="Animation_po5ky"]
+resource_name = "bopping"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(268, 160), Vector2(268, 164)]
+}
+
+[sub_resource type="Animation" id="Animation_l6cn5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(268, 160)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_b77n7"]
+_data = {
+"RESET": SubResource("Animation_l6cn5"),
+"bopping": SubResource("Animation_po5ky")
+}
+
+[node name="DialogueSystem" type="CanvasLayer"]
+script = ExtResource("2_jg3wb")
+
+[node name="Background" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(240, 48)
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 40.0
+offset_top = -56.0
+offset_right = -40.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0.136757, 0.176659, 0.25247, 1)
+
+[node name="NameLabel" type="RichTextLabel" parent="Background"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+bbcode_enabled = true
+
+[node name="TextLabel" type="RichTextLabel" parent="Background"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+bbcode_enabled = true
+
+[node name="Indicator" type="Polygon2D" parent="."]
+position = Vector2(268, 160)
+polygon = PackedVector2Array(8, 0, -8, 0, 0, 5)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Indicator"]
+libraries = {
+"": SubResource("AnimationLibrary_b77n7")
+}
+autoplay = "bopping"
+
+[node name="Timer" type="Timer" parent="."]

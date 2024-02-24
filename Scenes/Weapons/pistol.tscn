@@ -1,14 +1,16 @@
 [gd_scene load_steps=4 format=3 uid="uid://1ftmkmpdvwmm"]
 
-[ext_resource type="Texture2D" uid="uid://dmy80336gmanm" path="res://icon.svg" id="1_nxalw"]
+[ext_resource type="Texture2D" uid="uid://dnq8vvvvi0xj3" path="res://Assets/Weapons/pistol.png" id="1_mau1o"]
 [ext_resource type="Script" path="res://Scenes/Weapons/weapon.gd" id="2_ih2x3"]
 [ext_resource type="PackedScene" uid="uid://b8uutjrb8nc52" path="res://Scenes/Projectiles/bullet_projectile.tscn" id="3_i6gb4"]
 
 [node name="Pistol" type="Sprite2D"]
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("1_nxalw")
+position = Vector2(6, 0)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("1_mau1o")
 script = ExtResource("2_ih2x3")
 damage = 3
+volley = 1
 projectile_scene = ExtResource("3_i6gb4")
 
 [node name="CooldownTimer" type="Timer" parent="."]
@@ -16,5 +18,8 @@ wait_time = 0.4
 one_shot = true
 
 [node name="VolleyTimer" type="Timer" parent="."]
+
+[node name="ShootSound" type="AudioStreamPlayer" parent="."]
+bus = &"Sounds"
 
 [connection signal="timeout" from="CooldownTimer" to="." method="_on_cooldown_timer_timeout"]

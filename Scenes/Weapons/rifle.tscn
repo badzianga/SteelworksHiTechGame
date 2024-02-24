@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://ds838ydifg4m3"]
+
+[ext_resource type="Texture2D" uid="uid://buqils3esxuoj" path="res://Assets/Weapons/rifle.png" id="1_p6njb"]
+[ext_resource type="Script" path="res://Scenes/Weapons/weapon.gd" id="2_pb87u"]
+[ext_resource type="PackedScene" uid="uid://dwt1cbnw1uskr" path="res://Scenes/Projectiles/laser_bullet_projectile.tscn" id="3_5n15a"]
+[ext_resource type="AudioStream" uid="uid://cvixn0mdd4kd4" path="res://Assets/Sounds/laser_gun.mp3" id="4_xiheb"]
+
+[node name="Rifle" type="Sprite2D"]
+position = Vector2(9, 0)
+scale = Vector2(0.65, 0.65)
+texture = ExtResource("1_p6njb")
+script = ExtResource("2_pb87u")
+damage = 1
+volley = 3
+projectile_scene = ExtResource("3_5n15a")
+
+[node name="CooldownTimer" type="Timer" parent="."]
+wait_time = 0.4
+one_shot = true
+
+[node name="VolleyTimer" type="Timer" parent="."]
+wait_time = 0.075
+one_shot = true
+
+[node name="ShootSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_xiheb")
+volume_db = -12.0
+max_polyphony = 3
+bus = &"Sounds"
+
+[connection signal="timeout" from="CooldownTimer" to="." method="_on_cooldown_timer_timeout"]
+[connection signal="timeout" from="VolleyTimer" to="." method="_on_volley_timer_timeout"]

@@ -1,5 +1,5 @@
 extends Projectile
 
 
-func special_behavior(delta: float) -> void:
+func special_behavior(_delta: float) -> void:
 	pass
