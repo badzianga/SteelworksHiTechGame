@@ -1,0 +1,193 @@
+[gd_scene load_steps=10 format=3 uid="uid://cg6sknwoktjqx"]
+
+[ext_resource type="Texture2D" uid="uid://dw4dtfps2ba52" path="res://Assets/UI/shop.png" id="1_bg5et"]
+[ext_resource type="Texture2D" uid="uid://c10odfbv1hqlp" path="res://Assets/UI/economy_1.png" id="2_q5sw1"]
+[ext_resource type="Texture2D" uid="uid://dq7776sj081h8" path="res://Assets/UI/economy_2.png" id="3_5pd3k"]
+[ext_resource type="Texture2D" uid="uid://ecf5rl6t1vig" path="res://Assets/UI/upgrade_bar_1.png" id="4_48n6b"]
+[ext_resource type="Texture2D" uid="uid://c3jd7n58vm78s" path="res://Assets/UI/upgrade_bar_2.png" id="5_tgbjm"]
+[ext_resource type="Texture2D" uid="uid://dllicbf1atna8" path="res://Assets/UI/btn_upgrade.png" id="6_y8isp"]
+[ext_resource type="Texture2D" uid="uid://cfmunnel3rxpn" path="res://Assets/UI/BAThesis.png" id="7_f8emw"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_4hvqv"]
+font_size = 11
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q24r0"]
+bg_color = Color(0.6, 0.6, 0.6, 0.203922)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 1)
+
+[node name="Node2D" type="Node2D"]
+position = Vector2(160, 96)
+
+[node name="Shop" type="Sprite2D" parent="."]
+scale = Vector2(2, 2)
+texture = ExtResource("1_bg5et")
+
+[node name="Economy1" type="Sprite2D" parent="."]
+position = Vector2(11, -67)
+texture = ExtResource("2_q5sw1")
+
+[node name="Economy2" type="Sprite2D" parent="."]
+position = Vector2(59, -67)
+texture = ExtResource("3_5pd3k")
+
+[node name="GloryPoints" type="Label" parent="."]
+offset_left = 19.0
+offset_top = -79.0
+offset_right = 47.0
+offset_bottom = -56.0
+text = "100"
+label_settings = SubResource("LabelSettings_4hvqv")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SatisfactionPoints" type="Label" parent="."]
+offset_left = 67.0
+offset_top = -79.0
+offset_right = 95.0
+offset_bottom = -56.0
+text = "100"
+label_settings = SubResource("LabelSettings_4hvqv")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Weapons" type="Node2D" parent="."]
+position = Vector2(-14, 0)
+
+[node name="Upgrade" type="Node2D" parent="Weapons"]
+position = Vector2(64, 88)
+scale = Vector2(1.25, 1.25)
+
+[node name="Upgrade_1" type="TextureProgressBar" parent="Weapons/Upgrade"]
+offset_left = -91.0
+offset_top = -101.333
+offset_right = -42.0
+offset_bottom = -95.3333
+max_value = 12.0
+texture_under = ExtResource("4_48n6b")
+texture_progress = ExtResource("5_tgbjm")
+
+[node name="Btn" type="Button" parent="Weapons/Upgrade"]
+offset_left = -37.3333
+offset_top = -106.667
+offset_right = -21.3333
+offset_bottom = -90.6667
+focus_mode = 0
+mouse_default_cursor_shape = 2
+icon = ExtResource("6_y8isp")
+flat = true
+
+[node name="Upgrade2" type="Node2D" parent="Weapons"]
+position = Vector2(64, 48)
+scale = Vector2(1.25, 1.25)
+
+[node name="Upgrade_2" type="TextureProgressBar" parent="Weapons/Upgrade2"]
+offset_left = -90.6667
+offset_top = -37.3333
+offset_right = -41.6667
+offset_bottom = -31.3333
+max_value = 12.0
+texture_under = ExtResource("4_48n6b")
+texture_progress = ExtResource("5_tgbjm")
+
+[node name="Btn" type="Button" parent="Weapons/Upgrade2"]
+offset_left = -37.3333
+offset_top = -42.6667
+offset_right = -21.3333
+offset_bottom = -26.6667
+focus_mode = 0
+mouse_default_cursor_shape = 2
+icon = ExtResource("6_y8isp")
+flat = true
+
+[node name="Upgrade3" type="Node2D" parent="Weapons"]
+position = Vector2(64, 96)
+scale = Vector2(1.25, 1.25)
+
+[node name="Upgrade_3" type="TextureProgressBar" parent="Weapons/Upgrade3"]
+offset_left = -91.0
+offset_top = -37.0
+offset_right = -42.0
+offset_bottom = -31.0
+max_value = 12.0
+texture_under = ExtResource("4_48n6b")
+texture_progress = ExtResource("5_tgbjm")
+
+[node name="Btn" type="Button" parent="Weapons/Upgrade3"]
+offset_left = -37.3333
+offset_top = -42.6667
+offset_right = -21.3333
+offset_bottom = -26.6667
+focus_mode = 0
+mouse_default_cursor_shape = 2
+icon = ExtResource("6_y8isp")
+flat = true
+
+[node name="Upgrades" type="Node2D" parent="."]
+
+[node name="Button" type="Button" parent="Upgrades"]
+offset_left = 72.0
+offset_top = -48.0
+offset_right = 96.0
+offset_bottom = -24.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_q24r0")
+icon = ExtResource("7_f8emw")
+icon_alignment = 1
+
+[node name="Button2" type="Button" parent="Upgrades"]
+offset_left = 120.0
+offset_top = -48.0
+offset_right = 144.0
+offset_bottom = -24.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_q24r0")
+icon = ExtResource("7_f8emw")
+icon_alignment = 1
+
+[node name="Button3" type="Button" parent="Upgrades"]
+offset_left = 72.0
+offset_right = 96.0
+offset_bottom = 24.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_q24r0")
+icon = ExtResource("7_f8emw")
+icon_alignment = 1
+
+[node name="Button4" type="Button" parent="Upgrades"]
+offset_left = 120.0
+offset_right = 144.0
+offset_bottom = 24.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_q24r0")
+icon = ExtResource("7_f8emw")
+icon_alignment = 1
+
+[node name="Button5" type="Button" parent="Upgrades"]
+offset_left = 72.0
+offset_top = 40.0
+offset_right = 96.0
+offset_bottom = 64.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_q24r0")
+icon = ExtResource("7_f8emw")
+icon_alignment = 1
+
+[node name="Button6" type="Button" parent="Upgrades"]
+offset_left = 120.0
+offset_top = 40.0
+offset_right = 144.0
+offset_bottom = 64.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_q24r0")
+icon = ExtResource("7_f8emw")
+icon_alignment = 1
