@@ -58,7 +58,6 @@ flat = true
 
 [node name="cost" type="Node2D" parent="Weapons/Upgrade_1"]
 position = Vector2(-91.2, -108.8)
-scale = Vector2(1, 1)
 
 [node name="Economy1" type="Sprite2D" parent="Weapons/Upgrade_1/cost"]
 position = Vector2(31.2, -9.53674e-07)
@@ -99,7 +98,6 @@ flat = true
 
 [node name="cost" type="Node2D" parent="Weapons/Upgrade_2"]
 position = Vector2(-91.2, -44.8)
-scale = Vector2(1, 1)
 
 [node name="Economy1" type="Sprite2D" parent="Weapons/Upgrade_2/cost"]
 position = Vector2(31.2, 0)
@@ -140,7 +138,6 @@ flat = true
 
 [node name="cost" type="Node2D" parent="Weapons/Upgrade_3"]
 position = Vector2(-91.2, -44.8)
-scale = Vector2(1, 1)
 
 [node name="Economy1" type="Sprite2D" parent="Weapons/Upgrade_3/cost"]
 position = Vector2(31.2, 0)
@@ -171,7 +168,6 @@ icon_alignment = 1
 
 [node name="cost" type="Node2D" parent="Upgrades/Ability_1"]
 position = Vector2(-3.00001, 34)
-scale = Vector2(1, 1)
 
 [node name="Economy2" type="Sprite2D" parent="Upgrades/Ability_1/cost"]
 position = Vector2(2.19995, 0)
@@ -200,7 +196,6 @@ icon_alignment = 1
 
 [node name="cost" type="Node2D" parent="Upgrades/Ability_2"]
 position = Vector2(-3, 34)
-scale = Vector2(1, 1)
 
 [node name="Economy2" type="Sprite2D" parent="Upgrades/Ability_2/cost"]
 position = Vector2(2.19995, 0)
@@ -228,7 +223,6 @@ icon_alignment = 1
 
 [node name="cost" type="Node2D" parent="Upgrades/Ability_3"]
 position = Vector2(-3, 34)
-scale = Vector2(1, 1)
 
 [node name="Economy2" type="Sprite2D" parent="Upgrades/Ability_3/cost"]
 position = Vector2(2.19995, 0)
@@ -256,7 +250,6 @@ icon_alignment = 1
 
 [node name="cost" type="Node2D" parent="Upgrades/Ability_4"]
 position = Vector2(-3.00002, 34)
-scale = Vector2(1, 1)
 
 [node name="Economy2" type="Sprite2D" parent="Upgrades/Ability_4/cost"]
 position = Vector2(2.19995, 0)

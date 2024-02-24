@@ -1,11 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://wbce6g434pt8"]
+[gd_scene load_steps=5 format=3 uid="uid://wbce6g434pt8"]
 
+[ext_resource type="Script" path="res://Scenes/Environment/bookshelf.gd" id="1_him74"]
 [ext_resource type="Texture2D" uid="uid://c4a8dyq33d47t" path="res://Assets/Environment/bookshelf.png" id="1_rtwv6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s2h3x"]
 size = Vector2(24, 8)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w84x4"]
+size = Vector2(24, 22)
+
 [node name="Bookshelf" type="StaticBody2D"]
+script = ExtResource("1_him74")
 
 [node name="Sprite" type="Sprite2D" parent="."]
 position = Vector2(0, -16)
@@ -14,3 +19,16 @@ texture = ExtResource("1_rtwv6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_s2h3x")
+
+[node name="AlphaArea" type="Area2D" parent="."]
+unique_name_in_owner = true
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AlphaArea"]
+position = Vector2(0, -15)
+shape = SubResource("RectangleShape2D_w84x4")
+debug_color = Color(0.615686, 0.396078, 0.913725, 0.419608)
+
+[connection signal="area_entered" from="AlphaArea" to="." method="_on_alpha_area_area_entered"]
+[connection signal="area_exited" from="AlphaArea" to="." method="_on_alpha_area_area_exited"]
