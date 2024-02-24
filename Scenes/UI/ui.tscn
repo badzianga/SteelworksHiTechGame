@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://ccrjpmfpsmv26"]
+[gd_scene load_steps=5 format=3 uid="uid://ccrjpmfpsmv26"]
 
 [ext_resource type="Script" path="res://Scenes/UI/ui.gd" id="1_1oxkd"]
 [ext_resource type="Texture2D" uid="uid://bi52jpruwl1tl" path="res://Assets/UI/heart_1.png" id="2_nvv85"]
 [ext_resource type="Texture2D" uid="uid://bb2tjtly7hefs" path="res://Assets/UI/heart_2.png" id="3_q0umv"]
+[ext_resource type="PackedScene" uid="uid://b65x3vroq46f3" path="res://Scenes/UI/economy.tscn" id="4_cj53e"]
 
 [node name="UI" type="CanvasLayer"]
 script = ExtResource("1_1oxkd")
@@ -16,3 +17,5 @@ max_value = 3.0
 value = 3.0
 texture_under = ExtResource("2_nvv85")
 texture_progress = ExtResource("3_q0umv")
+
+[node name="Economy" parent="." instance=ExtResource("4_cj53e")]
