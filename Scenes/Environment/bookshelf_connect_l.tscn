@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://dsn3kg2fv2c2b"]
+
+[ext_resource type="Texture2D" uid="uid://1dk6env5bdu4" path="res://Assets/Environment/bookshelf_connect.png" id="1_pgath"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dyrck"]
+size = Vector2(48, 32)
+
+[node name="Bookshelf_connect_L" type="StaticBody2D"]
+scale = Vector2(0.5, 0.5)
+
+[node name="BookshelfConnect" type="Sprite2D" parent="."]
+texture = ExtResource("1_pgath")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_dyrck")
