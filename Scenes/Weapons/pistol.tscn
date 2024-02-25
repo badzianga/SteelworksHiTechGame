@@ -61,6 +61,7 @@ one_shot = true
 
 [node name="ShootSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_fg8co")
+volume_db = -8.0
 bus = &"Sounds"
 
 [node name="Animation" type="AnimationPlayer" parent="."]
