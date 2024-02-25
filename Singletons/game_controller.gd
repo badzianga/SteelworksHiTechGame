@@ -87,8 +87,6 @@ const wave_info := {
 	},
 }
 
-@onready var music_player := $MusicPlayer
-
 
 func _ready() -> void:
 	randomize()

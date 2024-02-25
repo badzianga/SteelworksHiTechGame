@@ -14,8 +14,9 @@ shader = ExtResource("2_5p3hr")
 shader_parameter/flash_color = Color(1, 0, 0, 1)
 shader_parameter/flash_state = 0.0
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ohu0p"]
-size = Vector2(15, 13)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xtv71"]
+radius = 3.5
+height = 13.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1b7x5"]
 size = Vector2(15, 13)
@@ -168,7 +169,8 @@ hframes = 3
 
 [node name="CollisionShape" type="CollisionShape2D" parent="."]
 position = Vector2(0.5, -0.5)
-shape = SubResource("RectangleShape2D_ohu0p")
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_xtv71")
 
 [node name="HitboxComponent" parent="." instance=ExtResource("2_imyqt")]
 collision_layer = 16

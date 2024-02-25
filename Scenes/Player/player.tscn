@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://mx6j27qpkmf5" path="res://Scenes/Components/hurtbox_component.tscn" id="3_0l8ck"]
 [ext_resource type="Texture2D" uid="uid://64kuw3mryfea" path="res://Assets/Entities/helmet.png" id="3_01npj"]
 [ext_resource type="PackedScene" uid="uid://bse3dkitoj2uh" path="res://Scenes/Components/health_component.tscn" id="4_o00dw"]
-[ext_resource type="PackedScene" uid="uid://ds838ydifg4m3" path="res://Scenes/Weapons/rifle.tscn" id="5_nyva0"]
+[ext_resource type="PackedScene" uid="uid://cmuwaea8oeiky" path="res://Scenes/Weapons/book.tscn" id="7_gf8uv"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_yl72a"]
 resource_local_to_scene = true
@@ -113,6 +113,21 @@ _data = {
 "run": SubResource("Animation_7gvx2")
 }
 
+[sub_resource type="Animation" id="Animation_oy6qk"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:material:shader_parameter/flash_state")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
 [sub_resource type="Animation" id="Animation_0fmue"]
 resource_name = "blinking"
 length = 1.2
@@ -128,21 +143,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0]
-}
-
-[sub_resource type="Animation" id="Animation_oy6qk"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite:material:shader_parameter/flash_state")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_h4dkd"]
@@ -190,7 +190,7 @@ libraries = {
 
 [node name="WeaponSlot" type="Marker2D" parent="."]
 
-[node name="Weapon" parent="WeaponSlot" instance=ExtResource("5_nyva0")]
+[node name="Weapon" parent="WeaponSlot" instance=ExtResource("7_gf8uv")]
 
 [node name="InvincibilityTimer" type="Timer" parent="."]
 wait_time = 1.2

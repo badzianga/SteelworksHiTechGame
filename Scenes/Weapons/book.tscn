@@ -5,6 +5,21 @@
 [ext_resource type="PackedScene" uid="uid://bvh1nf6j4fw25" path="res://Scenes/Projectiles/book_projectile.tscn" id="2_q3647"]
 [ext_resource type="AudioStream" uid="uid://dshlbfylcdf2g" path="res://Assets/Sounds/throw_1.mp3" id="4_bsn0y"]
 
+[sub_resource type="Animation" id="Animation_o0ytb"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.523599]
+}
+
 [sub_resource type="Animation" id="Animation_yg03h"]
 resource_name = "shoot"
 length = 0.4
@@ -19,21 +34,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
 "values": [0.872665, 1.22173, 1.5708, 2.0944, 0.523599]
-}
-
-[sub_resource type="Animation" id="Animation_o0ytb"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.523599]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_fuk4v"]
