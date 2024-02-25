@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://b65svflv5vby0"]
+[gd_scene load_steps=10 format=3 uid="uid://b65svflv5vby0"]
 
 [ext_resource type="Script" path="res://Singletons/game_controller.gd" id="1_f15wj"]
 [ext_resource type="AudioStream" uid="uid://b3h51rljx4rt5" path="res://Assets/Sounds/bg_menu.mp3" id="2_51gaf"]
@@ -7,6 +7,7 @@
 [ext_resource type="AudioStream" uid="uid://d2sk4lghghak1" path="res://Assets/Sounds/bg_game_2.mp3" id="5_b5pgg"]
 [ext_resource type="AudioStream" uid="uid://j56nyatsnyjq" path="res://Assets/Sounds/bg_game_3.mp3" id="6_l0sk7"]
 [ext_resource type="AudioStream" uid="uid://daso0vg51rd6q" path="res://Assets/Sounds/bg_game_4.mp3" id="7_mon5k"]
+[ext_resource type="AudioStream" uid="uid://vg3vdob5h6vy" path="res://Assets/Sounds/enemy_hit.mp3" id="8_kkvlq"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_ro8bb"]
 streams_count = 4
@@ -34,3 +35,7 @@ bus = &"Music"
 [node name="LibraryMusic" type="AudioStreamPlayer" parent="."]
 stream = SubResource("AudioStreamRandomizer_ro8bb")
 bus = &"Music"
+
+[node name="HitSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_kkvlq")
+max_polyphony = 16

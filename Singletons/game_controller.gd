@@ -133,6 +133,7 @@ const health_multiplers := [
 @onready var menu_music: AudioStreamPlayer = $MenuMusic
 @onready var lobby_music: AudioStreamPlayer = $LobbyMusic
 @onready var library_music: AudioStreamPlayer = $LibraryMusic
+@onready var hit_sound: AudioStreamPlayer = $HitSound
 
 
 func _ready() -> void:

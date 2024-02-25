@@ -57,5 +57,13 @@ icon = ExtResource("1_aqelm")
 flat = true
 icon_alignment = 1
 
+[node name="Label" type="Label" parent="."]
+offset_left = 160.0
+offset_top = 40.0
+offset_right = 299.0
+offset_bottom = 63.0
+theme_override_font_sizes/font_size = 8
+text = "Documentation-not-inluced Edition!"
+
 [connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="ExitButton" to="." method="_on_exit_button_pressed"]

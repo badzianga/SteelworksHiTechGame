@@ -57,6 +57,7 @@ func handle_weapon() -> void:
 
 
 func _on_health_changed() -> void:
+	GameController.hit_sound.play()
 	effects.play("hurt")
 
 
