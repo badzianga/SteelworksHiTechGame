@@ -71,7 +71,7 @@ func handle_weapon() -> void:
 	else:
 		weapon.flip_v = false
 	
-	if Input.is_action_just_pressed("shoot"):
+	if Input.is_action_just_pressed("shoot") and helmet_sprite.visible:
 		weapon.shoot()
 
 

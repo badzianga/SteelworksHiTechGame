@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://0luf8s1i3aey"]
+[gd_scene load_steps=3 format=3 uid="uid://daqhgrjq6vtvg"]
 
 [ext_resource type="Script" path="res://Scenes/UI/pause.gd" id="1_e8r77"]
 
@@ -20,12 +20,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
+offset_left = -46.0
+offset_top = -52.0
+offset_right = 354.0
+offset_bottom = 368.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(0.25, 0.25)
 theme_override_styles/panel = SubResource("StyleBoxFlat_blax7")
 
 [node name="PauseContainer" type="VBoxContainer" parent="Background"]

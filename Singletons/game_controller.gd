@@ -1,17 +1,21 @@
 extends Node
 
 
-var reputation_points := 1000
-var glory_points := 1000
+const MenuScene := preload("res://Scenes/UI/main_menu.tscn")
+const WorldScene := preload("res://Scenes/Maps/world.tscn")
+const ShopScene := preload("res://Scenes/UI/shop.tscn")
+
+var reputation_points := 0
+var glory_points := 0
 var player: Player
 var ui: UI
 var world: Node2D
-var current_wave := 1
+var current_wave := 0
 
 signal room_changed(next_position: Vector2)
 
 # State of user's weapons
-var weapons := {
+const WEAPONS := {
 	"book": {
 		"acquired": true,
 		"level": 1,
@@ -50,8 +54,10 @@ var weapons := {
 	}
 }
 
+var weapons := {}
+
 # User's abilities
-var abilities := {
+const ABILITIES := {
 	"BAThesis": {
 		"acquired": false,
 		"cost": 150,
@@ -85,26 +91,33 @@ var abilities := {
 	},
 }
 
+var abilities := {}
+
 const wave_info := {
 	1: {
 		"enemies_in_room_min": 0,
 		"enemies_in_room_max": 2,
+		"time": 60,
 	},
 	2: {
 		"enemies_in_room_min": 1,
 		"enemies_in_room_max": 2,
+		"time": 60,
 	},
 	3: {
 		"enemies_in_room_min": 1,
 		"enemies_in_room_max": 3,
+		"time": 60,
 	},
 	4: {
 		"enemies_in_room_min": 1,
 		"enemies_in_room_max": 4,
+		"time": 60,
 	},
 	5: {
 		"enemies_in_room_min": 2,
 		"enemies_in_room_max": 4,
+		"time": 60,
 	},
 }
 
@@ -113,9 +126,31 @@ func _ready() -> void:
 	randomize()
 
 
+func start_game() -> void:
+	reset_game()
+	go_to_world()
+
+
+func go_to_menu() -> void:
+	reset_game()
+	get_tree().change_scene_to_packed(MenuScene)
+
+
+func go_to_shop() -> void:
+	get_tree().change_scene_to_packed(ShopScene)
+
+
+func go_to_world() -> void:
+	current_wave += 1
+	get_tree().change_scene_to_packed(WorldScene)
+
+
 func reset_game() -> void:
+	weapons = WEAPONS.duplicate(true)
+	abilities = ABILITIES.duplicate(true)
 	reputation_points = 0
 	glory_points = 0
 	player = null
 	ui = null
 	world = null
+	current_wave = 0
