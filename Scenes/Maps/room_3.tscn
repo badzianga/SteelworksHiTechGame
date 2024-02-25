@@ -6,8 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://wbce6g434pt8" path="res://Scenes/Environment/bookshelf.tscn" id="3_0s8ef"]
 [ext_resource type="PackedScene" uid="uid://u76wa83muvlu" path="res://Scenes/Environment/bookshelf_side.tscn" id="4_7a6u5"]
 [ext_resource type="PackedScene" uid="uid://xwoj3qa43i2x" path="res://Scenes/Enemies/player_detection_area.tscn" id="6_j8j0i"]
-[ext_resource type="PackedScene" uid="uid://dsn3kg2fv2c2b" path="res://Scenes/Environment/bookshelf_connect_l.tscn" id="7_7fass"]
-[ext_resource type="PackedScene" uid="uid://c6lafvrv60rll" path="res://Scenes/Environment/bookshelf_connect_r.tscn" id="8_67rn8"]
+[ext_resource type="PackedScene" path="res://Scenes/Environment/bookshelf_connect_l.tscn" id="7_7fass"]
+[ext_resource type="PackedScene" path="res://Scenes/Environment/bookshelf_connect_r.tscn" id="8_67rn8"]
 
 [node name="Room3" type="Node2D"]
 y_sort_enabled = true
@@ -305,3 +305,8 @@ position = Vector2(120, -80)
 
 [node name="Marker12" type="Marker2D" parent="BookPoints"]
 position = Vector2(120, -80)
+
+[node name="Enemies" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[connection signal="area_entered" from="PlayerDetectionArea" to="." method="_on_player_detection_area_area_entered"]

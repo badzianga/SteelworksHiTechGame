@@ -6,11 +6,12 @@ var glory_points := 10000
 var player: Player
 var ui: UI
 var world: Node2D
+var current_wave := 5
 
 signal room_changed(next_position: Vector2)
 
 # State of user's weapons
-var weapons = {
+var weapons := {
 	"book": {
 		"acquired": true,
 		"level": 1,
@@ -41,7 +42,7 @@ var weapons = {
 }
 
 # User's abilities
-var abilities = {
+var abilities := {
 	"BAThesis": {
 		"acquired": false,
 		"cost": 150,
@@ -60,6 +61,29 @@ var abilities = {
 		"acquired": false,
 		"cost": 1500,
 		"reload_multiplier": 0.9, # 10% faster
+	},
+}
+
+const wave_info := {
+	1: {
+		"enemies_in_room_min": 0,
+		"enemies_in_room_max": 2,
+	},
+	2: {
+		"enemies_in_room_min": 1,
+		"enemies_in_room_max": 2,
+	},
+	3: {
+		"enemies_in_room_min": 1,
+		"enemies_in_room_max": 3,
+	},
+	4: {
+		"enemies_in_room_min": 1,
+		"enemies_in_room_max": 4,
+	},
+	5: {
+		"enemies_in_room_min": 2,
+		"enemies_in_room_max": 4,
 	},
 }
 

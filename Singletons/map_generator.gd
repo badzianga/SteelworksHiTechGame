@@ -69,8 +69,12 @@ func create_next_room() -> void:
 			if map[at_v(next_pointer)] == ROOM_TYPE.NONE:
 				possible_directions.append(next_pointer)
 	if possible_directions.is_empty():
-		pointer.y -= 1
-		create_next_room()
+		# screw it, generate whole map if stuck
+		# also create smaller map
+		map.clear()
+		map.resize(ARRAY_ROWS * ARRAY_COLS)
+		clear_map()
+		generate(6)
 		return
 	pointer = possible_directions.pick_random()
 	map[at_v(pointer)] = ROOM_TYPE.NORMAL
