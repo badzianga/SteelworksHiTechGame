@@ -1,11 +1,18 @@
-[gd_scene load_steps=13 format=3 uid="uid://kna2yacl5q3s"]
+[gd_scene load_steps=18 format=3 uid="uid://kna2yacl5q3s"]
 
 [ext_resource type="Script" path="res://Scenes/Player/player.gd" id="1_5whdu"]
+[ext_resource type="Shader" path="res://Resources/Shaders/flash.gdshader" id="2_41ip4"]
 [ext_resource type="Texture2D" uid="uid://byhv2d3266ffc" path="res://Assets/Entities/Player/player_sheet.png" id="2_nd2ey"]
 [ext_resource type="PackedScene" uid="uid://mx6j27qpkmf5" path="res://Scenes/Components/hurtbox_component.tscn" id="3_0l8ck"]
 [ext_resource type="Texture2D" uid="uid://64kuw3mryfea" path="res://Assets/Entities/helmet.png" id="3_01npj"]
 [ext_resource type="PackedScene" uid="uid://bse3dkitoj2uh" path="res://Scenes/Components/health_component.tscn" id="4_o00dw"]
 [ext_resource type="PackedScene" uid="uid://ds838ydifg4m3" path="res://Scenes/Weapons/rifle.tscn" id="5_nyva0"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yl72a"]
+resource_local_to_scene = true
+shader = ExtResource("2_41ip4")
+shader_parameter/flash_color = Color(1, 1, 1, 1)
+shader_parameter/flash_state = 0.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_36d6u"]
 size = Vector2(10, 4)
@@ -106,11 +113,50 @@ _data = {
 "run": SubResource("Animation_7gvx2")
 }
 
+[sub_resource type="Animation" id="Animation_0fmue"]
+resource_name = "blinking"
+length = 1.2
+step = 0.15
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:material:shader_parameter/flash_state")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.15, 0.3, 0.45, 0.6, 0.75, 0.9, 1.05, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_oy6qk"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:material:shader_parameter/flash_state")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_h4dkd"]
+_data = {
+"RESET": SubResource("Animation_oy6qk"),
+"blinking": SubResource("Animation_0fmue")
+}
+
 [node name="Player" type="CharacterBody2D"]
 motion_mode = 1
 script = ExtResource("1_5whdu")
 
 [node name="Sprite" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_yl72a")
 position = Vector2(0, -5)
 texture = ExtResource("2_nd2ey")
 hframes = 8
@@ -143,3 +189,14 @@ libraries = {
 [node name="WeaponSlot" type="Marker2D" parent="."]
 
 [node name="Weapon" parent="WeaponSlot" instance=ExtResource("5_nyva0")]
+
+[node name="InvincibilityTimer" type="Timer" parent="."]
+wait_time = 1.2
+one_shot = true
+
+[node name="Effects" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_h4dkd")
+}
+
+[connection signal="timeout" from="InvincibilityTimer" to="." method="_on_invincibility_timer_timeout"]
