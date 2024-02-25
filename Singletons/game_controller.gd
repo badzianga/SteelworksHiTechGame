@@ -20,8 +20,8 @@ const WEAPONS := {
 		"acquired": true,
 		"level": 1,
 		
-		"damage": 10,
-		"damage_multiplier": 1.5,
+		"damage": 15,
+		"damage_multiplier": 1.2,
 		"upgrade_cost": 21,
 		"cost_multiplier": 1.1,
 		
@@ -32,8 +32,8 @@ const WEAPONS := {
 		"acquired": false,
 		"level": 0,
 		
-		"damage": 70,
-		"damage_multiplier": 1.5,
+		"damage": 40,
+		"damage_multiplier": 1.2,
 		"upgrade_cost": 90,
 		"cost_multiplier": 1.2,
 		
@@ -44,8 +44,8 @@ const WEAPONS := {
 		"acquired": false,
 		"level": 0,
 		
-		"damage": 120,
-		"damage_multiplier": 1.5,
+		"damage": 70,
+		"damage_multiplier": 1.2,
 		"upgrade_cost": 100,
 		"cost_multiplier": 1.3,
 		
@@ -121,6 +121,13 @@ const wave_info := {
 	},
 }
 
+const health_multiplers := [
+	1.0,
+	1.1,
+	1.3,
+	1.5,
+	2.0
+]
 
 func _ready() -> void:
 	randomize()

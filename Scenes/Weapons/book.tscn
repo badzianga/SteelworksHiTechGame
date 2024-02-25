@@ -50,6 +50,7 @@ texture = ExtResource("1_eqy3m")
 script = ExtResource("1_2rb7t")
 damage = 1
 volley = 1
+type = "Book"
 projectile_scene = ExtResource("2_q3647")
 
 [node name="CooldownTimer" type="Timer" parent="."]

@@ -50,6 +50,7 @@ hframes = 4
 script = ExtResource("2_ih2x3")
 damage = 3
 volley = 1
+type = "Pistol"
 projectile_scene = ExtResource("3_i6gb4")
 
 [node name="CooldownTimer" type="Timer" parent="."]
