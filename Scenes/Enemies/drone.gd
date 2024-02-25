@@ -42,5 +42,9 @@ func _on_health_depleted() -> void:
 
 func _on_explosion_timeout_timeout() -> void:
 	GameController.glory_points += randi_range(glory_min, glory_max)
+	$Sprite.visible = false
+	set_physics_process(false)
+	$HurtboxComponent/CollisionShape.set_deferred("disabled", true)
 	effects.play("explosion")
+	await effects.animation_finished
 	queue_free()
