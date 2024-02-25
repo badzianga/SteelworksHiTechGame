@@ -44,9 +44,9 @@ const WEAPONS := {
 		"acquired": false,
 		"level": 0,
 		
-		"damage": 70,
+		"damage": 20,
 		"damage_multiplier": 1.2,
-		"upgrade_cost": 45,
+		"upgrade_cost": 80,
 		"cost_multiplier": 1.3,
 		
 		"title": "UJ-knowledge-inator",
