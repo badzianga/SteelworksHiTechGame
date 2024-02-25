@@ -20,7 +20,7 @@ const WEAPONS := {
 		"acquired": true,
 		"level": 1,
 		
-		"damage": 15,
+		"damage": 25,
 		"damage_multiplier": 1.2,
 		"upgrade_cost": 21,
 		"cost_multiplier": 1.1,
@@ -32,9 +32,9 @@ const WEAPONS := {
 		"acquired": false,
 		"level": 0,
 		
-		"damage": 40,
+		"damage": 45,
 		"damage_multiplier": 1.2,
-		"upgrade_cost": 90,
+		"upgrade_cost": 20,
 		"cost_multiplier": 1.2,
 		
 		"title": "Grandpa's Glock",
@@ -46,7 +46,7 @@ const WEAPONS := {
 		
 		"damage": 70,
 		"damage_multiplier": 1.2,
-		"upgrade_cost": 100,
+		"upgrade_cost": 45,
 		"cost_multiplier": 1.3,
 		
 		"title": "UJ-knowledge-inator",
@@ -97,37 +97,37 @@ const wave_info := {
 	1: {
 		"enemies_in_room_min": 0,
 		"enemies_in_room_max": 2,
-		"time": 60,
+		"time": 120,
 	},
 	2: {
 		"enemies_in_room_min": 1,
 		"enemies_in_room_max": 2,
-		"time": 60,
+		"time": 130,
 	},
 	3: {
 		"enemies_in_room_min": 1,
 		"enemies_in_room_max": 3,
-		"time": 60,
+		"time": 140,
 	},
 	4: {
 		"enemies_in_room_min": 1,
 		"enemies_in_room_max": 4,
-		"time": 60,
+		"time": 150,
 	},
 	5: {
 		"enemies_in_room_min": 2,
-		"enemies_in_room_max": 4,
-		"time": 60,
+		"enemies_in_room_max": 5,
+		"time": 170,
 	},
 }
 
 const health_multiplers := [
 	1.0,
 	1.0,
-	1.1,
-	1.3,
-	1.5,
-	2.0
+	1.7,
+	2.3,
+	2.8,
+	4,
 ]
 
 @onready var menu_music: AudioStreamPlayer = $MenuMusic
