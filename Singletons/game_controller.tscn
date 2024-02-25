@@ -1,15 +1,36 @@
-[gd_scene load_steps=2 format=3 uid="uid://b65svflv5vby0"]
+[gd_scene load_steps=9 format=3 uid="uid://b65svflv5vby0"]
 
 [ext_resource type="Script" path="res://Singletons/game_controller.gd" id="1_f15wj"]
+[ext_resource type="AudioStream" uid="uid://b3h51rljx4rt5" path="res://Assets/Sounds/bg_menu.mp3" id="2_51gaf"]
+[ext_resource type="AudioStream" uid="uid://btbqmx5h75xj7" path="res://Assets/Sounds/comic_background_music.mp3" id="3_ey84b"]
+[ext_resource type="AudioStream" uid="uid://0di1cqvq5wn2" path="res://Assets/Sounds/bg_game_1.mp3" id="4_5017a"]
+[ext_resource type="AudioStream" uid="uid://d2sk4lghghak1" path="res://Assets/Sounds/bg_game_2.mp3" id="5_b5pgg"]
+[ext_resource type="AudioStream" uid="uid://j56nyatsnyjq" path="res://Assets/Sounds/bg_game_3.mp3" id="6_l0sk7"]
+[ext_resource type="AudioStream" uid="uid://daso0vg51rd6q" path="res://Assets/Sounds/bg_game_4.mp3" id="7_mon5k"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_ro8bb"]
+streams_count = 4
+stream_0/stream = ExtResource("4_5017a")
+stream_0/weight = 1.0
+stream_1/stream = ExtResource("5_b5pgg")
+stream_1/weight = 1.0
+stream_2/stream = ExtResource("6_l0sk7")
+stream_2/weight = 1.0
+stream_3/stream = ExtResource("7_mon5k")
+stream_3/weight = 1.0
 
 [node name="GameController" type="Node"]
 script = ExtResource("1_f15wj")
 
 [node name="MenuMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_51gaf")
 bus = &"Music"
 
 [node name="LobbyMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_ey84b")
 bus = &"Music"
 
 [node name="LibraryMusic" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_ro8bb")
+autoplay = true
 bus = &"Music"
