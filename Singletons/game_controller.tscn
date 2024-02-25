@@ -32,5 +32,4 @@ bus = &"Music"
 
 [node name="LibraryMusic" type="AudioStreamPlayer" parent="."]
 stream = SubResource("AudioStreamRandomizer_ro8bb")
-autoplay = true
 bus = &"Music"

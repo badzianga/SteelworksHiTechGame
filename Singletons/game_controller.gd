@@ -26,7 +26,7 @@ const WEAPONS := {
 		"cost_multiplier": 1.1,
 		
 		"title": "Hard Covered Math's Book",
-		"description": "Ouch! That hurts. Upgrade your book to harden cover and deal more damage."
+		"description": "Ouch! That hurts! Upgrade your book to harden cover and deal more damage."
 	},
 	"gun": {
 		"acquired": false,
