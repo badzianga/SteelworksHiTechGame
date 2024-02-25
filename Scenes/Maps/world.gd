@@ -54,6 +54,11 @@ func _ready() -> void:
 			
 			add_child(room_scene)
 			room_scene.fill_holes(to_fill)
+			
+			# Add book to finish room
+			if MapGenerator.map[index] == MapGenerator.ROOM_TYPE.FINISH:
+				room_scene.add_book()
+			
 			#print("Generated room (I hope)")
 
 

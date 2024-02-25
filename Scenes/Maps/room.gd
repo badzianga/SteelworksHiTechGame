@@ -66,6 +66,14 @@ func spawn_enemies() -> void:
 		enemies.call_deferred("add_child", enemy)
 
 
+func add_book() -> void:
+	var book_points := $BookPoints.get_children()
+	var point: Marker2D = book_points.pick_random()
+	var book_area: Area2D = load("res://Scenes/Environment/book_area.tscn").instantiate()
+	book_area.global_position = point.global_position
+	GameController.world.add_child(book_area)
+
+
 func _on_player_detection_area_area_entered(_area: Area2D) -> void:
 	print("Visited? ", visited)
 	if visited:

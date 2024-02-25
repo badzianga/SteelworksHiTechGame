@@ -17,7 +17,7 @@ extends CharacterBody2D
 
 var direction := Vector2.ZERO
 var shoot_direction := Vector2.ZERO
-
+var collected_book := false
 
 func _ready() -> void:
 	GameController.player = self

@@ -155,6 +155,7 @@ _data = {
 collision_layer = 0
 motion_mode = 1
 script = ExtResource("1_5whdu")
+speed = 128.0
 
 [node name="Sprite" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_yl72a")
