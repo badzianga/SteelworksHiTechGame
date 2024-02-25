@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://bukrbdsakuboe"]
+[gd_scene load_steps=6 format=3 uid="uid://bukrbdsakuboe"]
 
 [ext_resource type="Texture2D" uid="uid://c1ocjgp6a3e4o" path="res://Assets/Entities/Enemies/ujotowiec.png" id="1_7p2jc"]
 [ext_resource type="Script" path="res://Scenes/UI/main_menu.gd" id="1_80bxt"]
 [ext_resource type="Texture2D" uid="uid://cmx28fbqkl0my" path="res://Assets/UI/button.png" id="1_aqelm"]
 [ext_resource type="Texture2D" uid="uid://b2luk3j0bg1ju" path="res://Assets/Entities/Player/player.png" id="1_wvuri"]
+[ext_resource type="Texture2D" uid="uid://tvjkhmmsppfo" path="res://Assets/UI/logo.png" id="5_2u72t"]
 
 [node name="MainMenu" type="Node2D"]
 script = ExtResource("1_80bxt")
@@ -57,13 +58,33 @@ icon = ExtResource("1_aqelm")
 flat = true
 icon_alignment = 1
 
-[node name="Label" type="Label" parent="."]
-offset_left = 160.0
-offset_top = 40.0
-offset_right = 299.0
-offset_bottom = 63.0
+[node name="Credits" type="Label" parent="."]
+offset_left = 224.0
+offset_top = 158.0
+offset_right = 315.0
+offset_bottom = 185.0
+theme_override_font_sizes/font_size = 6
+text = "A game by
+Dwóch Informatyków Podcast"
+horizontal_alignment = 2
+
+[node name="Logo" type="Sprite2D" parent="."]
+position = Vector2(160, 32)
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("5_2u72t")
+
+[node name="Edition" type="Label" parent="."]
+offset_left = 163.0
+offset_top = 51.0
+offset_right = 302.0
+offset_bottom = 78.0
+rotation = -0.20944
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
 theme_override_font_sizes/font_size = 8
-text = "Documentation-not-inluced Edition!"
+text = "Documentation-not-inluced 
+Edition!"
+horizontal_alignment = 1
 
 [connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="ExitButton" to="." method="_on_exit_button_pressed"]
