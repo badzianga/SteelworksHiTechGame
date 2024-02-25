@@ -20,6 +20,9 @@ var weapons := {
 		"damage_multiplier": 1.5,
 		"upgrade_cost": 21,
 		"cost_multiplier": 1.1,
+		
+		"title": "Hard Covered Math's Book",
+		"description": "Ouch! That hurts. Upgrade your book to harden cover and deal more damage."
 	},
 	"gun": {
 		"acquired": false,
@@ -29,6 +32,9 @@ var weapons := {
 		"damage_multiplier": 1.5,
 		"upgrade_cost": 90,
 		"cost_multiplier": 1.2,
+		
+		"title": "Grandpa's Glock",
+		"description": "It may be old, but sure deals a lot!"
 	},
 	"laser_gun": {
 		"acquired": false,
@@ -38,6 +44,9 @@ var weapons := {
 		"damage_multiplier": 1.5,
 		"upgrade_cost": 100,
 		"cost_multiplier": 1.3,
+		
+		"title": "UJ-knowledge-inator",
+		"description": "Shoots with knowledge unbearable by UJ students. It's basic calculus..."
 	}
 }
 
@@ -47,20 +56,32 @@ var abilities := {
 		"acquired": false,
 		"cost": 150,
 		"malfunction": 10, # 10%
+		
+		"title": "Bachelor of Arts Thesis",
+		"description": "AGH carrying out an infiltration on UJ's students. 10% chance for drone malfanction due to UJ's students not graduating as a proper engeneers"
 	},
 	"Beer": { # Dash
 		"acquired": false,
 		"cost": 350,
+		
+		"title": "Beer for Flanki",
+		"description": "Sudennly you gain speed abilities. Use [Space] to dash."
 	},
 	"Handshake": {
 		"acquired": false,
 		"cost": 700,
 		"damage_multiplier": 1.05, # 5%
+		
+		"title": "Mrs Librarian's Handshake",
+		"description": "You achieve boosted intelligence flow. Your damage is increased by 5%."
 	},
 	"Contract": {
 		"acquired": false,
 		"cost": 1500,
 		"reload_multiplier": 0.9, # 10% faster
+		
+		"title": "Employment Contract",
+		"description": "You gain confidence boost due to stable work and income as a student. 10% faster reloading"
 	},
 }
 
