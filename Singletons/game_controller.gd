@@ -95,22 +95,22 @@ var abilities := {}
 
 const wave_info := {
 	1: {
-		"enemies_in_room_min": 0,
-		"enemies_in_room_max": 2,
-		"time": 120,
-	},
-	2: {
 		"enemies_in_room_min": 1,
 		"enemies_in_room_max": 2,
 		"time": 130,
 	},
-	3: {
+	2: {
 		"enemies_in_room_min": 1,
 		"enemies_in_room_max": 3,
+		"time": 130,
+	},
+	3: {
+		"enemies_in_room_min": 1,
+		"enemies_in_room_max": 4,
 		"time": 140,
 	},
 	4: {
-		"enemies_in_room_min": 1,
+		"enemies_in_room_min": 2,
 		"enemies_in_room_max": 4,
 		"time": 150,
 	},

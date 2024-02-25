@@ -39,6 +39,7 @@ func shoot() -> void:
 		cooldown_timer.start()
 		if shots_left > 0:
 			if not enemy:
+				GameController.world.apply_shake()
 				create_projectile()
 			else:
 				create_enemy_projectile()
