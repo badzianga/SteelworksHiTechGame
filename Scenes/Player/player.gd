@@ -76,8 +76,7 @@ func get_shoot_direction() -> Vector2:
 
 
 func _on_health_changed() -> void:
-	pass
-	#GameController.ui.apply_damage()
+	GameController.ui.apply_damage()
 
 
 func _on_room_changed(new_position: Vector2) -> void:
