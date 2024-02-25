@@ -217,7 +217,7 @@ wait_time = 2.0
 one_shot = true
 
 [node name="DashingTime" type="Timer" parent="."]
-wait_time = 0.5
+wait_time = 0.4
 one_shot = true
 
 [connection signal="timeout" from="InvincibilityTimer" to="." method="_on_invincibility_timer_timeout"]

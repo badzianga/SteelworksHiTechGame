@@ -22,7 +22,7 @@ var shoot_direction := Vector2.ZERO
 var collected_book := false
 var can_dash := false
 var dashing := false
-var dash_multiplier := 2.5
+var dash_multiplier := 3.0
 
 func _ready() -> void:
 	if GameController.abilities["Beer"]["acquired"]:
@@ -58,6 +58,7 @@ func handle_movement() -> void:
 	if Input.is_action_just_pressed("dash") and can_dash and dash_cooldown.is_stopped():
 		can_dash = false
 		dashing = true
+		hurtbox_collision.set_deferred("disabled", true)
 		dashing_time.start()
 
 
@@ -129,5 +130,6 @@ func _on_dash_cooldown_timeout() -> void:
 
 
 func _on_dashing_time_timeout() -> void:
+	hurtbox_collision.set_deferred("disabled", false)
 	dashing = false
 	dash_cooldown.start()
