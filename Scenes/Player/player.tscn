@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://kna2yacl5q3s"]
+[gd_scene load_steps=19 format=3 uid="uid://kna2yacl5q3s"]
 
 [ext_resource type="Script" path="res://Scenes/Player/player.gd" id="1_5whdu"]
 [ext_resource type="Shader" path="res://Resources/Shaders/flash.gdshader" id="2_41ip4"]
@@ -151,11 +151,13 @@ _data = {
 "blinking": SubResource("Animation_0fmue")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5yiq8"]
+size = Vector2(10, 4)
+
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 0
 motion_mode = 1
 script = ExtResource("1_5whdu")
-speed = 128.0
 
 [node name="Sprite" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_yl72a")
@@ -201,5 +203,13 @@ one_shot = true
 libraries = {
 "": SubResource("AnimationLibrary_h4dkd")
 }
+
+[node name="DetectedByPortalArea" type="Area2D" parent="."]
+collision_layer = 32
+collision_mask = 0
+
+[node name="CollisionShape" type="CollisionShape2D" parent="DetectedByPortalArea"]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_5yiq8")
 
 [connection signal="timeout" from="InvincibilityTimer" to="." method="_on_invincibility_timer_timeout"]

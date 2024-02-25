@@ -7,7 +7,7 @@ size = Vector2(320, 168)
 
 [node name="PlayerDetectionArea" type="Area2D"]
 collision_layer = 0
-collision_mask = 2
+collision_mask = 32
 script = ExtResource("1_fy62x")
 
 [node name="CollisionShape" type="CollisionShape2D" parent="."]
