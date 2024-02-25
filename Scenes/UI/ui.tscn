@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://ccrjpmfpsmv26"]
+[gd_scene load_steps=6 format=3 uid="uid://ccrjpmfpsmv26"]
 
 [ext_resource type="Script" path="res://Scenes/UI/ui.gd" id="1_1oxkd"]
 [ext_resource type="Texture2D" uid="uid://bi52jpruwl1tl" path="res://Assets/UI/heart_1.png" id="2_nvv85"]
 [ext_resource type="Texture2D" uid="uid://bb2tjtly7hefs" path="res://Assets/UI/heart_2.png" id="3_q0umv"]
-[ext_resource type="PackedScene" uid="uid://b65x3vroq46f3" path="res://Scenes/UI/economy.tscn" id="4_cj53e"]
+[ext_resource type="Texture2D" uid="uid://c10odfbv1hqlp" path="res://Assets/UI/economy_1.png" id="5_saqy4"]
+[ext_resource type="Texture2D" uid="uid://dq7776sj081h8" path="res://Assets/UI/economy_2.png" id="6_jlsm1"]
 
 [node name="UI" type="CanvasLayer"]
 script = ExtResource("1_1oxkd")
@@ -18,4 +19,38 @@ value = 3.0
 texture_under = ExtResource("2_nvv85")
 texture_progress = ExtResource("3_q0umv")
 
-[node name="Economy" parent="." instance=ExtResource("4_cj53e")]
+[node name="Economy1" type="TextureRect" parent="."]
+offset_left = 7.0
+offset_top = 18.0
+offset_right = 20.0
+offset_bottom = 31.0
+texture = ExtResource("5_saqy4")
+expand_mode = 1
+
+[node name="Economy2" type="TextureRect" parent="."]
+offset_left = 43.0
+offset_top = 18.0
+offset_right = 56.0
+offset_bottom = 31.0
+texture = ExtResource("6_jlsm1")
+expand_mode = 1
+
+[node name="GloryPoints" type="Label" parent="."]
+offset_left = 14.0
+offset_top = 13.0
+offset_right = 42.0
+offset_bottom = 36.0
+theme_override_font_sizes/font_size = 8
+text = "100"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ReputationPoints" type="Label" parent="."]
+offset_left = 50.0
+offset_top = 13.0
+offset_right = 78.0
+offset_bottom = 36.0
+theme_override_font_sizes/font_size = 8
+text = "100"
+horizontal_alignment = 1
+vertical_alignment = 1
