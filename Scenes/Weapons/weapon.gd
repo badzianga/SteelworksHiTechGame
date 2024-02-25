@@ -11,6 +11,7 @@ var shots_left := volley
 var cooldown_timer: Timer
 @onready var volley_timer := $VolleyTimer
 @onready var shoot_sound := $ShootSound
+@onready var animation := $Animation
 
 # Reload multiplier ability
 func _ready():
@@ -29,6 +30,7 @@ func shoot() -> void:
 			volley_timer.start()
 			shots_left -= 1
 		#visible = false  - used only in book
+		animation.play("shoot")
 
 
 func create_projectile() -> void:
