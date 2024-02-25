@@ -1,8 +1,46 @@
-[gd_scene load_steps=4 format=3 uid="uid://cmuwaea8oeiky"]
+[gd_scene load_steps=8 format=3 uid="uid://cmuwaea8oeiky"]
 
 [ext_resource type="Script" path="res://Scenes/Weapons/weapon.gd" id="1_2rb7t"]
 [ext_resource type="Texture2D" uid="uid://hlew5jk71a2s" path="res://Assets/Weapons/book.png" id="1_eqy3m"]
 [ext_resource type="PackedScene" uid="uid://bvh1nf6j4fw25" path="res://Scenes/Projectiles/book_projectile.tscn" id="2_q3647"]
+[ext_resource type="AudioStream" uid="uid://dshlbfylcdf2g" path="res://Assets/Sounds/throw_1.mp3" id="4_bsn0y"]
+
+[sub_resource type="Animation" id="Animation_yg03h"]
+resource_name = "shoot"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0.872665, 1.22173, 1.5708, 2.0944, 0.523599]
+}
+
+[sub_resource type="Animation" id="Animation_o0ytb"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.523599]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fuk4v"]
+_data = {
+"RESET": SubResource("Animation_o0ytb"),
+"shoot": SubResource("Animation_yg03h")
+}
 
 [node name="Book" type="Sprite2D"]
 position = Vector2(6, 0)
@@ -20,6 +58,12 @@ one_shot = true
 [node name="VolleyTimer" type="Timer" parent="."]
 
 [node name="ShootSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_bsn0y")
 bus = &"Sounds"
+
+[node name="Animation" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_fuk4v")
+}
 
 [connection signal="timeout" from="CooldownTimer" to="." method="_on_cooldown_timer_timeout"]

@@ -1,0 +1,71 @@
+[gd_scene load_steps=8 format=3 uid="uid://cca4g8agxnvve"]
+
+[ext_resource type="Texture2D" uid="uid://daapaqeluurji" path="res://Assets/Entities/Npc/npc_1.png" id="2_3erwg"]
+[ext_resource type="Shader" path="res://Resources/Shaders/flash.gdshader" id="2_h8bja"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_moi6k"]
+resource_local_to_scene = true
+shader = ExtResource("2_h8bja")
+shader_parameter/flash_color = Color(1, 0, 0, 1)
+shader_parameter/flash_state = 0.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ohu0p"]
+size = Vector2(10, 4)
+
+[sub_resource type="Animation" id="Animation_b7f5s"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_i6c3x"]
+resource_name = "run"
+length = 0.8
+loop_mode = 1
+step = 0.025
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.075, 0.15, 0.275, 0.4, 0.475, 0.55, 0.675),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fde1w"]
+_data = {
+"RESET": SubResource("Animation_b7f5s"),
+"run": SubResource("Animation_i6c3x")
+}
+
+[node name="Npc" type="CharacterBody2D"]
+motion_mode = 1
+
+[node name="Sprite" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_moi6k")
+position = Vector2(0, -4)
+texture = ExtResource("2_3erwg")
+hframes = 8
+
+[node name="CollisionShape" type="CollisionShape2D" parent="."]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_ohu0p")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_fde1w")
+}
+autoplay = "run"

@@ -1,14 +1,53 @@
-[gd_scene load_steps=5 format=3 uid="uid://ds838ydifg4m3"]
+[gd_scene load_steps=8 format=3 uid="uid://ds838ydifg4m3"]
 
-[ext_resource type="Texture2D" uid="uid://buqils3esxuoj" path="res://Assets/Weapons/rifle.png" id="1_p6njb"]
+[ext_resource type="Texture2D" uid="uid://csudcf07ak0ub" path="res://Assets/Weapons/rifle_sheet.png" id="1_mkudr"]
 [ext_resource type="Script" path="res://Scenes/Weapons/weapon.gd" id="2_pb87u"]
 [ext_resource type="PackedScene" uid="uid://dwt1cbnw1uskr" path="res://Scenes/Projectiles/laser_bullet_projectile.tscn" id="3_5n15a"]
 [ext_resource type="AudioStream" uid="uid://cvixn0mdd4kd4" path="res://Assets/Sounds/laser_gun.mp3" id="4_xiheb"]
 
+[sub_resource type="Animation" id="Animation_x6h4w"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_j5dr4"]
+resource_name = "shoot"
+length = 0.25
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.03, 0.06, 0.09, 0.12, 0.15, 0.18),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 0, 1, 2, 3, 4, 0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0kw8c"]
+_data = {
+"RESET": SubResource("Animation_x6h4w"),
+"shoot": SubResource("Animation_j5dr4")
+}
+
 [node name="Rifle" type="Sprite2D"]
 position = Vector2(9, 0)
 scale = Vector2(0.65, 0.65)
-texture = ExtResource("1_p6njb")
+texture = ExtResource("1_mkudr")
+hframes = 5
 script = ExtResource("2_pb87u")
 damage = 1
 volley = 3
@@ -27,6 +66,11 @@ stream = ExtResource("4_xiheb")
 volume_db = -12.0
 max_polyphony = 3
 bus = &"Sounds"
+
+[node name="Animation" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_0kw8c")
+}
 
 [connection signal="timeout" from="CooldownTimer" to="." method="_on_cooldown_timer_timeout"]
 [connection signal="timeout" from="VolleyTimer" to="." method="_on_volley_timer_timeout"]
