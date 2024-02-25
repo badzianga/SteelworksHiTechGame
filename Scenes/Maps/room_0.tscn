@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://depthu6t38i1i"]
+[gd_scene load_steps=16 format=3 uid="uid://depthu6t38i1i"]
 
 [ext_resource type="TileSet" uid="uid://c6vtajlqadjm8" path="res://Resources/TileSets/floors.tres" id="1_ntvxu"]
 [ext_resource type="PackedScene" uid="uid://cl5dr7hvsd7uu" path="res://Scenes/Environment/bookshelf_top.tscn" id="2_uwl50"]
@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://v55vliv3w5uk" path="res://Scenes/Environment/door.tscn" id="3_mme2l"]
 [ext_resource type="PackedScene" path="res://Scenes/Environment/lamp.tscn" id="5_k2ck2"]
 [ext_resource type="PackedScene" uid="uid://u76wa83muvlu" path="res://Scenes/Environment/bookshelf_side.tscn" id="6_xkksf"]
+[ext_resource type="PackedScene" uid="uid://dw5gu5wq2um11" path="res://Scenes/Maps/portal.tscn" id="8_umohk"]
+[ext_resource type="PackedScene" uid="uid://xwoj3qa43i2x" path="res://Scenes/Enemies/player_detection_area.tscn" id="9_wopgg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f3uh2"]
 size = Vector2(138, 19)
@@ -19,6 +21,12 @@ size = Vector2(63, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7k467"]
 size = Vector2(48, 47)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6418l"]
+size = Vector2(32, 4)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tuvml"]
+size = Vector2(32, 14)
 
 [node name="Room1" type="Node2D"]
 y_sort_enabled = true
@@ -136,3 +144,29 @@ position = Vector2(0, -55)
 
 [node name="ExplosionTimeout" type="Timer" parent="."]
 unique_name_in_owner = true
+
+[node name="Portal" parent="." instance=ExtResource("8_umohk")]
+position = Vector2(-1, -49)
+jump_direction = Vector2(0, -1)
+
+[node name="CollisionShape" type="CollisionShape2D" parent="Portal"]
+position = Vector2(1, -1)
+shape = SubResource("RectangleShape2D_6418l")
+
+[node name="Portal2" parent="." instance=ExtResource("8_umohk")]
+position = Vector2(0, -55)
+jump_direction = Vector2(0, 1)
+
+[node name="CollisionShape" type="CollisionShape2D" parent="Portal2"]
+position = Vector2(0, -5)
+shape = SubResource("RectangleShape2D_tuvml")
+
+[node name="PlayerDetectionArea" parent="." instance=ExtResource("9_wopgg")]
+
+[node name="BLACK" type="ColorRect" parent="."]
+z_index = 10
+offset_left = -160.0
+offset_top = -90.0
+offset_right = 160.0
+offset_bottom = -76.0
+color = Color(0, 0, 0, 1)

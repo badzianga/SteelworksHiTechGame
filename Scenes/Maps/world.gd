@@ -52,8 +52,8 @@ func _ready() -> void:
 				to_fill.append(3)
 			#print("Coordinates: ", Vector2i(x, y), " To fill: ", to_fill)
 			
-			room_scene.fill_holes(to_fill)
 			add_child(room_scene)
+			room_scene.fill_holes(to_fill)
 			#print("Generated room (I hope)")
 
 
