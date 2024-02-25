@@ -33,6 +33,7 @@ func _ready() -> void:
 		can_dash = true
 	GameController.player = self
 	health_component.health_changed.connect(_on_health_changed)
+	health_component.health_depleted.connect(GameController.wave_again)
 	GameController.room_changed.connect(_on_room_changed)
 	
 	helmet_sprite.visible = false
@@ -133,6 +134,8 @@ func frame_freeze(time_scale: float, duration: float) -> void:
 
 
 func _on_health_changed() -> void:
+	if health_component.health == 0:
+		return
 	GameController.ui.apply_damage()
 	GameController.world.enable_chromatic_aberration()
 	hurtbox_collision.set_deferred("disabled", true)

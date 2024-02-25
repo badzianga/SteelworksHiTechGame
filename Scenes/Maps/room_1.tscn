@@ -6,10 +6,10 @@
 [ext_resource type="PackedScene" uid="uid://wbce6g434pt8" path="res://Scenes/Environment/bookshelf.tscn" id="2_ib80f"]
 [ext_resource type="PackedScene" uid="uid://u76wa83muvlu" path="res://Scenes/Environment/bookshelf_side.tscn" id="4_ln5id"]
 [ext_resource type="PackedScene" uid="uid://xwoj3qa43i2x" path="res://Scenes/Enemies/player_detection_area.tscn" id="6_o12u4"]
-[ext_resource type="PackedScene" uid="uid://c6lafvrv60rll" path="res://Scenes/Environment/bookshelf_connect_r.tscn" id="7_gvyw7"]
-[ext_resource type="PackedScene" uid="uid://dsn3kg2fv2c2b" path="res://Scenes/Environment/bookshelf_connect_l.tscn" id="8_0bmal"]
+[ext_resource type="PackedScene" path="res://Scenes/Environment/bookshelf_connect_r.tscn" id="7_gvyw7"]
+[ext_resource type="PackedScene" path="res://Scenes/Environment/bookshelf_connect_l.tscn" id="8_0bmal"]
 [ext_resource type="PackedScene" uid="uid://dw5gu5wq2um11" path="res://Scenes/Maps/portal.tscn" id="9_wlmln"]
-[ext_resource type="PackedScene" uid="uid://clmh8mqgt3owe" path="res://Scenes/Environment/lamp.tscn" id="10_xo4h6"]
+[ext_resource type="PackedScene" path="res://Scenes/Environment/lamp.tscn" id="10_xo4h6"]
 [ext_resource type="Texture2D" uid="uid://cipkloi0o3v14" path="res://Assets/Utils/robot.png" id="11_y6k7c"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6r7b0"]

@@ -196,4 +196,7 @@ func _on_ability_4_mouse_exited() -> void:
 
 
 func _on_next_wave_pressed() -> void:
-	GameController.go_to_world()
+	if GameController.current_wave == 5:
+		get_tree().change_scene_to_file("res://Scenes/UI/win_screen.tscn")
+	else:
+		GameController.go_to_world()

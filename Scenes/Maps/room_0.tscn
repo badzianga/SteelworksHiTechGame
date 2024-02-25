@@ -29,7 +29,7 @@ size = Vector2(32, 4)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tuvml"]
 size = Vector2(32, 14)
 
-[node name="Room1" type="Node2D"]
+[node name="Room0" type="Node2D"]
 y_sort_enabled = true
 position = Vector2(1, 0)
 
@@ -163,6 +163,7 @@ position = Vector2(0, -5)
 shape = SubResource("RectangleShape2D_tuvml")
 
 [node name="PlayerDetectionArea" parent="." instance=ExtResource("9_wopgg")]
+room_type = 1
 
 [node name="BLACK" type="ColorRect" parent="."]
 z_index = 10

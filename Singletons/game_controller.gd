@@ -123,11 +123,17 @@ const wave_info := {
 
 const health_multiplers := [
 	1.0,
+	1.0,
 	1.1,
 	1.3,
 	1.5,
 	2.0
 ]
+
+@onready var menu_music: AudioStreamPlayer = $MenuMusic
+@onready var lobby_music: AudioStreamPlayer = $LobbyMusic
+@onready var library_music: AudioStreamPlayer = $LibraryMusic
+
 
 func _ready() -> void:
 	randomize()
@@ -140,16 +146,31 @@ func start_game() -> void:
 
 func go_to_menu() -> void:
 	reset_game()
+	lobby_music.stop()
+	library_music.stop()
+	menu_music.play()
 	get_tree().change_scene_to_packed(MenuScene)
 
 
 func go_to_shop() -> void:
-	get_tree().change_scene_to_packed(ShopScene)
+	if not lobby_music.playing:
+		lobby_music.play()
+	library_music.stop()
+	get_tree().call_deferred("change_scene_to_packed", ShopScene)
 
 
 func go_to_world() -> void:
+	menu_music.stop()
+	if not lobby_music.playing:
+		lobby_music.play()
 	current_wave += 1
 	get_tree().change_scene_to_packed(WorldScene)
+
+
+func wave_again() -> void:
+	current_wave -= 1
+	reputation_points -= 50
+	go_to_shop()
 
 
 func finish_wave(found_book: bool = true) -> void:

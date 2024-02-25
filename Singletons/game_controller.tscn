@@ -24,6 +24,7 @@ script = ExtResource("1_f15wj")
 
 [node name="MenuMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_51gaf")
+autoplay = true
 bus = &"Music"
 
 [node name="LobbyMusic" type="AudioStreamPlayer" parent="."]

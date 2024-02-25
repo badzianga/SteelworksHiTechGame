@@ -75,7 +75,7 @@ func add_book() -> void:
 
 
 func _on_player_detection_area_area_entered(_area: Area2D) -> void:
-	print("Visited? ", visited)
+	#print("Visited? ", visited)
 	if visited:
 		return
 	visited = true
