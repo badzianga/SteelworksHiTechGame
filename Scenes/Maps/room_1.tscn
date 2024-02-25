@@ -6,8 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://wbce6g434pt8" path="res://Scenes/Environment/bookshelf.tscn" id="2_ib80f"]
 [ext_resource type="PackedScene" uid="uid://u76wa83muvlu" path="res://Scenes/Environment/bookshelf_side.tscn" id="4_ln5id"]
 [ext_resource type="PackedScene" uid="uid://xwoj3qa43i2x" path="res://Scenes/Enemies/player_detection_area.tscn" id="6_o12u4"]
-[ext_resource type="PackedScene" path="res://Scenes/Environment/bookshelf_connect_r.tscn" id="7_gvyw7"]
-[ext_resource type="PackedScene" path="res://Scenes/Environment/bookshelf_connect_l.tscn" id="8_0bmal"]
+[ext_resource type="PackedScene" uid="uid://c6lafvrv60rll" path="res://Scenes/Environment/bookshelf_connect_r.tscn" id="7_gvyw7"]
+[ext_resource type="PackedScene" uid="uid://dsn3kg2fv2c2b" path="res://Scenes/Environment/bookshelf_connect_l.tscn" id="8_0bmal"]
 
 [node name="Room1" type="Node2D"]
 y_sort_enabled = true
@@ -283,6 +283,7 @@ position = Vector2(168, 28)
 position = Vector2(-168, 28)
 
 [node name="SpawnPoints" type="Node2D" parent="."]
+visible = false
 
 [node name="Marker" type="Marker2D" parent="SpawnPoints"]
 position = Vector2(-136, -56)
@@ -306,3 +307,5 @@ position = Vector2(-88, 48)
 
 [node name="Marker8" type="Marker2D" parent="SpawnPoints"]
 position = Vector2(112, 40)
+
+[node name="BookPoints" type="Node2D" parent="."]
