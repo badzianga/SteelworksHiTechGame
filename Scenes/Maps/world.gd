@@ -7,6 +7,7 @@ var lobby := preload("res://Scenes/Maps/room_0.tscn")
 
 @onready var camera := $Camera
 @onready var player: Player = $Player
+@onready var chromatic_player := $Camera/CanvasLayer/ChromaticAberration/AnimationPlayer
 
 
 func _ready() -> void:
@@ -51,9 +52,13 @@ func _ready() -> void:
 				to_fill.append(3)
 			#print("Coordinates: ", Vector2i(x, y), " To fill: ", to_fill)
 			
-			room_scene.fill_holes(to_fill)
 			add_child(room_scene)
+			room_scene.fill_holes(to_fill)
 			#print("Generated room (I hope)")
+
+
+func enable_chromatic_aberration() -> void:
+	chromatic_player.play("aberration")
 
 
 func _on_room_changed(next_position: Vector2) -> void:

@@ -10,6 +10,10 @@ extends CharacterBody2D
 @onready var weapon: Weapon = $WeaponSlot/Weapon
 @onready var health_component: HealthComponent = $HealthComponent
 @onready var helmet_sprite := $HelmetSprite
+@onready var invincibility_timer := $InvincibilityTimer
+@onready var hurtbox_collision := $HurtboxComponent/CollisionShape
+@onready var effects := $Effects
+
 
 var direction := Vector2.ZERO
 var shoot_direction := Vector2.ZERO
@@ -75,8 +79,20 @@ func get_shoot_direction() -> Vector2:
 	return shoot_direction
 
 
+func frame_freeze(time_scale: float, duration: float) -> void:
+	sprite.material.set_shader_parameter("flash_state", 1.0)
+	Engine.time_scale = time_scale
+	await get_tree().create_timer(duration * time_scale).timeout
+	Engine.time_scale = 1.0
+	invincibility_timer.start()
+	effects.play("blinking")
+
+
 func _on_health_changed() -> void:
 	GameController.ui.apply_damage()
+	GameController.world.enable_chromatic_aberration()
+	hurtbox_collision.set_deferred("disabled", true)
+	frame_freeze(0.05, 1.0)
 
 
 func _on_room_changed(new_position: Vector2) -> void:
@@ -87,3 +103,7 @@ func _on_room_changed(new_position: Vector2) -> void:
 	else:
 		helmet_sprite.visible = true
 		weapon_slot.visible = true
+
+
+func _on_invincibility_timer_timeout() -> void:
+	hurtbox_collision.set_deferred("disabled", false)

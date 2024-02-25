@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://fud1ek34g8rj"]
+[gd_scene load_steps=18 format=3 uid="uid://fud1ek34g8rj"]
 
 [ext_resource type="TileSet" uid="uid://c6vtajlqadjm8" path="res://Resources/TileSets/floors.tres" id="1_dwb2j"]
 [ext_resource type="Script" path="res://Scenes/Maps/room.gd" id="1_lpb4c"]
@@ -8,6 +8,31 @@
 [ext_resource type="PackedScene" uid="uid://xwoj3qa43i2x" path="res://Scenes/Enemies/player_detection_area.tscn" id="6_o12u4"]
 [ext_resource type="PackedScene" path="res://Scenes/Environment/bookshelf_connect_r.tscn" id="7_gvyw7"]
 [ext_resource type="PackedScene" path="res://Scenes/Environment/bookshelf_connect_l.tscn" id="8_0bmal"]
+[ext_resource type="PackedScene" uid="uid://dw5gu5wq2um11" path="res://Scenes/Maps/portal.tscn" id="9_wlmln"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6r7b0"]
+size = Vector2(40, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f8vmw"]
+size = Vector2(40, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_encgd"]
+size = Vector2(8, 40)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8txce"]
+size = Vector2(8, 40)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qu3wq"]
+size = Vector2(40, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sngyq"]
+size = Vector2(40, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_45uiq"]
+size = Vector2(8, 40)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0c6tq"]
+size = Vector2(8, 40)
 
 [node name="Room1" type="Node2D"]
 y_sort_enabled = true
@@ -350,5 +375,68 @@ position = Vector2(-32, -24)
 
 [node name="Enemies" type="Node2D" parent="."]
 y_sort_enabled = true
+
+[node name="Portals" type="Node2D" parent="."]
+
+[node name="Portal0" parent="Portals" instance=ExtResource("9_wlmln")]
+position = Vector2(0, -72)
+jump_direction = Vector2(0, -1)
+
+[node name="CollisionShape" type="CollisionShape2D" parent="Portals/Portal0"]
+position = Vector2(0, -4)
+shape = SubResource("RectangleShape2D_6r7b0")
+
+[node name="Portal1" parent="Portals" instance=ExtResource("9_wlmln")]
+position = Vector2(0, 92)
+jump_direction = Vector2(0, 1)
+
+[node name="CollisionShape" type="CollisionShape2D" parent="Portals/Portal1"]
+shape = SubResource("RectangleShape2D_f8vmw")
+
+[node name="Portal2" parent="Portals" instance=ExtResource("9_wlmln")]
+position = Vector2(-160, 0)
+jump_direction = Vector2(-1, 0)
+
+[node name="CollisionShape" type="CollisionShape2D" parent="Portals/Portal2"]
+shape = SubResource("RectangleShape2D_encgd")
+
+[node name="Portal3" parent="Portals" instance=ExtResource("9_wlmln")]
+position = Vector2(160, 0)
+jump_direction = Vector2(1, 0)
+
+[node name="CollisionShape" type="CollisionShape2D" parent="Portals/Portal3"]
+shape = SubResource("RectangleShape2D_8txce")
+
+[node name="Up" type="StaticBody2D" parent="Portals"]
+position = Vector2(0, -80)
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionShape" type="CollisionShape2D" parent="Portals/Up"]
+shape = SubResource("RectangleShape2D_qu3wq")
+
+[node name="Down" type="StaticBody2D" parent="Portals"]
+position = Vector2(0, 96)
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionShape" type="CollisionShape2D" parent="Portals/Down"]
+shape = SubResource("RectangleShape2D_sngyq")
+
+[node name="Left" type="StaticBody2D" parent="Portals"]
+position = Vector2(-160, 0)
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionShape" type="CollisionShape2D" parent="Portals/Left"]
+shape = SubResource("RectangleShape2D_45uiq")
+
+[node name="Right" type="StaticBody2D" parent="Portals"]
+position = Vector2(160, 0)
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionShape" type="CollisionShape2D" parent="Portals/Right"]
+shape = SubResource("RectangleShape2D_0c6tq")
 
 [connection signal="area_entered" from="PlayerDetectionArea" to="." method="_on_player_detection_area_area_entered"]
