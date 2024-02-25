@@ -1,0 +1,77 @@
+[gd_scene load_steps=8 format=3 uid="uid://l5h47dj7gas2"]
+
+[ext_resource type="Script" path="res://Scenes/UI/tutorial.gd" id="1_g5t3d"]
+[ext_resource type="Texture2D" uid="uid://cp1mc1crdr7de" path="res://Assets/Tutorial/tutorial_1.png" id="2_04klg"]
+[ext_resource type="Texture2D" uid="uid://cr7la16siyd8q" path="res://Assets/Tutorial/tutorial_2.png" id="3_mlhgt"]
+[ext_resource type="Texture2D" uid="uid://bpm08ixwp0ncr" path="res://Assets/Tutorial/tutorial_3.png" id="4_qe3la"]
+[ext_resource type="Texture2D" uid="uid://t6txs44g7qxu" path="res://Assets/Tutorial/tutorial_4.png" id="5_oxnko"]
+[ext_resource type="Texture2D" uid="uid://mxj3jigyvtjh" path="res://Assets/Tutorial/tutorial_5.png" id="6_dj5xl"]
+[ext_resource type="Texture2D" uid="uid://dffr38annej0a" path="res://Assets/Tutorial/tutorial_6.png" id="7_0smnf"]
+
+[node name="Tutorial" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_g5t3d")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 96.0
+offset_right = 228.0
+offset_bottom = 180.0
+texture = ExtResource("2_04klg")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 96.0
+offset_top = 180.0
+offset_right = 228.0
+offset_bottom = 360.0
+texture = ExtResource("3_mlhgt")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="TextureRect3" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 96.0
+offset_top = 360.0
+offset_right = 228.0
+offset_bottom = 540.0
+texture = ExtResource("4_qe3la")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="TextureRect4" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 96.0
+offset_top = 540.0
+offset_right = 228.0
+offset_bottom = 720.0
+texture = ExtResource("5_oxnko")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="TextureRect5" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 96.0
+offset_top = 720.0
+offset_right = 228.0
+offset_bottom = 900.0
+texture = ExtResource("6_dj5xl")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="TextureRect6" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 96.0
+offset_top = 900.0
+offset_right = 228.0
+offset_bottom = 1080.0
+texture = ExtResource("7_0smnf")
+expand_mode = 1
+stretch_mode = 4

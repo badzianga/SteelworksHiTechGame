@@ -62,4 +62,5 @@ func _on_health_changed() -> void:
 
 func _on_health_depleted() -> void:
 	GameController.glory_points += randi_range(glory_min, glory_max)
+	GameController.ui.update_glory_points()
 	queue_free()

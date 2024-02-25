@@ -148,7 +148,8 @@ func go_to_menu() -> void:
 	reset_game()
 	lobby_music.stop()
 	library_music.stop()
-	menu_music.play()
+	if not menu_music.playing:
+		menu_music.play()
 	get_tree().change_scene_to_packed(MenuScene)
 
 
@@ -169,7 +170,7 @@ func go_to_world() -> void:
 
 func wave_again() -> void:
 	current_wave -= 1
-	reputation_points -= 50
+	reputation_points -= 5
 	go_to_shop()
 
 
@@ -180,7 +181,7 @@ func finish_wave(found_book: bool = true) -> void:
 		var diff := int(wave_time - time_left)
 		reputation_points += 4 * diff
 	else:
-		reputation_points -= 50
+		reputation_points -= 5
 	call_deferred("go_to_shop")
 
 
