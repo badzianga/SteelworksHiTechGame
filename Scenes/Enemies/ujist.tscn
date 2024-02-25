@@ -101,6 +101,7 @@ _data = {
 }
 
 [node name="UJist" type="CharacterBody2D"]
+collision_layer = 0
 collision_mask = 9
 motion_mode = 1
 script = ExtResource("1_v2pgn")
@@ -114,10 +115,11 @@ position = Vector2(0, -4)
 texture = ExtResource("3_b8ute")
 hframes = 8
 
-[node name="GunSlot" type="Marker2D" parent="."]
+[node name="WeaponSlot" type="Marker2D" parent="."]
 
-[node name="Pistol" parent="GunSlot" instance=ExtResource("4_wr0lc")]
+[node name="Weapon" parent="WeaponSlot" instance=ExtResource("4_wr0lc")]
 damage = 1
+volley = 2
 
 [node name="CollisionShape" type="CollisionShape2D" parent="."]
 position = Vector2(0, 2)

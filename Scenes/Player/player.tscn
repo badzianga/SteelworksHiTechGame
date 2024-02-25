@@ -18,7 +18,7 @@ shader_parameter/flash_state = 0.0
 size = Vector2(10, 4)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_byg6u"]
-size = Vector2(10.5, 4.5)
+size = Vector2(10, 4.125)
 
 [sub_resource type="Animation" id="Animation_8xfso"]
 length = 0.001
@@ -152,6 +152,7 @@ _data = {
 }
 
 [node name="Player" type="CharacterBody2D"]
+collision_layer = 0
 motion_mode = 1
 script = ExtResource("1_5whdu")
 
@@ -176,6 +177,7 @@ collision_mask = 16
 health_component = NodePath("../HealthComponent")
 
 [node name="CollisionShape" type="CollisionShape2D" parent="HurtboxComponent"]
+position = Vector2(0, 0.0625)
 shape = SubResource("RectangleShape2D_byg6u")
 
 [node name="HealthComponent" parent="." instance=ExtResource("4_o00dw")]
