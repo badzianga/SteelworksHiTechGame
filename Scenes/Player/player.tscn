@@ -158,7 +158,6 @@ size = Vector2(10, 4)
 collision_layer = 0
 motion_mode = 1
 script = ExtResource("1_5whdu")
-speed = 192.0
 
 [node name="Sprite" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_yl72a")
@@ -213,4 +212,14 @@ collision_mask = 0
 position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_5yiq8")
 
+[node name="DashCooldown" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="DashingTime" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
 [connection signal="timeout" from="InvincibilityTimer" to="." method="_on_invincibility_timer_timeout"]
+[connection signal="timeout" from="DashCooldown" to="." method="_on_dash_cooldown_timeout"]
+[connection signal="timeout" from="DashingTime" to="." method="_on_dashing_time_timeout"]

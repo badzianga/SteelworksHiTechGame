@@ -13,13 +13,20 @@ extends CharacterBody2D
 @onready var invincibility_timer := $InvincibilityTimer
 @onready var hurtbox_collision := $HurtboxComponent/CollisionShape
 @onready var effects := $Effects
+@onready var dash_cooldown := $DashCooldown
+@onready var dashing_time := $DashingTime
 
 
 var direction := Vector2.ZERO
 var shoot_direction := Vector2.ZERO
 var collected_book := false
+var can_dash := false
+var dashing := false
+var dash_multiplier := 2.5
 
 func _ready() -> void:
+	if GameController.abilities["Beer"]["acquired"]:
+		can_dash = true
 	GameController.player = self
 	health_component.health_changed.connect(_on_health_changed)
 	GameController.room_changed.connect(_on_room_changed)
@@ -39,11 +46,19 @@ func handle_movement() -> void:
 	direction.y = Input.get_axis("up", "down")
 	direction = direction.normalized()
 	if direction:
-		velocity = direction * speed
+		if dashing:
+			velocity = direction * speed * dash_multiplier
+		else:
+			velocity = direction * speed
 	else:
 		velocity = Vector2.ZERO
 	
 	move_and_slide()
+	
+	if Input.is_action_just_pressed("dash") and can_dash and dash_cooldown.is_stopped():
+		can_dash = false
+		dashing = true
+		dashing_time.start()
 
 
 func handle_animation() -> void:
@@ -107,3 +122,12 @@ func _on_room_changed(new_position: Vector2) -> void:
 
 func _on_invincibility_timer_timeout() -> void:
 	hurtbox_collision.set_deferred("disabled", false)
+
+
+func _on_dash_cooldown_timeout() -> void:
+	can_dash = true
+
+
+func _on_dashing_time_timeout() -> void:
+	dashing = false
+	dash_cooldown.start()
