@@ -7,7 +7,6 @@ extends CharacterBody2D
 @onready var sprite := $Sprite
 @onready var animation_player := $AnimationPlayer
 @onready var weapon_slot: Marker2D = $WeaponSlot
-@onready var weapon: Weapon = $WeaponSlot/Weapon
 @onready var health_component: HealthComponent = $HealthComponent
 @onready var helmet_sprite := $HelmetSprite
 @onready var invincibility_timer := $InvincibilityTimer
@@ -15,7 +14,11 @@ extends CharacterBody2D
 @onready var effects := $Effects
 @onready var dash_cooldown := $DashCooldown
 @onready var dashing_time := $DashingTime
-
+@onready var weapons: Array[Weapon] = [
+	$WeaponSlot/Book,
+	$WeaponSlot/Pistol,
+	$WeaponSlot/Rifle,
+]
 
 var direction := Vector2.ZERO
 var shoot_direction := Vector2.ZERO
@@ -23,6 +26,7 @@ var collected_book := false
 var can_dash := false
 var dashing := false
 var dash_multiplier := 3.0
+var selected_weapon := 0
 
 func _ready() -> void:
 	if GameController.abilities["Beer"]["acquired"]:
@@ -38,7 +42,31 @@ func _ready() -> void:
 func _physics_process(_delta: float) -> void:
 	handle_movement()
 	handle_animation()
+	switch_weapons()
 	handle_weapon()
+
+
+func switch_weapons() -> void:
+	if weapons[selected_weapon].cannot_change():
+		return
+	if Input.is_action_just_pressed("weapon1"):
+		if GameController.weapons["book"]["acquired"]:
+			selected_weapon = 0
+			weapons[0].visible = true
+			weapons[1].visible = false
+			weapons[2].visible = false
+	elif Input.is_action_just_pressed("weapon2"):
+		if GameController.weapons["gun"]["acquired"]:
+			selected_weapon = 1
+			weapons[0].visible = false
+			weapons[1].visible = true
+			weapons[2].visible = false
+	elif Input.is_action_just_pressed("weapon3"):
+		if GameController.weapons["laser_gun"]["acquired"]:
+			selected_weapon = 2
+			weapons[0].visible = false
+			weapons[1].visible = false
+			weapons[2].visible = true
 
 
 func handle_movement() -> void:
@@ -83,12 +111,12 @@ func handle_weapon() -> void:
 	var angle := dir.angle()
 	weapon_slot.rotation = angle
 	if weapon_slot.rotation_degrees > 90.0 or weapon_slot.rotation_degrees < -90.0:
-		weapon.flip_v = true
+		weapons[selected_weapon].flip_v = true
 	else:
-		weapon.flip_v = false
+		weapons[selected_weapon].flip_v = false
 	
 	if Input.is_action_just_pressed("shoot") and helmet_sprite.visible:
-		weapon.shoot()
+		weapons[selected_weapon].shoot()
 
 
 func get_shoot_direction() -> Vector2:

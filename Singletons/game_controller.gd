@@ -26,7 +26,7 @@ const WEAPONS := {
 		"cost_multiplier": 1.1,
 		
 		"title": "Hard Covered Math's Book",
-		"description": "Ouch! That hurts. Upgrade your book to harden cover and deal more damage."
+		"description": "Ouch! That hurts! Upgrade your book to harden cover and deal more damage."
 	},
 	"gun": {
 		"acquired": false,
@@ -61,17 +61,17 @@ const ABILITIES := {
 	"BAThesis": {
 		"acquired": false,
 		"cost": 150,
-		"malfunction": 10, # 10%
+		"malfunction": 25, # 25%
 		
 		"title": "Bachelor of Arts Thesis",
-		"description": "AGH carrying out an infiltration on UJ's students. 10% chance for drone malfanction due to UJ's students not graduating as a proper engeneers"
+		"description": "AGH carrying out an infiltration on UJ's students. 25% chance for drone malfanction due to UJ's students not graduating as a proper engeneers."
 	},
 	"Beer": { # Dash
 		"acquired": false,
 		"cost": 350,
 		
 		"title": "Beer for Flanki",
-		"description": "Sudennly you gain speed abilities. Use [Space] to dash."
+		"description": "Suddenly, you gain speed abilities. Use [RMB] to dash."
 	},
 	"Handshake": {
 		"acquired": false,
@@ -87,7 +87,7 @@ const ABILITIES := {
 		"reload_multiplier": 0.9, # 10% faster
 		
 		"title": "Employment Contract",
-		"description": "You gain confidence boost due to stable work and income as a student. 10% faster reloading"
+		"description": "You gain confidence boost due to stable work and income as a student. 10% faster reloading."
 	},
 }
 

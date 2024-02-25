@@ -48,6 +48,10 @@ func shoot() -> void:
 		animation.play("shoot")
 
 
+func cannot_change() -> bool:
+	return not cooldown_timer.is_stopped()
+
+
 func create_projectile() -> void:
 	shoot_sound.play()
 	var projectile: Projectile = projectile_scene.instantiate()
@@ -65,6 +69,7 @@ func create_enemy_projectile() -> void:
 	projectile.damage = 1
 	projectile.direction = GameController.player.global_position - global_position
 	GameController.world.add_child(projectile)
+
 
 func _on_cooldown_timer_timeout() -> void:
 	visible = true

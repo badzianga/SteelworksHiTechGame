@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://kna2yacl5q3s"]
+[gd_scene load_steps=21 format=3 uid="uid://kna2yacl5q3s"]
 
 [ext_resource type="Script" path="res://Scenes/Player/player.gd" id="1_5whdu"]
 [ext_resource type="Shader" path="res://Resources/Shaders/flash.gdshader" id="2_41ip4"]
@@ -6,7 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://mx6j27qpkmf5" path="res://Scenes/Components/hurtbox_component.tscn" id="3_0l8ck"]
 [ext_resource type="Texture2D" uid="uid://64kuw3mryfea" path="res://Assets/Entities/helmet.png" id="3_01npj"]
 [ext_resource type="PackedScene" uid="uid://bse3dkitoj2uh" path="res://Scenes/Components/health_component.tscn" id="4_o00dw"]
+[ext_resource type="PackedScene" uid="uid://cmuwaea8oeiky" path="res://Scenes/Weapons/book.tscn" id="7_psapu"]
 [ext_resource type="PackedScene" uid="uid://1ftmkmpdvwmm" path="res://Scenes/Weapons/pistol.tscn" id="7_uo34t"]
+[ext_resource type="PackedScene" uid="uid://ds838ydifg4m3" path="res://Scenes/Weapons/rifle.tscn" id="9_cqyyx"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_yl72a"]
 resource_local_to_scene = true
@@ -193,7 +195,13 @@ libraries = {
 
 [node name="WeaponSlot" type="Marker2D" parent="."]
 
-[node name="Weapon" parent="WeaponSlot" instance=ExtResource("7_uo34t")]
+[node name="Book" parent="WeaponSlot" instance=ExtResource("7_psapu")]
+
+[node name="Pistol" parent="WeaponSlot" instance=ExtResource("7_uo34t")]
+visible = false
+
+[node name="Rifle" parent="WeaponSlot" instance=ExtResource("9_cqyyx")]
+visible = false
 
 [node name="InvincibilityTimer" type="Timer" parent="."]
 wait_time = 1.2
