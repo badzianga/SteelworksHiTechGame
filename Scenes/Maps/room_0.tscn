@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://debcd1f1dgpxf" path="res://Assets/Environment/wall_weapons.png" id="2_xw1m6"]
 [ext_resource type="PackedScene" uid="uid://wbce6g434pt8" path="res://Scenes/Environment/bookshelf.tscn" id="3_b2jwr"]
 [ext_resource type="PackedScene" uid="uid://v55vliv3w5uk" path="res://Scenes/Environment/door.tscn" id="3_mme2l"]
-[ext_resource type="PackedScene" path="res://Scenes/Environment/lamp.tscn" id="5_k2ck2"]
+[ext_resource type="PackedScene" uid="uid://clmh8mqgt3owe" path="res://Scenes/Environment/lamp.tscn" id="5_k2ck2"]
 [ext_resource type="PackedScene" uid="uid://u76wa83muvlu" path="res://Scenes/Environment/bookshelf_side.tscn" id="6_xkksf"]
 [ext_resource type="PackedScene" uid="uid://dw5gu5wq2um11" path="res://Scenes/Maps/portal.tscn" id="8_umohk"]
 [ext_resource type="PackedScene" uid="uid://xwoj3qa43i2x" path="res://Scenes/Enemies/player_detection_area.tscn" id="9_wopgg"]

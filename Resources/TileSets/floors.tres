@@ -1,10 +1,11 @@
-[gd_resource type="TileSet" load_steps=11 format=3 uid="uid://c6vtajlqadjm8"]
+[gd_resource type="TileSet" load_steps=13 format=3 uid="uid://c6vtajlqadjm8"]
 
 [ext_resource type="Texture2D" uid="uid://dsv8mtsayfymj" path="res://Assets/Environment/floor_sheet.png" id="1_lbhs5"]
 [ext_resource type="Texture2D" uid="uid://dw0tx81h4b811" path="res://Assets/Environment/carpet.png" id="2_1mo4f"]
 [ext_resource type="Texture2D" uid="uid://b3yda3x3jr1jr" path="res://Assets/Environment/wall_metal.png" id="3_50r5p"]
 [ext_resource type="Texture2D" uid="uid://b45ktnryu82bj" path="res://Assets/Environment/table_sheet.png" id="4_dfnod"]
 [ext_resource type="Texture2D" uid="uid://c73c6buc3ywt2" path="res://Assets/Environment/bg_black.png" id="5_6mqfa"]
+[ext_resource type="Texture2D" uid="uid://b1xq7r1e2dqxk" path="res://Assets/Utils/book_utils_sheet.png" id="6_r2vnh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j6wq7"]
 texture = ExtResource("1_lbhs5")
@@ -77,6 +78,14 @@ texture = ExtResource("4_dfnod")
 texture = ExtResource("5_6mqfa")
 0:0/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fwsb0"]
+texture = ExtResource("6_r2vnh")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+
 [resource]
 terrain_set_0/mode = 1
 terrain_set_0/terrain_0/name = "Carpet"
@@ -86,3 +95,4 @@ sources/1 = SubResource("TileSetAtlasSource_51rwm")
 sources/2 = SubResource("TileSetAtlasSource_fejyu")
 sources/3 = SubResource("TileSetAtlasSource_0acnr")
 sources/4 = SubResource("TileSetAtlasSource_s50c2")
+sources/5 = SubResource("TileSetAtlasSource_fwsb0")
