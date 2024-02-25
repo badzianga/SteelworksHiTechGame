@@ -117,49 +117,49 @@ func _on_ability_4_pressed() -> void:
 
 func _on_btn_1_mouse_entered() -> void:
 	popup1 = PopupScene.instantiate()
-	popup1.set_texts("Hello", "UwU")
+	popup1.set_texts(GameController.weapons["book"]["title"], GameController.weapons["book"]["description"])
 	popup1.position = get_local_mouse_position() + Vector2(4.0, 4.0)
 	add_child(popup1)
 
 
 func _on_btn_2_mouse_entered() -> void:
 	popup2 = PopupScene.instantiate()
-	popup2.set_texts("Hello", "UwU")
+	popup2.set_texts(GameController.weapons["gun"]["title"], GameController.weapons["gun"]["description"])
 	popup2.position = get_local_mouse_position() + Vector2(4.0, 4.0)
 	add_child(popup2)
 
 
 func _on_btn_mouse_3_entered() -> void:
 	popup3 = PopupScene.instantiate()
-	popup3.set_texts("Hello", "UwU")
+	popup3.set_texts(GameController.weapons["laser_gun"]["title"], GameController.weapons["laser_gun"]["description"])
 	popup3.position = get_local_mouse_position() + Vector2(4.0, -56.0)
 	add_child(popup3)
 
 
 func _on_ability_1_mouse_entered() -> void:
 	popup4 = PopupScene.instantiate()
-	popup4.set_texts("Hello", "UwU")
+	popup4.set_texts(GameController.abilities["BAThesis"]["title"], GameController.abilities["BAThesis"]["description"])
 	popup4.position = get_local_mouse_position() + Vector2(-132.0, 4.0)
 	add_child(popup4)
 
 
 func _on_ability_2_mouse_entered() -> void:
 	popup5 = PopupScene.instantiate()
-	popup5.set_texts("Hello", "UwU")
+	popup5.set_texts(GameController.abilities["Beer"]["title"], GameController.abilities["Beer"]["description"])
 	popup5.position = get_local_mouse_position() + Vector2(-132.0, 4.0)
 	add_child(popup5)
 
 
 func _on_ability_3_mouse_entered() -> void:
 	popup6 = PopupScene.instantiate()
-	popup6.set_texts("Hello", "UwU")
+	popup6.set_texts(GameController.abilities["Handshake"]["title"], GameController.abilities["Handshake"]["description"])
 	popup6.position = get_local_mouse_position() + Vector2(-132.0, -32.0)
 	add_child(popup6)
 
 
 func _on_ability_4_mouse_entered() -> void:
 	popup7 = PopupScene.instantiate()
-	popup7.set_texts("Hello", "UwU")
+	popup7.set_texts(GameController.abilities["Contract"]["title"], GameController.abilities["Contract"]["description"])
 	popup7.position = get_local_mouse_position() + Vector2(-132.0, -32.0)
 	add_child(popup7)
 
