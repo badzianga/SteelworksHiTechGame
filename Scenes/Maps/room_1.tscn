@@ -283,7 +283,6 @@ position = Vector2(168, 28)
 position = Vector2(-168, 28)
 
 [node name="SpawnPoints" type="Node2D" parent="."]
-visible = false
 
 [node name="Marker" type="Marker2D" parent="SpawnPoints"]
 position = Vector2(-136, -56)
@@ -309,3 +308,42 @@ position = Vector2(-88, 48)
 position = Vector2(112, 40)
 
 [node name="BookPoints" type="Node2D" parent="."]
+
+[node name="Marker" type="Marker2D" parent="BookPoints"]
+position = Vector2(-40, 24)
+
+[node name="Marker2" type="Marker2D" parent="BookPoints"]
+position = Vector2(-72, 32)
+
+[node name="Marker3" type="Marker2D" parent="BookPoints"]
+position = Vector2(-112, -8)
+
+[node name="Marker4" type="Marker2D" parent="BookPoints"]
+position = Vector2(-128, -80)
+
+[node name="Marker5" type="Marker2D" parent="BookPoints"]
+position = Vector2(-96, -80)
+
+[node name="Marker6" type="Marker2D" parent="BookPoints"]
+position = Vector2(-40, -80)
+
+[node name="Marker7" type="Marker2D" parent="BookPoints"]
+position = Vector2(96, -80)
+
+[node name="Marker8" type="Marker2D" parent="BookPoints"]
+position = Vector2(144, -80)
+
+[node name="Marker9" type="Marker2D" parent="BookPoints"]
+position = Vector2(112, 0)
+
+[node name="Marker10" type="Marker2D" parent="BookPoints"]
+position = Vector2(80, 32)
+
+[node name="Marker11" type="Marker2D" parent="BookPoints"]
+position = Vector2(40, 24)
+
+[node name="Marker12" type="Marker2D" parent="BookPoints"]
+position = Vector2(56, -24)
+
+[node name="Marker13" type="Marker2D" parent="BookPoints"]
+position = Vector2(-32, -24)
