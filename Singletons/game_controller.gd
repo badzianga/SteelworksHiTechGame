@@ -1,12 +1,12 @@
 extends Node
 
 
-var reputation_points := 10000
-var glory_points := 10000
+var reputation_points := 1000
+var glory_points := 1000
 var player: Player
 var ui: UI
 var world: Node2D
-var current_wave := 5
+var current_wave := 1
 
 signal room_changed(next_position: Vector2)
 

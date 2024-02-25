@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cg6sknwoktjqx"]
+[gd_scene load_steps=13 format=3 uid="uid://cg6sknwoktjqx"]
 
 [ext_resource type="Texture2D" uid="uid://dw4dtfps2ba52" path="res://Assets/UI/shop.png" id="1_bg5et"]
 [ext_resource type="Script" path="res://Scenes/UI/shop.gd" id="1_j8dmq"]
@@ -6,7 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://dq7776sj081h8" path="res://Assets/UI/economy_2.png" id="3_5pd3k"]
 [ext_resource type="Texture2D" uid="uid://ecf5rl6t1vig" path="res://Assets/UI/upgrade_bar_1.png" id="4_48n6b"]
 [ext_resource type="Texture2D" uid="uid://c3jd7n58vm78s" path="res://Assets/UI/upgrade_bar_2.png" id="5_tgbjm"]
-[ext_resource type="PackedScene" uid="uid://b65x3vroq46f3" path="res://Scenes/UI/economy.tscn" id="6_888is"]
 [ext_resource type="Texture2D" uid="uid://dllicbf1atna8" path="res://Assets/UI/btn_upgrade.png" id="6_y8isp"]
 [ext_resource type="Texture2D" uid="uid://cfmunnel3rxpn" path="res://Assets/UI/BAThesis.png" id="7_f8emw"]
 [ext_resource type="Texture2D" uid="uid://cfhgfd37u3uoa" path="res://Assets/UI/beer.png" id="8_fsfio"]
@@ -268,13 +267,58 @@ text = "20"
 position = Vector2(-37, 67)
 scale = Vector2(2, 2)
 
-[node name="Economy" parent="Node2D" instance=ExtResource("6_888is")]
-position = Vector2(22, -34)
+[node name="Economy1" type="TextureRect" parent="."]
+offset_left = 48.0
+offset_top = -74.0
+offset_right = 61.0
+offset_bottom = -61.0
+texture = ExtResource("2_q5sw1")
+expand_mode = 1
 
+[node name="Economy2" type="TextureRect" parent="."]
+offset_left = 89.0
+offset_top = -74.0
+offset_right = 102.0
+offset_bottom = -61.0
+texture = ExtResource("3_5pd3k")
+expand_mode = 1
+
+[node name="GloryPoints" type="Label" parent="."]
+offset_left = 63.0
+offset_top = -79.0
+offset_right = 91.0
+offset_bottom = -56.0
+theme_override_font_sizes/font_size = 8
+text = "100"
+vertical_alignment = 1
+
+[node name="ReputationPoints" type="Label" parent="."]
+offset_left = 104.0
+offset_top = -79.0
+offset_right = 132.0
+offset_bottom = -56.0
+theme_override_font_sizes/font_size = 8
+text = "100"
+vertical_alignment = 1
+
+[connection signal="mouse_entered" from="Weapons/Upgrade_1/Btn" to="." method="_on_btn_1_mouse_entered"]
+[connection signal="mouse_exited" from="Weapons/Upgrade_1/Btn" to="." method="_on_btn_1_mouse_exited"]
 [connection signal="pressed" from="Weapons/Upgrade_1/Btn" to="." method="_on_btn_1_pressed"]
+[connection signal="mouse_entered" from="Weapons/Upgrade_2/Btn" to="." method="_on_btn_2_mouse_entered"]
+[connection signal="mouse_exited" from="Weapons/Upgrade_2/Btn" to="." method="_on_btn_2_mouse_exited"]
 [connection signal="pressed" from="Weapons/Upgrade_2/Btn" to="." method="_on_btn_2_pressed"]
+[connection signal="mouse_entered" from="Weapons/Upgrade_3/Btn" to="." method="_on_btn_mouse_3_entered"]
+[connection signal="mouse_exited" from="Weapons/Upgrade_3/Btn" to="." method="_on_btn_3_mouse_exited"]
 [connection signal="pressed" from="Weapons/Upgrade_3/Btn" to="." method="_on_btn_3_pressed"]
+[connection signal="mouse_entered" from="Upgrades/Ability_1" to="." method="_on_ability_1_mouse_entered"]
+[connection signal="mouse_exited" from="Upgrades/Ability_1" to="." method="_on_ability_1_mouse_exited"]
 [connection signal="pressed" from="Upgrades/Ability_1" to="." method="_on_ability_1_pressed"]
+[connection signal="mouse_entered" from="Upgrades/Ability_2" to="." method="_on_ability_2_mouse_entered"]
+[connection signal="mouse_exited" from="Upgrades/Ability_2" to="." method="_on_ability_2_mouse_exited"]
 [connection signal="pressed" from="Upgrades/Ability_2" to="." method="_on_ability_2_pressed"]
+[connection signal="mouse_entered" from="Upgrades/Ability_3" to="." method="_on_ability_3_mouse_entered"]
+[connection signal="mouse_exited" from="Upgrades/Ability_3" to="." method="_on_ability_3_mouse_exited"]
 [connection signal="pressed" from="Upgrades/Ability_3" to="." method="_on_ability_3_pressed"]
+[connection signal="mouse_entered" from="Upgrades/Ability_4" to="." method="_on_ability_4_mouse_entered"]
+[connection signal="mouse_exited" from="Upgrades/Ability_4" to="." method="_on_ability_4_mouse_exited"]
 [connection signal="pressed" from="Upgrades/Ability_4" to="." method="_on_ability_4_pressed"]

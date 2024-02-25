@@ -1,117 +1,192 @@
 extends Node2D
 
-# Weapon upgrades =========================================
-# Upgrade costs
-var cost_1 = GameController.weapons["book"]["upgrade_cost"]
-var cost_2 = GameController.weapons["gun"]["upgrade_cost"]
-var cost_3 = GameController.weapons["laser_gun"]["upgrade_cost"]
 
-# Upgrade points
-var lvl_1 = GameController.weapons["book"]["level"]
-var lvl_2 = GameController.weapons["gun"]["level"]
-var lvl_3 = GameController.weapons["laser_gun"]["level"]
+const PopupScene := preload("res://Scenes/UI/popup.tscn")
 
-# Damage points
-var damage_1 = GameController.weapons["book"]["damage"]
-var damage_2 = GameController.weapons["gun"]["damage"]
-var damage_3 = GameController.weapons["laser_gun"]["damage"]
+var popup1: ColorRect = null
+var popup2: ColorRect = null
+var popup3: ColorRect = null
+var popup4: ColorRect = null
+var popup5: ColorRect = null
+var popup6: ColorRect = null
+var popup7: ColorRect = null
 
-# Abilities ================================================
-# Abilities cost
-var a_cost_1 = GameController.abilities["BAThesis"]["cost"]
-var a_cost_2 = GameController.abilities["Beer"]["cost"]
-var a_cost_3 = GameController.abilities["Handshake"]["cost"]
-var a_cost_4 = GameController.abilities["Contract"]["cost"]
 
-# Acquirance status of ability
-var has_1 = GameController.abilities["BAThesis"]["acquired"]
-var has_2 = GameController.abilities["Beer"]["acquired"]
-var has_3 = GameController.abilities["Handshake"]["acquired"]
-var has_4 = GameController.abilities["Contract"]["acquired"]
+func _ready() -> void:
+	set_points()
 
-func _physics_process(delta):
-	
+
+func _physics_process(_delta: float) -> void:
 	# Weapons buying - using glory points 
 	# book
-	%Upgrade_1/progress.value = lvl_1
-	%Upgrade_1/cost/Label.text = str(cost_1)
+	%Upgrade_1/progress.value = GameController.weapons["book"]["level"]
+	%Upgrade_1/cost/Label.text = str(GameController.weapons["book"]["upgrade_cost"])
 	
 	# gun
-	%Upgrade_2/progress.value = lvl_2
-	%Upgrade_2/cost/Label.text = str(cost_2)
+	%Upgrade_2/progress.value = GameController.weapons["gun"]["level"]
+	%Upgrade_2/cost/Label.text = str(GameController.weapons["gun"]["upgrade_cost"])
 	
 	# laser gun
-	%Upgrade_3/progress.value = lvl_3
-	%Upgrade_3/cost/Label.text = str(cost_3)
+	%Upgrade_3/progress.value = GameController.weapons["laser_gun"]["level"]
+	%Upgrade_3/cost/Label.text = str(GameController.weapons["laser_gun"]["upgrade_cost"])
 	
 	# Abilities buying - using satisfaction points
 	# BAThesis
-	%Ability_1/cost/Label.text = str(a_cost_1)
-	%Ability_1.disabled = has_1
+	%Ability_1/cost/Label.text = str(GameController.abilities["BAThesis"]["cost"])
+	%Ability_1.disabled = GameController.abilities["BAThesis"]["acquired"]
 	
 	# Beer
-	%Ability_2/cost/Label.text = str(a_cost_2)
-	%Ability_2.disabled = has_2
+	%Ability_2/cost/Label.text = str(GameController.abilities["Beer"]["cost"])
+	%Ability_2.disabled = GameController.abilities["Beer"]["acquired"]
 	
 	# Handshake
-	%Ability_3/cost/Label.text = str(a_cost_3)
-	%Ability_3.disabled = has_3
+	%Ability_3/cost/Label.text = str(GameController.abilities["Handshake"]["cost"])
+	%Ability_3.disabled = GameController.abilities["Handshake"]["acquired"]
 	
 	# Contract
-	%Ability_4/cost/Label.text = str(a_cost_4)
-	%Ability_4.disabled = has_4
+	%Ability_4/cost/Label.text = str(GameController.abilities["Contract"]["cost"])
+	%Ability_4.disabled = GameController.abilities["Contract"]["acquired"]
+
+
+func set_points() -> void:
+	$GloryPoints.text = str(GameController.glory_points)
+	$ReputationPoints.text = str(GameController.reputation_points)
+
 
 # Weapon upgrades =====================================================================
 # Book - upgrade
-func _on_btn_1_pressed():
-	if GameController.glory_points > cost_1 and lvl_1 < 12:
-		GameController.glory_points -= cost_1
-		lvl_1 += 1
-		cost_1 = round(cost_1 * GameController.weapons["book"]["cost_multiplier"])
-		damage_1 = round( damage_1 * GameController.weapons["book"]["damage_multiplier"])
+func _on_btn_1_pressed() -> void:
+	if GameController.glory_points > GameController.weapons["book"]["upgrade_cost"] and GameController.weapons["book"]["level"] < 12:
+		GameController.glory_points -= GameController.weapons["book"]["upgrade_cost"]
+		GameController.weapons["book"]["level"] += 1
+		GameController.weapons["book"]["upgrade_cost"] = round(GameController.weapons["book"]["upgrade_cost"] * GameController.weapons["book"]["cost_multiplier"])
+		GameController.weapons["book"]["damage"] = round(GameController.weapons["book"]["damage"] * GameController.weapons["book"]["damage_multiplier"])
+		set_points()
 
 # Gun - upgrade
-func _on_btn_2_pressed():
-	if GameController.glory_points > cost_2 and lvl_2 < 12:
-		GameController.glory_points -= cost_2
-		lvl_2 += 1
-		cost_2 = round(cost_2 * GameController.weapons["gun"]["cost_multiplier"])
-		damage_2 = round( damage_2 * GameController.weapons["gun"]["damage_multiplier"])
+func _on_btn_2_pressed() -> void:
+	if GameController.glory_points > GameController.weapons["gun"]["upgrade_cost"] and GameController.weapons["gun"]["level"] < 12:
+		GameController.glory_points -= GameController.weapons["gun"]["upgrade_cost"]
+		GameController.weapons["gun"]["level"] += 1
+		GameController.weapons["gun"]["upgrade_cost"] = round(GameController.weapons["gun"]["upgrade_cost"] * GameController.weapons["gun"]["cost_multiplier"])
+		GameController.weapons["gun"]["damage"] = round(GameController.weapons["gun"]["damage"] * GameController.weapons["gun"]["damage_multiplier"])
+		set_points()
 
 # Laser gun - upgrade
-func _on_btn_3_pressed():
-	if GameController.glory_points > cost_3 and lvl_3 < 12:
-		GameController.glory_points -= cost_3
-		lvl_3 += 1
-		cost_3 = round(cost_3 * GameController.weapons["laser_gun"]["cost_multiplier"])
-		damage_3 = round( damage_3 * GameController.weapons["laser_gun"]["damage_multiplier"])
+func _on_btn_3_pressed() -> void:
+	if GameController.glory_points > GameController.weapons["laser_gun"]["upgrade_cost"] and GameController.weapons["laser_gun"]["level"] < 12:
+		GameController.glory_points -= GameController.weapons["laser_gun"]["upgrade_cost"]
+		GameController.weapons["laser_gun"]["level"] += 1
+		GameController.weapons["laser_gun"]["upgrade_cost"] = round(GameController.weapons["laser_gun"]["upgrade_cost"] * GameController.weapons["laser_gun"]["cost_multiplier"])
+		GameController.weapons["laser_gun"]["damage"] = round(GameController.weapons["laser_gun"]["damage"] * GameController.weapons["laser_gun"]["damage_multiplier"])
+		set_points()
 
 
 # User Abilities ==============================================
-func _on_ability_1_pressed():
-	if GameController.reputation_points > a_cost_1 and has_1 == false:
-		GameController.reputation_points -= a_cost_1
-		has_1 = true
+func _on_ability_1_pressed() -> void:
+	if GameController.reputation_points > GameController.abilities["BAThesis"]["cost"] and GameController.abilities["BAThesis"]["acquired"] == false:
+		GameController.reputation_points -= GameController.abilities["BAThesis"]["cost"]
+		GameController.abilities["BAThesis"]["acquired"] = true
+		set_points()
 
 
-func _on_ability_2_pressed():
-	if GameController.reputation_points > a_cost_2 and has_2 == false:
-		GameController.reputation_points -= a_cost_2
-		has_2 = true
+func _on_ability_2_pressed() -> void:
+	if GameController.reputation_points > GameController.abilities["Beer"]["cost"] and GameController.abilities["Beer"]["acquired"] == false:
+		GameController.reputation_points -= GameController.abilities["Beer"]["cost"]
+		GameController.abilities["Beer"]["acquired"] = true
+		set_points()
 
 
-func _on_ability_3_pressed():
-	if GameController.reputation_points > a_cost_3 and has_3 == false:
-		GameController.reputation_points -= a_cost_3
-		has_3 = true
+func _on_ability_3_pressed() -> void:
+	if GameController.reputation_points > GameController.abilities["Handshake"]["cost"] and GameController.abilities["Handshake"]["acquired"] == false:
+		GameController.reputation_points -= GameController.abilities["Handshake"]["cost"]
+		GameController.abilities["Handshake"]["acquired"] = true
+		set_points()
 		
 		# Apply damage multiplier
-		damage_1 = round( damage_1 * GameController.abilities["Handshake"]["damage_multiplier"])
-		damage_2 = round( damage_2 * GameController.abilities["Handshake"]["damage_multiplier"])
-		damage_3 = round( damage_3 * GameController.abilities["Handshake"]["damage_multiplier"])
+		GameController.weapons["book"]["damage"] = round(GameController.weapons["book"]["damage"] * GameController.abilities["Handshake"]["damage_multiplier"])
+		GameController.weapons["gun"]["damage"] = round(GameController.weapons["gun"]["damage"] * GameController.abilities["Handshake"]["damage_multiplier"])
+		GameController.weapons["laser_gun"]["damage"] = round(GameController.weapons["laser_gun"]["damage"] * GameController.abilities["Handshake"]["damage_multiplier"])
 
 
-func _on_ability_4_pressed():
-	if GameController.reputation_points > a_cost_4 and has_4 == false:
-		GameController.reputation_points -= a_cost_4
-		has_4 = true
+func _on_ability_4_pressed() -> void:
+	if GameController.reputation_points > GameController.abilities["Contract"]["cost"] and GameController.abilities["Contract"]["acquired"] == false:
+		GameController.reputation_points -= GameController.abilities["Contract"]["cost"]
+		GameController.abilities["Contract"]["acquired"] = true
+
+
+func _on_btn_1_mouse_entered() -> void:
+	popup1 = PopupScene.instantiate()
+	popup1.set_texts("Hello", "UwU")
+	popup1.position = get_local_mouse_position() + Vector2(4.0, 4.0)
+	add_child(popup1)
+
+
+func _on_btn_2_mouse_entered() -> void:
+	popup2 = PopupScene.instantiate()
+	popup2.set_texts("Hello", "UwU")
+	popup2.position = get_local_mouse_position() + Vector2(4.0, 4.0)
+	add_child(popup2)
+
+
+func _on_btn_mouse_3_entered() -> void:
+	popup3 = PopupScene.instantiate()
+	popup3.set_texts("Hello", "UwU")
+	popup3.position = get_local_mouse_position() + Vector2(4.0, -56.0)
+	add_child(popup3)
+
+
+func _on_ability_1_mouse_entered() -> void:
+	popup4 = PopupScene.instantiate()
+	popup4.set_texts("Hello", "UwU")
+	popup4.position = get_local_mouse_position() + Vector2(-132.0, 4.0)
+	add_child(popup4)
+
+
+func _on_ability_2_mouse_entered() -> void:
+	popup5 = PopupScene.instantiate()
+	popup5.set_texts("Hello", "UwU")
+	popup5.position = get_local_mouse_position() + Vector2(-132.0, 4.0)
+	add_child(popup5)
+
+
+func _on_ability_3_mouse_entered() -> void:
+	popup6 = PopupScene.instantiate()
+	popup6.set_texts("Hello", "UwU")
+	popup6.position = get_local_mouse_position() + Vector2(-132.0, -32.0)
+	add_child(popup6)
+
+
+func _on_ability_4_mouse_entered() -> void:
+	popup7 = PopupScene.instantiate()
+	popup7.set_texts("Hello", "UwU")
+	popup7.position = get_local_mouse_position() + Vector2(-132.0, -32.0)
+	add_child(popup7)
+
+
+func _on_btn_1_mouse_exited() -> void:
+	popup1.queue_free()
+
+
+func _on_btn_2_mouse_exited() -> void:
+	popup2.queue_free()
+
+
+func _on_btn_3_mouse_exited() -> void:
+	popup3.queue_free()
+
+
+func _on_ability_1_mouse_exited() -> void:
+	popup4.queue_free()
+
+
+func _on_ability_2_mouse_exited() -> void:
+	popup5.queue_free()
+
+
+func _on_ability_3_mouse_exited() -> void:
+	popup6.queue_free()
+
+
+func _on_ability_4_mouse_exited() -> void:
+	popup7.queue_free()

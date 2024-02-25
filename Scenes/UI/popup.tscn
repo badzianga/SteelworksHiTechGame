@@ -1,0 +1,38 @@
+[gd_scene load_steps=2 format=3 uid="uid://hyj1bed3qed4"]
+
+[ext_resource type="Script" path="res://Scenes/UI/popup.gd" id="1_wyui4"]
+
+[node name="Popup" type="ColorRect"]
+custom_minimum_size = Vector2(120, 61)
+offset_left = -128.0
+offset_top = -32.0
+offset_right = -8.0
+offset_bottom = 29.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0.254902, 0.254902, 0.254902, 1)
+script = ExtResource("1_wyui4")
+
+[node name="Title" type="Label" parent="."]
+custom_minimum_size = Vector2(112, 0)
+layout_mode = 0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 116.0
+offset_bottom = 16.0
+theme_override_font_sizes/font_size = 8
+text = "Title"
+horizontal_alignment = 3
+autowrap_mode = 3
+
+[node name="Description" type="Label" parent="."]
+custom_minimum_size = Vector2(112, 0)
+layout_mode = 0
+offset_left = 4.0
+offset_top = 16.0
+offset_right = 116.0
+offset_bottom = 44.0
+theme_override_font_sizes/font_size = 5
+text = "Description"
+horizontal_alignment = 3
+autowrap_mode = 3

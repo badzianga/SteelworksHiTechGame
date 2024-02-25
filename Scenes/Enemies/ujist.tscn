@@ -119,7 +119,7 @@ hframes = 8
 
 [node name="Weapon" parent="WeaponSlot" instance=ExtResource("4_wr0lc")]
 damage = 1
-volley = 2
+enemy = true
 
 [node name="CollisionShape" type="CollisionShape2D" parent="."]
 position = Vector2(0, 2)
@@ -156,3 +156,5 @@ autoplay = "run"
 libraries = {
 "": SubResource("AnimationLibrary_cmlwv")
 }
+
+[node name="Sight" type="RayCast2D" parent="."]

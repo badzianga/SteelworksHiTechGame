@@ -13,6 +13,7 @@ var shoot_direction: Vector2
 @onready var sprite := $Sprite
 @onready var weapon_slot := $WeaponSlot
 @onready var weapon: Weapon = $WeaponSlot/Weapon
+@onready var sight := $Sight
 
 
 func _ready() -> void:
@@ -41,6 +42,9 @@ func move(delta: float) -> void:
 
 
 func handle_weapon() -> void:
+	sight.target_position = GameController.player.global_position - sight.global_position
+	if sight.is_colliding():
+		return
 	var dir: Vector2 = weapon_slot.global_position.direction_to(GameController.player.global_position)
 	shoot_direction = dir
 	var angle := dir.angle()
@@ -49,6 +53,7 @@ func handle_weapon() -> void:
 		weapon.flip_v = true
 	else:
 		weapon.flip_v = false
+	weapon.shoot()
 
 
 func _on_health_changed() -> void:

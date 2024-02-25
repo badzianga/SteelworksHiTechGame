@@ -10,6 +10,8 @@ extends CanvasLayer
 func _ready() -> void:
 	GameController.ui = self
 	health.value = 3
+	update_glory_points()
+	update_reputation_points()
 
 
 func apply_damage() -> void:
