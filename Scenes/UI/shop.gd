@@ -59,6 +59,7 @@ func _on_btn_1_pressed() -> void:
 	if GameController.glory_points > GameController.weapons["book"]["upgrade_cost"] and GameController.weapons["book"]["level"] < 12:
 		GameController.glory_points -= GameController.weapons["book"]["upgrade_cost"]
 		GameController.weapons["book"]["level"] += 1
+		GameController.weapons["book"]["acquired"] = true
 		GameController.weapons["book"]["upgrade_cost"] = round(GameController.weapons["book"]["upgrade_cost"] * GameController.weapons["book"]["cost_multiplier"])
 		GameController.weapons["book"]["damage"] = round(GameController.weapons["book"]["damage"] * GameController.weapons["book"]["damage_multiplier"])
 		set_points()
@@ -68,6 +69,7 @@ func _on_btn_2_pressed() -> void:
 	if GameController.glory_points > GameController.weapons["gun"]["upgrade_cost"] and GameController.weapons["gun"]["level"] < 12:
 		GameController.glory_points -= GameController.weapons["gun"]["upgrade_cost"]
 		GameController.weapons["gun"]["level"] += 1
+		GameController.weapons["gun"]["acquired"] = true
 		GameController.weapons["gun"]["upgrade_cost"] = round(GameController.weapons["gun"]["upgrade_cost"] * GameController.weapons["gun"]["cost_multiplier"])
 		GameController.weapons["gun"]["damage"] = round(GameController.weapons["gun"]["damage"] * GameController.weapons["gun"]["damage_multiplier"])
 		set_points()
@@ -77,6 +79,7 @@ func _on_btn_3_pressed() -> void:
 	if GameController.glory_points > GameController.weapons["laser_gun"]["upgrade_cost"] and GameController.weapons["laser_gun"]["level"] < 12:
 		GameController.glory_points -= GameController.weapons["laser_gun"]["upgrade_cost"]
 		GameController.weapons["laser_gun"]["level"] += 1
+		GameController.weapons["laser_gun"]["acquired"] = true
 		GameController.weapons["laser_gun"]["upgrade_cost"] = round(GameController.weapons["laser_gun"]["upgrade_cost"] * GameController.weapons["laser_gun"]["cost_multiplier"])
 		GameController.weapons["laser_gun"]["damage"] = round(GameController.weapons["laser_gun"]["damage"] * GameController.weapons["laser_gun"]["damage_multiplier"])
 		set_points()

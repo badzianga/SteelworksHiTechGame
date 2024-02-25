@@ -5,6 +5,7 @@ const EnemyProjectileScene := preload("res://Scenes/Projectiles/enemy_projectile
 
 @export var damage: int
 @export var volley: int
+@export var type: String
 @export var projectile_scene: PackedScene
 @export var enemy := false
 
@@ -21,6 +22,13 @@ func _ready():
 	if not enemy:
 		if GameController.abilities["Contract"]["acquired"]:
 			cooldown_timer.wait_time *= GameController.abilities["Contract"]["reload_multiplier"]
+		if type == "Pistol":
+			damage = GameController.weapons["gun"]["damage"]
+		elif type == "Rifle":
+			damage = GameController.weapons["laser_gun"]["damage"]
+		elif type == "Book":
+			damage = GameController.weapons["book"]["damage"]
+
 	else:
 		cooldown_timer.wait_time = 0.5
 		

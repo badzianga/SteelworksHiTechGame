@@ -106,8 +106,8 @@ collision_mask = 9
 motion_mode = 1
 script = ExtResource("1_v2pgn")
 speed = 80.0
-glory_min = 2
-glory_max = 5
+glory_min = 5
+glory_max = 7
 
 [node name="Sprite" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_moi6k")
@@ -144,7 +144,7 @@ position = Vector2(0, -4)
 shape = SubResource("RectangleShape2D_fu4ut")
 
 [node name="HealthComponent" parent="." instance=ExtResource("6_0ad1x")]
-max_health = 5.0
+max_health = 100.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
