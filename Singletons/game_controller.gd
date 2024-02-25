@@ -145,6 +145,17 @@ func go_to_world() -> void:
 	get_tree().change_scene_to_packed(WorldScene)
 
 
+func finish_wave(found_book: bool = true) -> void:
+	if found_book:
+		var time_left := ui.get_time_left()
+		var wave_time: float = wave_info[current_wave]["time"]
+		var diff := int(wave_time - time_left)
+		reputation_points += 4 * diff
+	else:
+		reputation_points -= 50
+	call_deferred("go_to_shop")
+
+
 func reset_game() -> void:
 	weapons = WEAPONS.duplicate(true)
 	abilities = ABILITIES.duplicate(true)

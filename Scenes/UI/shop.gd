@@ -190,3 +190,7 @@ func _on_ability_3_mouse_exited() -> void:
 
 func _on_ability_4_mouse_exited() -> void:
 	popup7.queue_free()
+
+
+func _on_next_wave_pressed() -> void:
+	GameController.go_to_world()

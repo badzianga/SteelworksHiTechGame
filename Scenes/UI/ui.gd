@@ -36,3 +36,11 @@ func update_glory_points() -> void:
 
 func update_reputation_points() -> void:
 	reputation_points.text = str(GameController.reputation_points)
+
+
+func get_time_left() -> float:
+	return patience_timer.time_left
+
+
+func _on_patience_timer_timeout() -> void:
+	GameController.finish_wave(false)

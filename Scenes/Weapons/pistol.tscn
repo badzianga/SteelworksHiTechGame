@@ -48,7 +48,7 @@ scale = Vector2(0.75, 0.75)
 texture = ExtResource("1_jjmt8")
 hframes = 4
 script = ExtResource("2_ih2x3")
-damage = 3
+damage = 2
 volley = 1
 projectile_scene = ExtResource("3_i6gb4")
 

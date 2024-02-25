@@ -1,14 +1,15 @@
-[gd_scene load_steps=16 format=3 uid="uid://depthu6t38i1i"]
+[gd_scene load_steps=17 format=3 uid="uid://depthu6t38i1i"]
 
 [ext_resource type="TileSet" uid="uid://c6vtajlqadjm8" path="res://Resources/TileSets/floors.tres" id="1_ntvxu"]
 [ext_resource type="PackedScene" uid="uid://cl5dr7hvsd7uu" path="res://Scenes/Environment/bookshelf_top.tscn" id="2_uwl50"]
 [ext_resource type="Texture2D" uid="uid://debcd1f1dgpxf" path="res://Assets/Environment/wall_weapons.png" id="2_xw1m6"]
 [ext_resource type="PackedScene" uid="uid://wbce6g434pt8" path="res://Scenes/Environment/bookshelf.tscn" id="3_b2jwr"]
 [ext_resource type="PackedScene" uid="uid://v55vliv3w5uk" path="res://Scenes/Environment/door.tscn" id="3_mme2l"]
-[ext_resource type="PackedScene" uid="uid://clmh8mqgt3owe" path="res://Scenes/Environment/lamp.tscn" id="5_k2ck2"]
+[ext_resource type="PackedScene" path="res://Scenes/Environment/lamp.tscn" id="5_k2ck2"]
 [ext_resource type="PackedScene" uid="uid://u76wa83muvlu" path="res://Scenes/Environment/bookshelf_side.tscn" id="6_xkksf"]
 [ext_resource type="PackedScene" uid="uid://dw5gu5wq2um11" path="res://Scenes/Maps/portal.tscn" id="8_umohk"]
 [ext_resource type="PackedScene" uid="uid://xwoj3qa43i2x" path="res://Scenes/Enemies/player_detection_area.tscn" id="9_wopgg"]
+[ext_resource type="PackedScene" uid="uid://cca4g8agxnvve" path="res://Scenes/Enemies/npc.tscn" id="10_bcl8o"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f3uh2"]
 size = Vector2(138, 19)
@@ -170,3 +171,7 @@ offset_top = -90.0
 offset_right = 160.0
 offset_bottom = -76.0
 color = Color(0, 0, 0, 1)
+
+[node name="NPC" parent="." instance=ExtResource("10_bcl8o")]
+z_index = 2
+position = Vector2(0, 32)
