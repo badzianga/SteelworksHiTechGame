@@ -1,4 +1,4 @@
-#Enter The Bookgeon
+# Enter The Bookgeon
 
 Enter The Bookgeon is a isaac-like shooter written in 48 hours in Godot Engine for Steelworks Jam - Hi-Tech 2024.
 
